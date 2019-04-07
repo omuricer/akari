@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
+  <header class=" mdc-top-app-bar">
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -8,9 +8,51 @@
     >
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-  </head>
+
+    <div class="mdc-top-app-bar__row">
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+        <img class="mdc-image-list__image logo" src="assets/logo.jpg">
+        <a href="#" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
+        <span class="mdc-top-app-bar__title">Title</span>
+      </section>
+    </div>
+    <div class="mdc-top-app-bar__row">
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+        <button class="material-icons mdc-top-app-bar__navigation-icon--unbounded">menu</button>
+        <span class="mdc-top-app-bar__title">San Francisco, CA</span>
+      </section>
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+        <button class="material-icons mdc-top-app-bar__action-item--unbounded" aria-label="Download">file_download</button>
+        <button class="material-icons mdc-top-app-bar__action-item--unbounded" aria-label="Print this page">print</button>
+        <button class="material-icons mdc-top-app-bar__action-item--unbounded" aria-label="Bookmark this page">bookmark</button>
+      </section>
+    </div>
+  </header>
   <body>
+    <div class="mdc-layout-grid">
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-12 test">キャッチコピー</div>
+      </div>
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell test">キャッチコピー１</div>
+        <div class="mdc-layout-grid__cell">キャッチコピー2</div>
+        <div class="mdc-layout-grid__cell">キャッチコピー3</div>
+      </div>
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-12 test">広告</div>
+      </div>
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-12 test">GoogleMap</div>
+      </div>
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-12 test">アクセス</div>
+      </div>
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell--span-12 test">アクセス</div>
+      </div>
+    </div>
     <div id="root"></div>
     <script src="js/app.bundle.js"></script>
+    
   </body>
 </html>

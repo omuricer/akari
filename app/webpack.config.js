@@ -6,7 +6,8 @@ module.exports = {
     // 指定できる値としては、ファイル名の文字列や、それを並べた配列やオブジェクト
     // 下記はオブジェクトとして指定した例 
     entry: {
-        bundle: './src/index.tsx',
+        // bundle: './src/index.tsx',
+        bundle: './src/index.js',
     },
     devtool: 'inline-source-map',    // デバッグできるように
     output: {
@@ -65,6 +66,29 @@ module.exports = {
                         loader: 'css-loader', 
                         options: {url: false}
                     },
+                ],
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            url: false,
+                            sourceMap: true,
+                            importLoaders: 2
+                        }
+                    },
+                    {
+                        loader: 'sass-loader', 
+                        options: {
+                            sourceMap: true,
+                            includePaths: ['./node_modules'],
+                            implementation: require('dart-sass'),
+                            fiber: require('fibers'),
+                        }
+                    }
                 ],
             },
             {
