@@ -1,15 +1,20 @@
-$mdc-theme-primary: #FEDBD0;
-$mdc-theme-on-primary: #442C2E;
-$mdc-theme-secondary: rgb(211, 43, 127);
-$mdc-theme-on-secondary: #442C2E;
-$mdc-theme-surface: #FFFBFA;
-$mdc-theme-on-surface: #442C2E;
-$mdc-theme-background: rgb(224, 229, 235);
-$mdc-theme-on-background: rgb(64, 60, 65);
+$mdc-theme-primary: #485859; // 錆鉄御納戸（さびてつおなんど）
+$mdc-theme-on-primary: #FBFAF5; // 生成り色（きなりいろ）
+$mdc-theme-secondary: #FFDC4F; // 黄支子（きくちなしいろ）
+$mdc-theme-on-secondary: #FBFAF5; // 生成り色（きなりいろ）
+// $mdc-theme-surface: #FFFBFA;
+// $mdc-theme-on-surface: #442C2E;
+$mdc-theme-background: #FBFAF5; // 生成り色（きなりいろ）
+$mdc-theme-on-background: #485859; // 錆鉄御納戸（さびてつおなんど）
 
+$mdc-theme-primary2: #80989B; // 湊鼠（みなとねずみ）
+$mdc-theme-primary3: #EBF6F7; // 藍白（あいじろ）
 
 $mdc-typography-font-family: Georgia, '游明朝', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'ＭＳ 明朝', serif;
 
+$mdc-typography-styles-subtitle1: (
+  font-weight: 500
+);
 $mdc-typography-styles-body1: (
   font-size: 0.9rem
 );
