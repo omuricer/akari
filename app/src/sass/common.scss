@@ -3,10 +3,23 @@
 @import "@material/top-app-bar/mdc-top-app-bar";
 @import "@material/typography/mdc-typography";
 
+:root {
+    font-size: 14px;
+    letter-spacing: 1px;
+}
 body {
     margin: 0;
     background-color: $mdc-theme-background;
     color: $mdc-theme-on-background;
+
+    font-family: $mdc-typography-font-family;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    vertical-align: top;
+}
+
+.header {
+    background: $mdc-theme-background;
 }
 
 .logo {
@@ -47,7 +60,7 @@ body {
     transform: translate(-50%,-50%);
     width: 100%;
     text-align: center;
-    color: $mdc-theme-surface;
+    color: $mdc-theme-on-primary;
 }
 
 iframe.googlemap-gray {
@@ -62,4 +75,4 @@ iframe.googlemap-gray {
     width: 80px;
     height: 6px;
     background: $mdc-theme-secondary;
- }
+}
