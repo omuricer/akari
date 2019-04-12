@@ -4,63 +4,63 @@
 @import "@material/typography/mdc-typography";
 
 :root {
-    font-size: 14px;
-    letter-spacing: 1px;
+  font-size: 14px;
+  letter-spacing: 1px;
 }
 body {
-    margin: 0;
-    background-color: $mdc-theme-background;
-    color: $mdc-theme-on-background;
+  margin: 0;
+  background-color: $mdc-theme-background;
+  color: $mdc-theme-on-background;
 
-    font-family: $mdc-typography-font-family;
-    font-weight: 500;
-    -webkit-font-smoothing: antialiased;
-    vertical-align: top;
+  font-family: $mdc-typography-font-family;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  vertical-align: top;
 }
 
 .header {
-    background: $mdc-theme-background;
+  background: $mdc-theme-background;
 }
 
 .logo {
-    width: 230px;
+  width: 230px;
 }
 .icon {
-    width: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+  width: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .mdc-layout-grid.no-margin {
-    --mdc-layout-grid-margin-desktop: 0px;
-    --mdc-layout-grid-margin-tablet: 0px;
-    --mdc-layout-grid-margin-phone: 0px;
+  --mdc-layout-grid-margin-desktop: 0px;
+  --mdc-layout-grid-margin-tablet: 0px;
+  --mdc-layout-grid-margin-phone: 0px;
 }
 .mdc-layout-grid.no-margin .mdc-layout-grid__inner {
-    --mdc-layout-grid-gutter-desktop: 0px;
-    --mdc-layout-grid-gutter-tablet: 0px;
-    --mdc-layout-grid-gutter-phone: 0px;
+  --mdc-layout-grid-gutter-desktop: 0px;
+  --mdc-layout-grid-gutter-tablet: 0px;
+  --mdc-layout-grid-gutter-phone: 0px;
 }
 
 .cell-concept {
-    position: relative;
+  position: relative;
 }
 .cell-concept img {
-    width: 100%;
-    vertical-align: middle; // 隙間対策https://coliss.com/articles/build-websites/operation/css/6-cases-of-unwanted-spaces-in-page-layout-by-demosthenes.html
+  width: 100%;
+  vertical-align: middle; // 隙間対策https://coliss.com/articles/build-websites/operation/css/6-cases-of-unwanted-spaces-in-page-layout-by-demosthenes.html
 }
 .cell-concept .concept-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    -moz-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    -o-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    width: 100%;
-    text-align: center;
-    color: $mdc-theme-on-primary;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  color: $mdc-theme-on-primary;
 }
 
 iframe.googlemap-gray {
@@ -72,7 +72,60 @@ iframe.googlemap-gray {
 }
 
 .marker {
-    width: 80px;
-    height: 6px;
-    background: $mdc-theme-secondary;
+  width: 80px;
+  height: 6px;
+  background: $mdc-theme-secondary;
+}
+
+.access .headline {
+  display: inline;
+}
+.access p:not(.headline) {
+  margin-left: 45px;
+}
+
+.company {
+  width: 100%;
+}
+.company th,
+.company td {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.company th {
+  text-align: right;
+  font-weight: bold;
+  padding-right: 20px;
+}
+@media screen and (max-width: 767px) {
+  .company,
+  .company tr,
+  .company td,
+  .company th {
+    display: block;
+    text-align: center;
+}
+  .company th {
+    width: auto;
+    padding-right: 0;
+  }
+  .company td {
+    padding-bottom: 14px;
+  }
+}
+
+.footer {
+  background-color: $mdc-theme-primary2;
+  text-align: center;
+  .wrap {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .corporate {
+      margin: 0 0 10px 0;
+    }
+    .copyright {
+      margin: 0;
+      font-size: 0.7rem;
+    }
+  }
 }
