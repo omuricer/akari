@@ -13,7 +13,7 @@ module.exports = {
     output: {
         // モジュールバンドルを行った結果を出力する場所やファイル名の指定
         // "__dirname"はこのファイルが存在するディレクトリを表すnode.jsで定義済みの定数
-        path: path.join(__dirname, 'public/js'),
+        path: path.join(__dirname, 'public/assets/js'),
         filename: 'app.[name].js'  // [name]はentryで記述した名前(この例ではbundle）が入る
     },
     // モジュールとして扱いたいファイルの拡張子を指定する
@@ -25,7 +25,7 @@ module.exports = {
     devServer: {
         open: true,//ブラウザを自動で開く
         contentBase: path.join(__dirname, 'public'),// HTML等コンテンツのルートディレクトリ
-        publicPath: '/js/',
+        publicPath: '/assets/js/',
         watchContentBase: true,//コンテンツの変更監視をする
         port: 3000, // ポート番号
         //     historyApiFallback: true
