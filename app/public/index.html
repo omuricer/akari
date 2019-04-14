@@ -9,6 +9,9 @@
   <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/swiper.min.css">
 </head>
 
 <body class="mdc-typography">
@@ -19,9 +22,13 @@
           <img class="mdc-image-list__image logo" src="assets/images/logo_akari.svg">
         </h1>
       </section>
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
-        <img class="mdc-image-list__image icon" src="assets/images/instagram.png">
-        <img class="mdc-image-list__image icon" src="assets/images/facebook.svg">
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end icon-list">
+        <a href="https://www.facebook.com/yamorisyamomonone2018" target=”_blank”>
+          <i class="fab fa-facebook-square"></i>
+        </a>
+        <a href="https://www.instagram.com/yamorisyamomonone/" target=”_blank”>
+          <i class="fab fa-instagram"></i>
+        </a>
       </section>
     </div>
   </header>
@@ -84,7 +91,7 @@
       </div>
     </div>
     <div class="mdc-layout-grid">
-      <div class="mdc-layout-grid__inner">
+      <div class="mdc-layout-grid__inner subtitle">
         <div class="mdc-layout-grid__cell--span-12">
           <h2 class="mdc-typography--headline6">News</h2>
           <div class="marker"></div>
@@ -92,19 +99,31 @@
       </div>
       <div class="mdc-layout-grid__inner">
         <div class="mdc-layout-grid__cell--span-12">
-          <h3 class="mdc-typography--headline6">
+          <h3 class="mdc-typography--headline5 newstitle">
             シェアオフィス　2019/10/1 OPEN<br>
-            「アカリ」を共につくる仲間を募集
+            「アカリ」を共につくる仲間を募集します！！
           </h3>
         </div>
       </div>
       <div class="mdc-layout-grid__inner">
         <div class="mdc-layout-grid__cell--span-6">
           <p class="mdc-typography--subtitle1">アカリ間取図</p>
-          <img class="mdc-image-list__image" style="width: 100%" src="assets/images/map.png">
+          <img class="mdc-image-list__image" style="width: 100%" src="assets/images/map_2f.png">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="assets/images/map_1f.png" alt="Swiper01"></div>
+              <div class="swiper-slide"><img src="https://haniwaman.com/wp-content/uploads/2018/05/swiper02.png"
+                  alt="Swiper02"></div>
+              <div class="swiper-slide"><img src="https://haniwaman.com/wp-content/uploads/2018/05/swiper03.png"
+                  alt="Swiper03"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
         </div>
         <div class="mdc-layout-grid__cell--span-6">
-          <p class="mdc-typography--subtitle1">こんな人</p>
+          <p class="mdc-typography--subtitle1">こんな人を募集しています</p>
           <ul>
             <li>地域に根ざしたお店を持ちたくて場所を探している。</li>
             <li>地域で起業したくて場所を探している。</li>
@@ -115,19 +134,19 @@
             <li>まちづくりがやりたい。</li>
             <li>副業を考えているが、適切な場所がない。</li>
           </ul>
-          <p class="mdc-typography--subtitle1">条件</p>
+          <p class="mdc-typography--subtitle1">入居にあたっての条件</p>
           <ul>
             <li>学びの場にふさわしい人柄であること。</li>
             <li>地域の魅力を高める業態であること。</li>
             <li>入居者同士協力してアカリをつくっていく気概のある方。</li>
             <li>複数人でシェア可</li>
           </ul>
-          <p class="mdc-typography--subtitle1">料金</p>
+          <p class="mdc-typography--subtitle1">利用料金</p>
           <ul>
             <li>賃料：¥20,000/月</li>
             <li>共益費：¥5,000/月</li>
           </ul>
-          <p class="mdc-typography--subtitle1">設備</p>
+          <p class="mdc-typography--subtitle1">アカリ設備</p>
           <ul>
             <li>1部屋 13㎡</li>
             <li>電源・Wifi完備</li>
@@ -149,7 +168,7 @@
       </div>
     </div>
     <div class="mdc-layout-grid">
-      <div class="mdc-layout-grid__inner">
+      <div class="mdc-layout-grid__inner subtitle">
         <div class="mdc-layout-grid__cell--span-12">
           <h2 class="mdc-typography--headline6">Access</h2>
           <div class="marker"></div>
@@ -160,16 +179,24 @@
           <img class="mdc-image-list__image" style="width: 100%" src="assets/images/yard.png">
         </div>
         <div class="mdc-layout-grid__cell--span-6">
+          <p class="mdc-typography--headline6">Co-working & Co-learning Space アカリ</p>
           <div class="access">
-            <img class="icon" src="assets/images/car.svg">
-            <p class="headline">お車でお越しの場合</p>
+            <i class="fas fa-map-pin"></i>
+            <p class="headline">所在地</p>
             <p>
-              東北自動車道 国見インターから約○分<br>
-              JR福島駅から約○分
+              福島県伊達郡国見町山﨑舘東14番地8
             </p>
           </div>
           <div class="access">
-            <img class="icon" src="assets/images/underground.svg">
+            <i class="fas fa-car"></i>
+            <p class="headline">お車でお越しの場合</p>
+            <p>
+              東北自動車道 国見インターから約5分<br>
+              JR福島駅から約30分
+            </p>
+          </div>
+          <div class="access">
+            <i class="fas fa-train"></i>
             <p class="headline">電車でお越しの場合</p>
             <p>
               JR藤田駅から徒歩1分
@@ -179,7 +206,7 @@
       </div>
     </div>
     <div class="mdc-layout-grid">
-      <div class="mdc-layout-grid__inner">
+      <div class="mdc-layout-grid__inner subtitle">
         <div class="mdc-layout-grid__cell--span-12">
           <h2 class="mdc-typography--headline6">Company</h2>
           <div class="marker"></div>
@@ -201,7 +228,7 @@
             </tr>
             <tr>
               <th>所在地</th>
-              <td>福島県伊達郡国見町山﨑舘東14番地８</td>
+              <td>福島県伊達郡国見町山﨑舘東14番地8</td>
             </tr>
             <tr>
               <th>設立</th>
@@ -222,8 +249,10 @@
       </div>
     </div>
   </div>
+
   <div id="root"></div>
-  <script src="js/app.bundle.js"></script>
+  <script src="assets/js/swiper.min.js"></script>
+  <script src="assets/js/app.bundle.js"></script>
 
 </body>
 
