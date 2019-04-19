@@ -143,6 +143,11 @@ iframe.googlemap-gray {
   background: $mdc-theme-secondary;
 }
 
+.access {
+  @media screen and (max-width: 480px) {
+    text-align: center;
+  }
+}
 .access i {
   font-size: 1.6rem;
   width: 30px;
@@ -154,10 +159,9 @@ iframe.googlemap-gray {
 .access p:not(.headline) {
   margin-left: 35px;
   margin-bottom: 20px;
-}
-.access img {
-  height: 100%;
-  object-fit: cover;
+  @media screen and (max-width: 480px) {
+    margin-left: 0px;
+  }
 }
 
 .grid-company {
@@ -196,6 +200,14 @@ iframe.googlemap-gray {
   @media screen and (max-width: 480px) {
     margin-left: 15vw;
     width: 70vw;
+  }
+}
+.access img {
+  height: 100%;
+  object-fit: cover;
+  @media screen and (max-width: 480px) {
+    width: 80vw;
+    height: auto;
   }
 }
 .company {
