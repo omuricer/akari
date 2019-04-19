@@ -24,4 +24,13 @@ var swiper = new Swiper('.swiper-container', {
     fadeEffect: {
         crossFade: true
     },
+    on: {
+        init: function () {
+            let images = document.querySelectorAll('.swiper-container img');
+            images.forEach(function(image) { image.style.display = 'block' });
+        },
+    },
+});
+swiper.on('init', function() {
+
 });
