@@ -6,7 +6,7 @@ import Swiper from 'swiper';
 // Instantiation
 const topAppBarElement = document.querySelector('.mdc-top-app-bar');
 const topAppBar = new MDCTopAppBar(topAppBarElement);
-
+ 
 
 
 var swiper = new Swiper('.swiper-container', {

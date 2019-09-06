@@ -1,100 +1,98 @@
-const path = require('path');
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const autoprefixer = require('autoprefixer');
+const CompressionPlugin = require("compression-webpack-plugin");
+
 module.exports = {
-    // モードの設定、v4系以降はmodeを指定しないと、webpack実行時に警告が出る
-    mode: 'development',
-    // モジュールバンドルを行う起点となるファイルの指定
-    // 指定できる値としては、ファイル名の文字列や、それを並べた配列やオブジェクト
-    // 下記はオブジェクトとして指定した例 
-    entry: {
-        // bundle: './src/index.tsx',
-        bundle: './src/index.js',
-    },
-    devtool: 'inline-source-map',    // デバッグできるように
-    output: {
-        // モジュールバンドルを行った結果を出力する場所やファイル名の指定
-        // "__dirname"はこのファイルが存在するディレクトリを表すnode.jsで定義済みの定数
-        path: path.join(__dirname, 'public/assets/js'),
-        filename: 'app.[name].js'  // [name]はentryで記述した名前(この例ではbundle）が入る
-    },
-    // モジュールとして扱いたいファイルの拡張子を指定する
-    // 例えば「import Foo from './foo'」という記述に対して"foo.ts"という名前のファイルをモジュールとして探す
-    // デフォルトは['.js', '.json']
-    resolve: {
-        extensions:['.js','.jsx','.ts','.tsx']
-    },
-    devServer: {
-        open: true,//ブラウザを自動で開く
-        contentBase: path.join(__dirname, 'public'),// HTML等コンテンツのルートディレクトリ
-        publicPath: '/assets/js/',
-        watchContentBase: true,//コンテンツの変更監視をする
-        port: 3000, // ポート番号
-        //     historyApiFallback: true
-    },
-    // モジュールに適用するルールの設定（ここではローダーの設定を行う事が多い）
-    module: {
-        rules: [
-            {                             // Linterを走らせる
-                enforce: 'pre',           // ビルド前処理だよってこと
-                loader: 'tslint-loader',  // tslint-loaderを使う
-                test: /\.tsx?$/,          // tslint-loaderに渡すファイルの正規表現。xxx.tsとxxx.tsxの正規表現。
-                exclude: [                // 渡さないファイル
-                    /node_modules/
-                ],
-                options: {
-                    emitErrors: true      // これ設定しとくとTSLintが出してくれたwarningをエラーとして扱ってくれる、要するに-Wall
-                }
-            },
-            {
-                // 拡張子が.tsで終わるファイルに対して、TypeScriptコンパイラを適用する
-                test: /\.tsx?$/,          // tslint-loaderに渡すファイルの正規表現。xxx.tsとxxx.tsxの正規表現。
-                loader:'ts-loader',
-                exclude: /node_modules/,
-                options: {
-                    configFile: 'tsconfig.dev.json'
-                },
-            },
-            {
-                test:[/\.jsx$/],
-                loader:'babel-loader',
-                exclude: /node_modules/
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader', 
-                        options: {url: false}
-                    },
-                ],
-            },
-            {
-                test: /\.scss$/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            url: false,
-                            sourceMap: true,
-                            importLoaders: 2
-                        }
-                    },
-                    {
-                        loader: 'sass-loader', 
-                        options: {
-                            sourceMap: true,
-                            includePaths: ['./node_modules'],
-                            implementation: require('dart-sass'),
-                            fiber: require('fibers'),
-                        }
-                    }
-                ],
-            },
-            {
-                test: /\.svg$/,
-                use: ['@svgr/webpack'],
-            },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          query: {
+            presets: ['@babel/preset-env'],
+          },
+        }
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader",
+            options: { minimize: true }
+          }
         ]
-    }
-}
+      },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader"
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+               plugins: () => [autoprefixer()]
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                includePaths: ['./node_modules']
+              },
+            }
+          }
+        ],
+      },
+      // {
+      //   test: /\.(jpe?g|png|gif|svg|ico)$/,
+      //   use: {
+      //     loader: 'url-loader',
+      //     options: {
+      //       name: './image/[name].[ext]'
+      //     }
+      //   }
+      // },
+      {
+        test: /\.(jpe?g|png|gif|svg|ico)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: './image/[name].[ext]'
+          }
+        }
+      },
+    ]
+  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: "./src/index.html",
+      filename: "./index.html"
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    }),
+    new CompressionPlugin({
+      test: /\.(css|js)$/,
+      compressionOptions: {
+        level: 9
+      }
+    })
+  ],
+  optimization: {
+    minimizer: [
+      new OptimizeCSSAssetsPlugin({})
+    ],
+  },
+};
