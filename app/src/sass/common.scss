@@ -3,7 +3,7 @@
 @import "@material/top-app-bar/mdc-top-app-bar";
 @import "@material/typography/mdc-typography";
 
-@import "~swiper/dist/css/swiper.css";
+@import "/css/swiper.css";
 
 :root {
   font-size: 14px;
@@ -266,10 +266,10 @@ iframe.googlemap-gray {
   margin-top: -16px;
 }
 .swiper-button-prev {
-  background: url(assets/images/arrow_left.svg) no-repeat center center / contain;
+  background: url(../image/arrow_left.svg) no-repeat center center / contain;
 }
 .swiper-button-next {
-  background: url(assets/images/arrow_right.svg) no-repeat center center / contain;
+  background: url(../image/arrow_right.svg) no-repeat center center / contain;
 }
 .swiper-slide {
   img {
