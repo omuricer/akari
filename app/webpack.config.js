@@ -1,7 +1,7 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const autoprefixer = require('autoprefixer');
+const autoprefixer = require("autoprefixer");
 const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
@@ -10,49 +10,50 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          query: {
-            presets: ['@babel/preset-env'],
-          },
-        }
-      },
-      {
-        test: /\.html$/,
         use: [
           {
-            loader: "html-loader",
-            options: { minimize: true }
+            loader: "babel-loader",
+            query: {
+              presets: ["@babel/preset-env"]
+            }
           }
         ]
       },
       {
-        test: /\.css$/,
+        test: /\.ejs$/,
         use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader"
+          {
+            loader: "html-loader",
+            options: { minimize: true }
+          },
+          "ejs-html-loader"
         ]
+      },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"]
       },
       {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          // "style-loader",
+          "css-loader",
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
-               plugins: () => [autoprefixer()]
+              plugins: () => [autoprefixer()]
             }
           },
           {
-            loader: 'sass-loader',
+            loader: "sass-loader",
             options: {
               sassOptions: {
-                includePaths: ['./node_modules']
-              },
+                includePaths: ["./node_modules"]
+              }
             }
           }
-        ],
+        ]
       },
       // {
       //   test: /\.(jpe?g|png|gif|svg|ico)$/,
@@ -65,19 +66,19 @@ module.exports = {
       // },
       {
         test: /\.(jpe?g|png|gif|svg|ico)$/,
+        // use: ['file-loader?name=image/[name].[ext]']
         use: {
-          loader: 'file-loader',
+          loader: "file-loader",
           options: {
-            name: './image/[name].[ext]'
+            name: "./image/[name].[ext]"
           }
         }
-      },
+      }
     ]
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
-      filename: "./index.html"
+      template: "./src/index.ejs"
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
@@ -91,8 +92,6 @@ module.exports = {
     })
   ],
   optimization: {
-    minimizer: [
-      new OptimizeCSSAssetsPlugin({})
-    ],
-  },
+    minimizer: [new OptimizeCSSAssetsPlugin({})]
+  }
 };

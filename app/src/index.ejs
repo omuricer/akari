@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<%= require('html-loader!./template/head.html') %>
+<%- include('template/head') %>
 
 <body class="mdc-typography">
-  <%= require('html-loader!./template/header.html') %>
+
+  <%- include('template/header') %>
+
   <div class="mdc-top-app-bar--fixed-adjust">
     <div class="mdc-layout-grid no-margin">
       <div class="mdc-layout-grid__inner">
         <div class="mdc-layout-grid__cell--span-12 cell-concept concept-main">
-          <img class="mdc-image-list__image" src="image/concept_main4.png">
+          <img class="mdc-image-list__image" src="image/concept_main.png">
           <div class="concept-text">
             <p class="mdc-typography--headline4">ともに学びあう</p>
             <p class="mdc-typography--body1">
@@ -224,10 +226,6 @@
       </div>
     </div>
   </div>
-
-  <div id="root"></div>
-  <script src="js/swiper.min.js"></script>
-
 </body>
 
 </html>
