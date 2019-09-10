@@ -2,8 +2,7 @@
 @import "@material/layout-grid/mdc-layout-grid";
 @import "@material/top-app-bar/mdc-top-app-bar";
 @import "@material/typography/mdc-typography";
-
-@import "/css/swiper.css";
+@import "../css/swiper.min";
 
 :root {
   font-size: 14px;

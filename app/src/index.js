@@ -1,13 +1,11 @@
-import './sass/common.scss';
-import {MDCTopAppBar} from '@material/top-app-bar/index';
+import "./sass/common.scss";
+import { MDCTopAppBar } from "@material/top-app-bar/index";
 
-import Swiper from 'swiper';
+import Swiper from "swiper";
 
 // Instantiation
-const topAppBarElement = document.querySelector('.mdc-top-app-bar');
-const topAppBar = new MDCTopAppBar(topAppBarElement);
- 
-
+const topAppBarElement = document.querySelector(".mdc-top-app-bar");
+// const topAppBar = new MDCTopAppBar(topAppBarElement);
 
 var swiper = new Swiper('.swiper-container', {
     effect: 'fade',
