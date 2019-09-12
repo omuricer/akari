@@ -6,7 +6,8 @@
 
 :root {
   font-size: 14px;
-  letter-spacing: 1px;
+  letter-spacing: 0.2em;
+  scroll-behavior: smooth;
   @media screen and (max-width: 480px) {
     font-size: 12px;
     letter-spacing: 1px;
@@ -38,31 +39,6 @@ a:hover {
   color: $mdc-theme-secondary;
 }
 
-.header {
-  background: $mdc-theme-background;
-  color: $mdc-theme-primary;
-  .menu {
-    padding-right: 1.5rem;
-    .menu__item {
-      margin-left: 1rem;
-      margin-right: 1rem;
-      padding-top: 1.4rem;
-    }
-    i {
-      font-size: 1.4rem;
-    }
-  }
-}
-
-.logo {
-  width: 230px;
-}
-.icon {
-  width: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
 .mdc-layout-grid {
   padding-left: 8.5vw;
   padding-right: 8.5vw;
@@ -89,25 +65,14 @@ a:hover {
   --mdc-layout-grid-gutter-tablet: 0px;
   --mdc-layout-grid-gutter-phone: 0px;
 }
-
-.mdc-layout-grid__inner.subtitle {
-  margin-bottom: 20px;
-}
 .newstitle {
   text-align: center;
   line-height: 2.8rem;
 }
 
-.cell-concept {
-  position: relative;
-}
-.cell-concept img {
-  width: 100%;
-  vertical-align: middle; // 隙間対策https://coliss.com/articles/build-websites/operation/css/6-cases-of-unwanted-spaces-in-page-layout-by-demosthenes.html
-}
-.cell-concept .concept-text {
+.concept-text {
   position: absolute;
-  top: 50%;
+  top: 48%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -117,17 +82,17 @@ a:hover {
   width: 100%;
   text-align: center;
   color: $mdc-theme-on-primary;
+  p.main {
+    letter-spacing: 0.2em;
+  }
+  p.text {
+    letter-spacing: 0.2em;
+    padding-top: 3rem;
+  }
 }
 @media screen and (max-width: 480px) {
   .concept-main {
     height: 80vw;
-  }
-  .concept-sub {
-    height: 40vw;
-  }
-  .cell-concept img {
-    height: 100%;
-    object-fit: cover;
   }
 }
 
@@ -139,11 +104,6 @@ iframe.googlemap-gray {
   filter: grayscale(100%);
 }
 
-.marker {
-  width: 80px;
-  height: 6px;
-  background: $mdc-theme-secondary;
-}
 
 .access {
   @media screen and (max-width: 480px) {

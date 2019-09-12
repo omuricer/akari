@@ -1,0 +1,16 @@
+.footer {
+  font-weight: 400;
+  background-color: $mdc-theme-primary2;
+  text-align: center;
+  .wrap {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .corporate {
+      margin: 0 0 10px 0;
+    }
+    .copyright {
+      margin: 0;
+      font-size: 0.7rem;
+    }
+  }
+}

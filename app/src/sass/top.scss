@@ -1,0 +1,10 @@
+.fixed-bg {
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.fixed-bg__concept-main{
+  background-image: url(../image/concept_main.jpg);
+}
