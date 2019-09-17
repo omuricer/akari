@@ -1,23 +1,13 @@
+@import "menu";
 .header {
   background: $mdc-theme-background;
   color: $mdc-theme-primary;
-  .menu {
-    padding-right: 1.5rem;
-    .menu__item {
-      margin-left: 1rem;
-      margin-right: 1rem;
-      padding-top: 1.4rem;
-    }
-    i {
-      font-size: 1.4rem;
-    }
-  }
   .logo {
     width: 230px;
   }
-  .icon {
-    width: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
+  // .icon {
+  //   width: 20px;
+  //   margin-left: 10px;
+  //   margin-right: 10px;
+  // }
 }
