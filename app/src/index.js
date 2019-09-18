@@ -1,11 +1,14 @@
 import "./sass/index.scss";
 import { MDCTopAppBar } from "@material/top-app-bar/index";
+import { MDCRipple } from "@material/ripple";
 
 import Swiper from "swiper";
 
 // Instantiation
 const topAppBarElement = document.querySelector(".mdc-top-app-bar");
 // const topAppBar = new MDCTopAppBar(topAppBarElement);
+
+const buttonRipple = new MDCRipple(document.querySelector(".mdc-button"));
 
 var swiper = new Swiper(".swiper-container", {
   effect: "fade",
