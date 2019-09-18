@@ -106,27 +106,6 @@ iframe.googlemap-gray {
 }
 
 
-.access {
-  @media screen and (max-width: 480px) {
-    text-align: center;
-  }
-}
-.access i {
-  font-size: 1.6rem;
-  width: 30px;
-  text-align: center;
-}
-.access .headline {
-  display: inline;
-}
-.access p:not(.headline) {
-  margin-left: 35px;
-  margin-bottom: 20px;
-  @media screen and (max-width: 480px) {
-    margin-left: 0px;
-  }
-}
-
 .grid-company {
   background-color: #ffffff;
   padding-bottom: 100px;

@@ -62,9 +62,90 @@
 <div class="mdc-layout-grid" id="news">
   <%- include('components/subtitle', {subtitle: 'news'}) %>
   <div class="mdc-layout-grid__inner">
-    <div class="mdc-layout-grid__cell--span-12">
-      aaa
-    </div>
+    <%
+      news = [
+        {
+          image: 'image/news/open_party.jpg',
+          date: '2019/9/6',
+          text: '9/28にオープニングパーティを開催します！クラウドファンディングでご協力頂いた方を中心に、アカリの内覧を希望される方、どんな人たちか会ってみたいという方など、ご興味をお持ちの方がいらっしゃれば是非お越しください(^^)',
+          more: {
+            url: 'https://www.facebook.com/events/381879056077791/',
+            text: '詳しくみる',
+          }
+        },
+        {
+          image: 'image/news/maturi_ato.jpg',
+          date: '2019/9/3',
+          text: '8/31に開催したアカリ夏マツリの写真を掲載します。ご来場いただいた皆様、ご出店いただいた方々、ありがとうございました(^^)',
+          more: {
+            url: 'https://www.facebook.com/pg/yamorisyamomonone2018/photos/?tab=album&album_id=407041663275450&__tn__=-UC-R',
+            text: '詳しくみる',
+          }
+        },
+        {
+          image: 'image/news/maturi3.jpg',
+          date: '2019/8/22',
+          text: '＼アカリ夏マツリ出店者紹介／<br>福島市から、cachecache-candleさんがきます！ナチュラルでかわいいキャンドルたちが、祭りの夜を彩ります(^^)',
+          more: {
+            url: 'https://www.facebook.com/yamorisyamomonone2018/posts/400654690580814?__xts__%5B0%5D=68.ARAGAutX2oQXsR49SEjDlK5MgF5Jd8HLG3xLkgDlC3-GdjkCzvmjjHBNIGBvw1rqDcCwzzI4vsgVHsxYN90Sj9zIdzYVLQTwzYAK2WLuSrDEjCCUf46GkrRcVuI6Ht2xrqvy-eNFI5DLhXj7fFDZYz1j1JsMcfnGbKdxRjqkw5PR9jWPPL1NnFL5qWF0oOWd8d6i8F77onaaOysnfU4Za5_3UvD5z3yMVvnHSDItEenTPqy4MackOj0k2eVcBtcDp-0MlNb9XDqpkJN_fGghx7VfnUi8eW0vm2JSbS6DwFWZ4tAFn_kFOtIsKakj9T_6-VF-XCsRLey1hwILCU6YcdQ&__tn__=-R',
+            text: '詳しくみる',
+          }
+        },
+        {
+          image: 'image/news/maturi2.jpg',
+          date: '2019/8/21',
+          text: '＼アカリ夏マツリ出店者紹介／<br>郡山市から、OBROS COFFEEさんがきます！一度飲んだらその魅力に取り憑かれてしまう、スペシャルティコーヒーを是非ご堪能ください(^^)',
+          more: {
+            url: 'https://www.facebook.com/yamorisyamomonone2018/posts/400175473962069?__xts__%5B0%5D=68.ARB6KblAeQICR2J4YgmikqpbJIWoD6HZO7ssYkgRLv_iaO9yisKjbg1QNNSW8juplRJ8VIoA2gmzaB_RomHoeqTMUXk_LXqSD3u6wS7onQoIGtQFkDnrsFJ7rup4c0UpsXXFkpJq3A90DIZskALYpfSEgrieM9rzJN9IaaMiteDDmNgqQsLCJjbE9orSl97Y7QkY28nAmadisv0VfUWkvPWwJO5jVtmwell97Hs2G4vXbPb8domHex9JKBoZOgMt__d3zTRtgcU7-sGfStSxTzPvHYEQCNahHfoHLDu5dcjx1GK512MGkpyDwmef0idU06UbnK2MyI9arzi-esWSulU&__tn__=-R',
+            text: '詳しくみる',
+          }
+        },
+        {
+          image: 'image/news/maturi1.jpg',
+          date: '2019/8/20',
+          text: '＼アカリ夏マツリ出店者紹介／<br>福島市から、curry dinningbar笑夢さんがキッチンカーで出店します！スパイスカレーが好きな人集まれー(^O^)',
+          more: {
+            url: 'https://www.facebook.com/yamorisyamomonone2018/posts/399815270664756?__xts__%5B0%5D=68.ARBiUetEhX16LE0G7wjhIUxM5-bts_gV3rFTTT8C_cKHaNYB_WzletGinRvgASK-yHhFfovfHIWSEqcGe-rc40ANI_WpUdoVbXHhT7JEYhYkefUPHJtsAQQhl8Qn0CAx8DHSLEiu_8O6drJPPWSqJnBWTH1Cdpq-c9Kk6KojebYZ6Jmn88ezduor5qjTTu54NZWGRra4rlub3IsxcqaANE7fKD999vRuuhJe33J2Pc7KB61jlQbLF7l0vaDSvO-i2LgKf_8LqBlQdS8PwDJmqRcJ9ZGOF0t8IUQ7kjzAKEozTmRMsWR9CE_WoIsU54UemGY68yVZDdz6mbLGJlZ8xR8&__tn__=-R',
+            text: '詳しくみる',
+          }
+        },
+        {
+          image: 'image/news/maturi.jpg',
+          date: '2019/7/11',
+          text: '今年１０月オープンの民間型公民館「アカリ」で夏マツリを開催します！日本には、たくさんのお祭りがあります。古来から続く伝統的なお祭りがほとんどだけど、これからの新しい文化をつくっていく、そんなお祭りを一緒につくりませんか？',
+          more: {
+            url: 'https://www.facebook.com/events/2872925172778721/?ref=3&action_history=null&__xts__%5B0%5D=68.ARDVQir4Xi2T7XjOSZpeZjNV-J81z25IzsAYMrUApWJ6B8d74LrWCJpPyqNEd6yvj_vKXY3o4NrtXrHsM8IkwgOeBI4pOOSnbmIDPKF9L5Vme1KNItW9nBSeNy6yN2pLxZEg_ORzUuQogQiEtyP0JceQRB56QZ03lPIjXmgJYqxWaXvOa0DU9EAKNCAC6jVhJtimMVHs5Hy8wWQ--njLKPjFYlKch5ck7O3o4L6qwZVSW0_9uOXaFDfYwMCG5xoRiJYFKkNtNJpjNPp9sSRrI4Y9&__tn__=-R',
+            text: '詳しくみる',
+          }
+        },
+        {
+          image: 'image/news/ima_ba.jpg',
+          date: '2019/7/5',
+          text: '福島県内各地で豊かなコミュニティ形成と消費活動がなされる“場”を生み出している人たちをお招きし、なぜそんな“場”をつくったの？運営体制はどのようにして実現させている？彼らが生み出す“場”の魅力とは？などについてお聞きできるイベントを開催しました！',
+          more: {
+            url: 'https://www.facebook.com/events/392767397995315/',
+            text: '詳しくみる',
+          }
+        },
+        {
+          image: 'image/news/renove.jpg',
+          date: '2019/4/26',
+          text: '＼共にアカリをつくる仲間を募集中！／毎週日曜日、アカリの中でセルフリノベーションを一緒にやりませんか？自分の手でモノをつくることを通じて、自分の暮らしを見つめなおしてみましょう。',
+          more: {
+            url: 'https://www.facebook.com/events/646027809158632/',
+            text: '詳しくみる',
+          }
+        },
+    ]
+    %>
+    <%- include('components/news', news[0]) %>
+    <%- include('components/news', news[1]) %>
+    <%- include('components/news', news[2]) %>
+    <%- include('components/news', news[3]) %>
+    <%- include('components/news', news[4]) %>
+    <%- include('components/news', news[5]) %>
+    <%- include('components/news', news[6]) %>
+    <%- include('components/news', news[7]) %>
   </div>
 </div>
 <div class="mdc-layout-grid no-margin" id="access">
@@ -84,11 +165,8 @@
 </div>
 <div class="mdc-layout-grid">
   <%- include('components/subtitle', {subtitle: 'access'}) %>
-  <div class="mdc-layout-grid__inner">
-    <div class="mdc-layout-grid__cell--span-6 cell-centering">
-      <img class="mdc-image-list__image" src="image/yard.png" />
-    </div>
-    <div class="mdc-layout-grid__cell--span-6">
+  <div class="mdc-layout-grid__inner access">
+    <div class="mdc-layout-grid__cell--span-12">
       <p class="mdc-typography--headline5">
         Co-working & Co-learning Space アカリ
       </p>

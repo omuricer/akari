@@ -14,6 +14,7 @@
   }
   .text {
     background: $mdc-theme-on-secondary;
+    opacity: 0.9;
     position: absolute;
     top: 2rem;
     left: 2vw;
@@ -51,6 +52,7 @@
   }
   .text {
     background: $mdc-theme-on-secondary;
+    opacity: 0.9;
     position: absolute;
     bottom: 2rem;
     right: 2vw;
