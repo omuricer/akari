@@ -11,19 +11,49 @@
 
 .access {
   text-align: center;
+  p {
+    line-height: 1.5rem;
+  }
+  .headline {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    p {
+      display: inline;
+    }
+  }
 }
 .access i {
   font-size: 1.6rem;
   width: 30px;
   text-align: center;
 }
-.access .headline {
-  display: inline;
-}
-.access p:not(.headline) {
-  margin-left: 35px;
-  margin-bottom: 20px;
-  @media screen and (max-width: 480px) {
-    margin-left: 0px;
+// .access p:not(.headline) {
+//   margin-left: 35px;
+//   margin-bottom: 20px;
+//   @media screen and (max-width: 480px) {
+//     margin-left: 0px;
+//   }
+// }
+
+.service {
+  ul {
+    list-style: none;
   }
+  li {
+    margin-bottom: 2rem;
+  }
+  .headline {
+    margin-bottom: 0.7rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  .text {
+    margin-bottom: 0.7rem;
+  }
+  .attr {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 0.3rem;
+  }
+  line-height: 1.5rem;
 }
