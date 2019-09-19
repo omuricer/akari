@@ -51,11 +51,70 @@
     <%- include('components/concept', concept[3]) %>
   </div>
 </div>
-<div class="mdc-layout-grid" id="service">
+<div class="mdc-layout-grid service" id="service">
   <%- include('components/subtitle', {subtitle: 'our service'}) %>
   <div class="mdc-layout-grid__inner">
-    <div class="mdc-layout-grid__cell--span-12">
-      aaa
+    <div class="mdc-layout-grid__cell--span-6">
+      <%
+        images = [
+          {
+            src: 'image/1f.png',
+            alt: '地域の価値を分かち合う。',
+          },
+          {
+            src: 'image/2f.png',
+            alt: '地域の価値を分かち合う。',
+          },
+        ]
+      %>
+  
+      <%- include('components/swiper', {images: images}) %>
+    </div>
+    <h4 class="mdc-layout-grid__cell--span-6">
+      <ul>
+        <li>
+          <h4 class="headline">Trattoria da martino ( イタリアン )</h4>
+          <div class="text">周辺地域の食材を使ったシチリア料理で新たな味の提案をしています。</div>
+        </li>
+        <li>
+          <h4 class="headline">Lounge</h4>
+          <div class="text">勉強や読書など、ご自由にお寛ぎください。無料でお使い頂けます。</div>
+        </li>
+        <li>
+          <h4 class="headline">Library</h4>
+          <div class="text">無人で本の販売をしています。Lounge に限り、お好きな本を無料でお読み頂けます。</div>
+        </li>
+        <li>
+          <h4 class="headline">Baby room</h4>
+          <div class="text">おむつ交換台と授乳スペースを設置しています。</div>
+        </li>
+        <li>
+          <h4 class="headline">Studio</h4>
+          <div class="text">会議やイベントスペースとしてお使い頂けます。プロジェクター、マイク、スクリーンは有料で貸し出しております。</div>
+          <div class="attr">面積：89㎡</div>
+          <div class="attr">利用料：¥1,000/h</div>
+        </li>
+        <li>
+          <h4 class="headline">Akari Park</h4>
+          <div class="text">マルシェなど、屋外のイベントでご利用頂けます。１日単位でご利用頂けます。</div>
+          <div class="attr">面積：1,500㎡</div>
+          <div class="attr">利用料：¥10,000/日</div>
+        </li>
+        <li>
+          <h4 class="headline">Share Office</h4>
+          <div class="text">地域の魅力を高める業種の方を対象に、格安でスペースをお貸ししています。随時入居者を募集しておりますので、紙面下のメールアドレスまで、お気軽にお問い合わせください。</div>
+          <div class="attr">部屋面積：11㎡</div>
+          <div class="attr">賃料：¥20,000/月</div>
+          <div class="attr">光熱費：¥5,000/月</div>
+          <div class="attr">共益費：¥3,000/月</div>
+          <div class="attr">月極駐車場有</div>
+          <div class="attr">wifi・電源完備</div>
+          <div class="attr">空調有り</div><br>
+          <div class="attr">＜入居者特典＞</div><br>
+          <div class="attr">①Trattoria da Martino のまかないメシ</div>
+          <div class="attr">②Studio・akaripark 利用料割引</div>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
@@ -167,208 +226,35 @@
   <%- include('components/subtitle', {subtitle: 'access'}) %>
   <div class="mdc-layout-grid__inner access">
     <div class="mdc-layout-grid__cell--span-12">
-      <p class="mdc-typography--headline5">
-        Co-working & Co-learning Space アカリ
+      <p>
+        Co-working & Co-learning Space
       </p>
-      <div>
-        <i class="fas fa-map-pin"></i>
-        <p class="headline">所在地</p>
-        <p>
-          福島県伊達郡国見町山﨑舘東14番地8
-        </p>
-      </div>
-      <div class="access">
-        <i class="fas fa-car"></i>
-        <p class="headline">お車でお越しの場合</p>
-        <p>
-          東北自動車道 国見インターから約5分<br />
-          JR福島駅から約30分
-        </p>
-      </div>
-      <div class="access">
-        <i class="fas fa-train"></i>
-        <p class="headline">電車でお越しの場合</p>
-        <p>
-          JR藤田駅から徒歩1分
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="mdc-layout-grid">
-  <div class="mdc-layout-grid__inner subtitle">
-    <div class="mdc-layout-grid__cell--span-12">
-      <h2 class="mdc-typography--headline6">News</h2>
-      <div class="marker"></div>
-    </div>
-  </div>
-  <div class="mdc-layout-grid__inner">
-    <div class="mdc-layout-grid__cell--span-12">
-      <h3 class="mdc-typography--headline5 newstitle">
-        福島県伊達郡国見町にシェアオフィスがOPEN！（2019/10/1予定） <br />
-        「アカリ」を共につくる仲間を募集します！！
-      </h3>
-    </div>
-  </div>
-  <div class="mdc-layout-grid__inner">
-    <div class="mdc-layout-grid__cell--span-6">
-      <img
-        class="mdc-image-list__image"
-        style="width: 100%"
-        src="image/map_2f.png"
-      />
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="image/map_1f.png" alt="Swiper01" />
-          </div>
-          <div class="swiper-slide">
-            <img src="image/map_out.png" alt="Swiper01" />
-          </div>
-          <div class="swiper-slide">
-            <img src="image/marche.png" alt="Swiper01" />
-          </div>
-        </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
-    </div>
-    <div class="mdc-layout-grid__cell--span-6 boshu">
-      <p class="mdc-typography--subtitle1">こんな人を募集しています</p>
-      <ul>
-        <li>地域に根ざしたお店を持ちたくて場所を探している</li>
-        <li>地域で起業したくて場所を探している</li>
-        <li>地域に拠点がほしいが、適切な場所がない</li>
-        <li>地域おこし協力隊として福島にきたが、起業する環境を探している</li>
-        <li>塾や英会話教室の経営をやりたいが、適切な場所を探している</li>
-        <li>作家として活動しているが、アトリエとして使える場所を探している</li>
-        <li>まちづくりがやりたい</li>
-        <li>副業を考えているが、適切な場所がない</li>
-      </ul>
-      <p class="mdc-typography--subtitle1">入居にあたっての条件</p>
-      <ul>
-        <li>学びの場にふさわしい人柄であること</li>
-        <li>地域の魅力を高める業態であること</li>
-        <li>入居者同士協力してアカリをつくっていく気概のある方</li>
-        <li>複数人でのシェアOK</li>
-      </ul>
-      <p class="mdc-typography--subtitle1">利用料金</p>
-      <ul>
-        <li>月額使用料 ¥25,000（共益費 5,000円含む）</li>
-      </ul>
-      <p class="mdc-typography--subtitle1">施設設備</p>
-      <ul>
-        <li>1部屋 13㎡</li>
-        <li>電源・Wifi完備</li>
-        <li>1Fに飲食店・ラウンジスペース予定</li>
-        <li>屋外に公園スペース有り</li>
-      </ul>
-      <p class="mdc-typography--subtitle1">問い合わせ先</p>
-      <a href="mailto:yamorisyamomonone@gmail.com" target="_blank"
-        >yamorisyamomonone@gmail.com</a
-      >
-    </div>
-  </div>
-</div>
-<div class="mdc-layout-grid no-margin">
-  <div class="mdc-layout-grid__inner">
-    <div class="mdc-layout-grid__cell--span-12">
-      <iframe
-        class="googlemap-gray"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3149.189768797691!2d140.5390445797095!3d37.879244514014125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a63effff3e0d5%3A0x290f6d736d519745!2z44CSOTY5LTE3NzEg56aP5bO255yM5LyK6YGU6YOh5Zu96KaL55S65bGx5bSO6IiY5p2x77yR77yU4oiS77yY!5e0!3m2!1sja!2sjp!4v1554870222948!5m2!1sja!2sjp"
-        width="100%"
-        height="300"
-        frameborder="0"
-        style="border:0"
-        allowfullscreen
-      ></iframe>
-    </div>
-  </div>
-</div>
-<div class="mdc-layout-grid">
-  <div class="mdc-layout-grid__inner subtitle">
-    <div class="mdc-layout-grid__cell--span-12">
-      <h2 class="mdc-typography--headline6">Access</h2>
-      <div class="marker"></div>
-    </div>
-  </div>
-  <div class="mdc-layout-grid__inner access">
-    <div class="mdc-layout-grid__cell--span-6 cell-centering">
-      <img class="mdc-image-list__image" src="image/yard.png" />
-    </div>
-    <div class="mdc-layout-grid__cell--span-6">
       <p class="mdc-typography--headline5">
-        Co-working & Co-learning Space アカリ
+        アカリ
       </p>
-      <div>
+      <div class="headline">
         <i class="fas fa-map-pin"></i>
-        <p class="headline">所在地</p>
-        <p>
-          福島県伊達郡国見町山﨑舘東14番地8
-        </p>
+        <p>所在地</p>
       </div>
-      <div class="access">
+      <p>
+        福島県伊達郡国見町山﨑舘東14番地8
+      </p>
+      <div class="headline">
         <i class="fas fa-car"></i>
-        <p class="headline">お車でお越しの場合</p>
-        <p>
-          東北自動車道 国見インターから約5分<br />
-          JR福島駅から約30分
-        </p>
+        <p>お車でお越しの場合</p>
       </div>
-      <div class="access">
+      <p>
+        東北自動車道 国見インターから約5分<br />
+        JR福島駅から約30分<br />
+        ※駐車場あります
+      </p>
+      <div class="headline">
         <i class="fas fa-train"></i>
-        <p class="headline">電車でお越しの場合</p>
-        <p>
-          JR藤田駅から徒歩1分
-        </p>
+        <p>電車でお越しの場合</p>
       </div>
-    </div>
-  </div>
-</div>
-<div class="mdc-layout-grid grid-company">
-  <div class="mdc-layout-grid__inner subtitle">
-    <div class="mdc-layout-grid__cell--span-12">
-      <h2 class="mdc-typography--headline6">Company</h2>
-      <div class="marker"></div>
-    </div>
-  </div>
-  <div class="mdc-layout-grid__inner">
-    <div class="mdc-layout-grid__cell--span-6 cell-centering">
-      <img class="mdc-image-list__image company-logo" src="image/logo.png" />
-    </div>
-    <div class="mdc-layout-grid__cell--span-6">
-      <table class="company">
-        <tr>
-          <th>会社名</th>
-          <td>株式会社 家守舎桃ノ音</td>
-        </tr>
-        <tr>
-          <th>代表者名</th>
-          <td>上神田 健太</td>
-        </tr>
-        <tr>
-          <th>所在地</th>
-          <td>福島県伊達郡国見町山﨑舘東14番地8</td>
-        </tr>
-        <tr>
-          <th>設立</th>
-          <td>2018年9 月5日</td>
-        </tr>
-        <tr>
-          <th>事業</th>
-          <td>転貸業、物品販売業、イベント企画業</td>
-        </tr>
-        <tr>
-          <th>問い合わせ先</th>
-          <td>
-            <a href="mailto:yamorisyamomonone@gmail.com" target="_blank"
-              >yamorisyamomonone@gmail.com</a
-            >
-          </td>
-        </tr>
-      </table>
+      <p>
+        JR藤田駅から徒歩1分
+      </p>
     </div>
   </div>
 </div>
