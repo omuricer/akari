@@ -6,12 +6,19 @@ import Swiper from "swiper";
 
 // Instantiation
 const topAppBarElement = document.querySelector(".mdc-top-app-bar");
-// // const topAppBar = new MDCTopAppBar(topAppBarElement);
+if (topAppBarElement) {
+  const topAppBar = new MDCTopAppBar(topAppBarElement);
+}
 
-// const buttonRipple = new MDCRipple(document.querySelector(".mdc-button"));
+const buttonElements = document.querySelectorAll(".mdc-button");
+if (buttonElements) {
+  let a = Array.prototype.slice.call(buttonElements);
+  a.forEach(element => {
+    new MDCRipple(element);
+  });
+}
 
-
-window.onload = function () {
+window.onload = function() {
   var swiper = new Swiper(".swiper-container", {
     effect: "fade",
     loop: true,
@@ -29,7 +36,10 @@ window.onload = function () {
     },
     on: {
       init: function() {
-        let images = Array.prototype.slice.call(document.querySelectorAll(".swiper-container img"), 0); 
+        let images = Array.prototype.slice.call(
+          document.querySelectorAll(".swiper-container img"),
+          0
+        );
         images.forEach(function(image) {
           image.style.display = "block";
         });
@@ -38,3 +48,4 @@ window.onload = function () {
   });
   // new Swiper(".swiper-container");
 };
+

@@ -1,0 +1,19 @@
+.subsubtitle-area {
+  text-align: left;
+  .subsubtitle {
+    margin-bottom: 0.8rem;
+    display: inline-block;
+  
+    h4 {
+      display: inline-block;
+      margin-left: 0.1rem;
+      margin-right: 1.5rem;
+      letter-spacing: 0.2em;
+      font-weight: 500;
+    }
+    .marker {
+      height: 1.5px;
+      background: $mdc-theme-secondary;
+    }
+  }
+}
