@@ -84,6 +84,10 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/index.ejs"
     }),
+    new HtmlWebPackPlugin({
+      template: "./src/reserve.ejs",
+      filename: 'reserve.html'
+    }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
