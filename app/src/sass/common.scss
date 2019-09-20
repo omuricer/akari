@@ -2,11 +2,13 @@
 @import "@material/layout-grid/mdc-layout-grid";
 @import "@material/top-app-bar/mdc-top-app-bar";
 @import "@material/typography/mdc-typography";
+@import "@material/button/mdc-button";
 @import "../css/swiper.min";
 
 :root {
   font-size: 14px;
-  letter-spacing: 1px;
+  letter-spacing: 0.2em;
+  scroll-behavior: smooth;
   @media screen and (max-width: 480px) {
     font-size: 12px;
     letter-spacing: 1px;
@@ -38,31 +40,10 @@ a:hover {
   color: $mdc-theme-secondary;
 }
 
-.header {
-  background: $mdc-theme-background;
-  color: $mdc-theme-primary;
-  .icon-list {
-    padding-right: 20px;
-    i {
-      font-size: 1.4rem;
-      margin-left: 10px;
-      margin-right: 10px;
-    }
-  }
-}
-
-.logo {
-  width: 230px;
-}
-.icon {
-  width: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
 .mdc-layout-grid {
   padding-left: 8.5vw;
   padding-right: 8.5vw;
+  padding-bottom: 10rem;
   --mdc-layout-grid-gutter-desktop: 1vw;
   @media screen and (max-width: 480px) {
     padding-left: 4.5vw;
@@ -86,25 +67,14 @@ a:hover {
   --mdc-layout-grid-gutter-tablet: 0px;
   --mdc-layout-grid-gutter-phone: 0px;
 }
-
-.mdc-layout-grid__inner.subtitle {
-  margin-bottom: 20px;
-}
 .newstitle {
   text-align: center;
   line-height: 2.8rem;
 }
 
-.cell-concept {
-  position: relative;
-}
-.cell-concept img {
-  width: 100%;
-  vertical-align: middle; // 隙間対策https://coliss.com/articles/build-websites/operation/css/6-cases-of-unwanted-spaces-in-page-layout-by-demosthenes.html
-}
-.cell-concept .concept-text {
+.concept-text {
   position: absolute;
-  top: 50%;
+  top: 48%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -114,17 +84,17 @@ a:hover {
   width: 100%;
   text-align: center;
   color: $mdc-theme-on-primary;
+  p.main {
+    letter-spacing: 0.2em;
+  }
+  p.text {
+    letter-spacing: 0.2em;
+    padding-top: 3rem;
+  }
 }
 @media screen and (max-width: 480px) {
   .concept-main {
     height: 80vw;
-  }
-  .concept-sub {
-    height: 40vw;
-  }
-  .cell-concept img {
-    height: 100%;
-    object-fit: cover;
   }
 }
 
@@ -136,32 +106,6 @@ iframe.googlemap-gray {
   filter: grayscale(100%);
 }
 
-.marker {
-  width: 80px;
-  height: 6px;
-  background: $mdc-theme-secondary;
-}
-
-.access {
-  @media screen and (max-width: 480px) {
-    text-align: center;
-  }
-}
-.access i {
-  font-size: 1.6rem;
-  width: 30px;
-  text-align: center;
-}
-.access .headline {
-  display: inline;
-}
-.access p:not(.headline) {
-  margin-left: 35px;
-  margin-bottom: 20px;
-  @media screen and (max-width: 480px) {
-    margin-left: 0px;
-  }
-}
 
 .grid-company {
   background-color: #ffffff;
@@ -242,6 +186,7 @@ iframe.googlemap-gray {
 
 // footer
 .footer {
+  font-weight: 400;
   background-color: $mdc-theme-primary2;
   text-align: center;
   .wrap {
@@ -257,33 +202,12 @@ iframe.googlemap-gray {
   }
 }
 
-// swiper
-.swiper-button-prev,
-.swiper-button-next {
-  width: 32px;
-  height: 32px;
-  margin-top: -16px;
-}
-.swiper-button-prev {
-  background: url(../image/arrow_left.svg) no-repeat center center / contain;
-}
-.swiper-button-next {
-  background: url(../image/arrow_right.svg) no-repeat center center / contain;
-}
-.swiper-slide {
-  img {
-    height: 30vw;
-    object-fit: cover;
-    display: none;
-    @media screen and (max-width: 480px) {
-      height: 80vw;
-      width: 100%;
-    }
-  }
-}
-
 .boshu ul {
   @media screen and (max-width: 480px) {
     padding-inline-start: 5vw;
   }
+}
+
+div.right {
+  text-align: right;
 }

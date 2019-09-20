@@ -5,11 +5,14 @@ const autoprefixer = require("autoprefixer");
 const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
+  entry: {
+    app: ["./src/css/html5reset-1.6.1.css", "./src/index.js"]
+  },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
+        exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/,
         use: [
           {
             loader: "babel-loader",
@@ -80,6 +83,10 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
       template: "./src/index.ejs"
+    }),
+    new HtmlWebPackPlugin({
+      template: "./src/reserve.ejs",
+      filename: 'reserve.html'
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
