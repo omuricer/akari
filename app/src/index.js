@@ -29,7 +29,7 @@ window.onload = function () {
     },
     on: {
       init: function() {
-        let images = document.querySelectorAll(".swiper-container img");
+        let images = Array.prototype.slice.call(document.querySelectorAll(".swiper-container img"), 0); 
         images.forEach(function(image) {
           image.style.display = "block";
         });
