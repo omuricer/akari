@@ -1,0 +1,20 @@
+.subtitle-area {
+  text-align: center;
+  .subtitle {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    display: inline-block;
+  
+    h3 {
+      display: inline-block;
+      margin-left: 3rem;
+      margin-right: 3rem;
+      letter-spacing: 0.3em;
+    }
+    .marker {
+      // width: 100%;
+      height: 2px;
+      background: $mdc-theme-secondary;
+    }
+  }
+}
