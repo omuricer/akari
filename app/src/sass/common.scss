@@ -9,6 +9,7 @@
   font-size: 14px;
   letter-spacing: 0.2em;
   scroll-behavior: smooth;
+  background-color: $mdc-theme-background;
   @media screen and (max-width: 480px) {
     font-size: 12px;
     letter-spacing: 1px;
@@ -204,13 +205,13 @@ div.right {
 }
 
 // https://littlethings.jp/blog/web/css-hover-effect
-a img {
+a img:not(.logo) {
   -webkit-transform: scale(1);
   transform: scale(1);
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-a img:hover {
+a img:not(.logo):hover {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
   opacity: 0.6;

@@ -1,12 +1,101 @@
 <header class="mdc-top-app-bar header">
   <div class="mdc-top-app-bar__row">
-    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+    <section
+      class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"
+    >
       <h1>
-        <img class="mdc-image-list__image logo" src="image/logo_akari.svg">
+        <a href="/">
+          <img class="mdc-image-list__image logo" src="image/logo_akari.svg" />
+        </a>
       </h1>
     </section>
-    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
-      <%- include('menu') %>
+    <section
+      class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end"
+    >
+      <div class="menu desktop">
+        <nav>
+          <ul>
+            <li>
+              <a href="/#about">
+                about
+              </a>
+            </li>
+            <li>
+              <a href="/#service">
+                service
+              </a>
+            </li>
+            <li>
+              <a href="/#news">
+                news
+              </a>
+            </li>
+            <li>
+              <a href="/reserve.html">
+                studio/akari park
+              </a>
+            </li>
+            <li>
+              <a href="">
+                company
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/yamorisyamomonone2018"
+                target="”_blank”"
+              >
+                <i class="fab fa-facebook-square"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/yamorisyamomonone/"
+                target="”_blank”"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="menu mobile">
+        <div class="menu__open">
+          <i class="fas fa-bars"></i>
+        </div>
+        <div class="menu__close">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
     </section>
   </div>
 </header>
+<nav class="mobile">
+  <ul>
+    <li>
+      <a href="/#about">about</a>
+    </li>
+    <li>
+      <a href="/#service">service</a>
+    </li>
+    <li>
+      <a href="/#news">news</a>
+    </li>
+    <li>
+      <a href="/reserve.html">studio/akari park</a>
+    </li>
+    <li>
+      <a href="">company</a>
+    </li>
+  </ul>
+  <a href="https://www.facebook.com/yamorisyamomonone2018" target="”_blank”">
+    <div class="menu__sns">
+      <i class="fab fa-facebook-square"></i>
+    </div>
+  </a>
+  <a href="https://www.instagram.com/yamorisyamomonone/" target="”_blank”">
+    <div class="menu__sns">
+      <i class="fab fa-instagram"></i>
+    </div>
+  </a>
+</nav>

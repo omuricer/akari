@@ -47,14 +47,14 @@ window.onload = function() {
   // menu
   const menuOpen = document.querySelector(".menu.mobile .menu__open");
   menuOpen.addEventListener("click", function() {
-    document.querySelector(".menu.mobile nav").style.display = "block";
+    document.querySelector("nav.mobile").classList.add("open");
     document.querySelector(".menu.mobile .menu__open").style.display = "none";
     document.querySelector(".menu.mobile .menu__close").style.display =
       "inline-block";
   });
   const menuClose = document.querySelector(".menu.mobile .menu__close");
   menuClose.addEventListener("click", function() {
-    document.querySelector(".menu.mobile nav").style.display = "none";
+    document.querySelector("nav.mobile").classList.remove("open");
     document.querySelector(".menu.mobile .menu__open").style.display =
       "inline-block";
     document.querySelector(".menu.mobile .menu__close").style.display = "none";
@@ -64,7 +64,7 @@ window.onload = function() {
     let menu_ie = Array.prototype.slice.call(menus, 0);
     menu_ie.forEach(function(e) {
       e.addEventListener("click", function() {
-        document.querySelector(".menu.mobile nav").style.display = "none";
+        document.querySelector("nav.mobile").classList.remove("open");
         document.querySelector(".menu.mobile .menu__open").style.display =
           "inline-block";
         document.querySelector(".menu.mobile .menu__close").style.display =
