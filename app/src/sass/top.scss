@@ -2,11 +2,40 @@
   min-height: 100vh;
   background-attachment: fixed;
   background-size: cover;
-  background-position: center;
+  background-position: -250px 0px;
 }
 
 .fixed-bg__concept-main{
   background-image: url(../image/concept_main.jpg);
+}
+
+.concept-text {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  color: $mdc-theme-on-primary;
+
+  border: 3px;
+  background: rgba(#000000, 0.1);
+
+  width: 80vw;
+  padding: 2rem;
+  border-top: 2px solid $mdc-theme-background;
+  border-bottom: 2px solid $mdc-theme-background;
+  p.main {
+    letter-spacing: 0.2em;
+  }
+  p.text {
+    letter-spacing: 0.2em;
+    padding-top: 3rem;
+  }
 }
 
 .access {
@@ -36,6 +65,7 @@
 // }
 
 .service {
+  text-align: center;
   ul {
     list-style: none;
   }
@@ -56,4 +86,20 @@
     margin-bottom: 0.3rem;
   }
   line-height: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .fixed-bg {
+    background-position: center;
+  }
+
+  .concept-text {
+    margin-left: 0;
+    width: auto;
+ }
+
+  .service {
+    text-align: left;
+  }
+
 }

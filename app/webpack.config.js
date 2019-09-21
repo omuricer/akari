@@ -6,7 +6,10 @@ const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
   entry: {
-    app: ["./src/css/html5reset-1.6.1.css", "./src/js/fitie.js", "./src/index.js"]
+    app: ["./src/css/html5reset-1.6.1.css", "./src/index.js"]
+  },
+  output: {
+    filename: 'app-[hash].js'
   },
   module: {
     rules: [

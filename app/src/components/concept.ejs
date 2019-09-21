@@ -1,9 +1,7 @@
-<div class="mdc-layout-grid__cell--span-6 <%= reverse ? 'concept-reverse' : 'concept' %>">
-  <div class="main"><%= main %></div>
-  <div class="text">
+<div class="mdc-layout-grid__cell--span-6 concept <%= reverse ? 'reverse' : '' %> ">
+  <div class="main effect-fade"><%= main %></div>
+  <div class="text effect-fade">
     <p><%= sub %></p>
   </div>
-  <div class="image">
-    <img src="<%= image %>" />
-  </div>
+  <img class="effect-fade" src="<%= image %>" />
 </div>

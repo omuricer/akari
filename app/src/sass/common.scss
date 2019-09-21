@@ -46,8 +46,9 @@ a:hover {
   padding-bottom: 10rem;
   --mdc-layout-grid-gutter-desktop: 1vw;
   @media screen and (max-width: 480px) {
-    padding-left: 4.5vw;
-    padding-right: 4.5vw;
+    padding-left: 6vw;
+    padding-right: 6vw;
+    padding-bottom: 5rem;
   }
 }
 
@@ -72,26 +73,6 @@ a:hover {
   line-height: 2.8rem;
 }
 
-.concept-text {
-  position: absolute;
-  top: 48%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 100%;
-  text-align: center;
-  color: $mdc-theme-on-primary;
-  p.main {
-    letter-spacing: 0.2em;
-  }
-  p.text {
-    letter-spacing: 0.2em;
-    padding-top: 3rem;
-  }
-}
 @media screen and (max-width: 480px) {
   .concept-main {
     height: 80vw;
@@ -105,7 +86,6 @@ iframe.googlemap-gray {
   -o-filter: grayscale(100%);
   filter: grayscale(100%);
 }
-
 
 .grid-company {
   background-color: #ffffff;
@@ -210,4 +190,28 @@ iframe.googlemap-gray {
 
 div.right {
   text-align: right;
+}
+
+// https://littlethings.jp/blog/web/css-effect-scroll
+.effect-fade {
+  opacity: 0;
+  transform: translate(0, 45px);
+  transition: all 1.3s;
+}
+.effect-fade.effect-scroll {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+// https://littlethings.jp/blog/web/css-hover-effect
+a img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+a img:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  opacity: 0.6;
 }

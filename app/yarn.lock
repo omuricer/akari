@@ -3165,11 +3165,6 @@ findup-sync@3.0.0:
     micromatch "^3.0.4"
     resolve-dir "^1.0.1"
 
-fitie@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/fitie/-/fitie-1.0.0.tgz#9d2870ddd951770749f1f3ed092248a79b52f6cc"
-  integrity sha1-nShw3dlRdwdJ8fPtCSJIp5tS9sw=
-
 flush-write-stream@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/flush-write-stream/-/flush-write-stream-1.1.1.tgz#8dd7d873a1babc207d94ead0c2e0e44276ebf2e8"
