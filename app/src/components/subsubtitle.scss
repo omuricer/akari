@@ -1,13 +1,13 @@
 .subsubtitle-area {
-  text-align: left;
+  text-align: center;
   .subsubtitle {
     margin-bottom: 0.8rem;
     display: inline-block;
-  
+
     h4 {
       display: inline-block;
-      margin-left: 0.1rem;
-      margin-right: 1.5rem;
+      margin-left: 0.8rem;
+      margin-right: 0.8rem;
       letter-spacing: 0.2em;
       font-weight: 500;
     }
@@ -15,5 +15,19 @@
       height: 1.5px;
       background: $mdc-theme-secondary;
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .subsubtitle-area {
+    text-align: left;
+
+    .subsubtitle {
+      h4 {
+        margin-left: 0.1rem;
+        margin-right: 1.5rem;
+      }
+    }
+  
   }
 }

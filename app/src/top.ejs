@@ -17,6 +17,9 @@
 <div class="mdc-layout-grid" id="about">
   <%- include('components/subtitle', {subtitle: 'about akari'}) %>
   <div class="mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__cell--span-12">
+      <p>アカリは、4つの「Share」をコンセプトに、ひとりひとりに灯る”想い”を大切にする場を目指しています。</p>
+    </div>
     <%
       concept = [
         {
@@ -226,39 +229,35 @@
   <%- include('components/subtitle', {subtitle: 'access'}) %>
   <div class="mdc-layout-grid__inner access">
     <div class="mdc-layout-grid__cell--span-12">
-      <p>
-        Co-working & 
-      </p>
-      <p>
-        Co-learning
-      </p>
-      <p>
-        Space
+      <p class="effect-fade">
+        Co-working &<br>
+        Co-learning<br>
+        Space<br>
       </p><br>
-      <p class="mdc-typography--headline5">
+      <p class="mdc-typography--headline5 effect-fade">
         アカリ
       </p>
-      <div class="headline">
+      <div class="headline effect-fade">
         <i class="fas fa-map-pin"></i>
         <p>所在地</p>
       </div>
-      <p>
+      <p class="effect-fade">
         福島県伊達郡国見町山﨑舘東14番地8
       </p>
-      <div class="headline">
+      <div class="headline effect-fade">
         <i class="fas fa-car"></i>
         <p>お車でお越しの場合</p>
       </div>
-      <p>
+      <p class="effect-fade">
         東北自動車道 国見インターから約5分<br />
         JR福島駅から約30分<br />
         ※駐車場あります
       </p>
-      <div class="headline">
+      <div class="headline effect-fade">
         <i class="fas fa-train"></i>
         <p>電車でお越しの場合</p>
       </div>
-      <p>
+      <p class="effect-fade">
         JR藤田駅から徒歩1分
       </p>
     </div>
