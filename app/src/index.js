@@ -78,6 +78,10 @@ window.onload = function() {
     effectFade();
   };
   effectFade();
+
+
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('content').classList.remove('hidden');
 };
 
 function actMDCRipple(selector) {
