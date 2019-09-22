@@ -73,15 +73,15 @@ window.onload = function() {
     });
   }
 
+  // loading
+  document.getElementById("loading").style.display = "none";
+  document.querySelector("#content .page").classList.add("select");
+
   // .effect-fade
   window.onscroll = () => {
     effectFade();
   };
   effectFade();
-
-
-  document.getElementById('loading').style.display = 'none';
-  document.getElementById('content').classList.remove('hidden');
 };
 
 function actMDCRipple(selector) {
