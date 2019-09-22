@@ -8,9 +8,11 @@
     </section>
 
     <div class="mdc-top-app-bar--fixed-adjust">
-      <div id="loading">loading</div>
-      <section id="content" class="hidden">
-        <%- include(`../${content}`) %>
+      <div id="loading"></div>
+      <section id="content">
+        <section class="page">
+          <%- include(`../${content}`) %>
+        </section>
       </section>
       <section id="footer">
         <%- include('../components/footer') %>
