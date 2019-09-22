@@ -51,6 +51,7 @@ window.onload = function() {
     document.querySelector(".menu.mobile .menu__open").style.display = "none";
     document.querySelector(".menu.mobile .menu__close").style.display =
       "inline-block";
+    document.addEventListener("touchmove", handleTouchMove, { passive: false });
   });
   const menuClose = document.querySelector(".menu.mobile .menu__close");
   menuClose.addEventListener("click", function() {
@@ -58,17 +59,16 @@ window.onload = function() {
     document.querySelector(".menu.mobile .menu__open").style.display =
       "inline-block";
     document.querySelector(".menu.mobile .menu__close").style.display = "none";
+    document.removeEventListener("touchmove", handleTouchMove, {
+      passive: false
+    });
   });
-  const menus = document.querySelectorAll(".menu.mobile a");
+  const menus = document.querySelectorAll("nav.mobile a");
   if (menus) {
     let menu_ie = Array.prototype.slice.call(menus, 0);
     menu_ie.forEach(function(e) {
       e.addEventListener("click", function() {
-        document.querySelector("nav.mobile").classList.remove("open");
-        document.querySelector(".menu.mobile .menu__open").style.display =
-          "inline-block";
-        document.querySelector(".menu.mobile .menu__close").style.display =
-          "none";
+        menuClose.dispatchEvent(new Event("click"));
       });
     });
   }
@@ -92,7 +92,7 @@ function actMDCRipple(selector) {
 
 /**
  * https://q-az.net/without-jquery-height-width-offset-scrolltop/
- * @param {*} e 
+ * @param {*} e
  */
 function offsetTop(e) {
   var rect = e.getBoundingClientRect();
@@ -111,7 +111,7 @@ function effectFade() {
       var elemPos = offsetTop(e);
       var scroll =
         document.documentElement.scrollTop || document.body.scrollTop;
-      var windowHeight = 	document.documentElement.clientHeight;
+      var windowHeight = document.documentElement.clientHeight;
       if (scroll > elemPos - windowHeight) {
         if (!e.classList.contains("effect-scroll")) {
           e.classList.add("effect-scroll");
@@ -119,4 +119,16 @@ function effectFade() {
       }
     });
   }
+}
+
+/**
+ * https://qiita.com/yukiTTT/items/773356c2483b96c9d4e0
+ * //スクロール禁止
+ * document.addEventListener('touchmove', handleTouchMove, { passive: false });
+ * //スクロール復帰
+ * document.removeEventListener('touchmove', handleTouchMove, { passive: false });
+ * @param {*} event
+ */
+function handleTouchMove(event) {
+  event.preventDefault();
 }
