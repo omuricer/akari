@@ -1,5 +1,9 @@
-<div class="mdc-layout-grid__cell--span-6 concept <%= reverse ? 'reverse' : '' %> ">
-  <div class="main effect-fade"><%= main %></div>
+<div
+  class="mdc-layout-grid__cell--span-6 concept <%= reverse ? 'reverse' : '' %> "
+>
+  <div class="main effect-fade">
+    <span class="accent"><%= main_accent %></span><%= main %>
+  </div>
   <div class="text effect-fade">
     <p><%= sub %></p>
   </div>
