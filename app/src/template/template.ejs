@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <%- include('head') %>
+
+  <body class="mdc-typography">
+    <section id="header">
+      <%- include('../components/header') %>
+    </section>
+
+    <div class="mdc-top-app-bar--fixed-adjust">
+      <div id="loading">loading</div>
+      <section id="content" class="hidden">
+        <%- include(`../${content}`) %>
+      </section>
+      <section id="footer">
+        <%- include('../components/footer') %>
+      </section>
+    </div>
+  </body>
+</html>
