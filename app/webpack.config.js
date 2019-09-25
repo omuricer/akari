@@ -5,12 +5,13 @@ const autoprefixer = require("autoprefixer");
 const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
-  entry: {
-    app: ["./src/css/html5reset-1.6.1.css", "./src/index.js"]
-  },
-  output: {
-    filename: 'app-[hash].js'
-  },
+  // entry: {
+  //   app: ["./src/css/html5reset-1.6.1.css", "./src/index.js"]
+  // },
+  entry: "./src/index.jsx",
+  // output: {
+  //   filename: 'app-[hash].js'
+  // },
   module: {
     rules: [
       {
@@ -43,8 +44,8 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          // "style-loader",
-          MiniCssExtractPlugin.loader,
+          "style-loader",
+          // MiniCssExtractPlugin.loader,
           "css-loader",
           {
             loader: "postcss-loader",
@@ -85,16 +86,16 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./src/index.ejs"
+      template: "./src/index.html"
     }),
-    new HtmlWebPackPlugin({
-      template: "./src/reserve.ejs",
-      filename: 'reserve.html'
-    }),
-    new HtmlWebPackPlugin({
-      template: "./src/contact.ejs",
-      filename: 'contact.html'
-    }),
+    // new HtmlWebPackPlugin({
+    //   template: "./src/reserve.ejs",
+    //   filename: 'reserve.html'
+    // }),
+    // new HtmlWebPackPlugin({
+    //   template: "./src/contact.ejs",
+    //   filename: 'contact.html'
+    // }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
@@ -108,5 +109,8 @@ module.exports = {
   ],
   optimization: {
     minimizer: [new OptimizeCSSAssetsPlugin({})]
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   }
 };
