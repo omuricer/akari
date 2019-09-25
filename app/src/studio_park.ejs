@@ -1,68 +1,152 @@
 <div class="mdc-layout-grid">
-  <div class="mdc-layout-grid__inner subtitle">
-    <div class="mdc-layout-grid__cell--span-12">
-      <h2 class="mdc-typography--headline2">studio</h2>
-      <div class="marker"></div>
+  <%- include('components/subtitle', {subtitle: 'reservation'}) %>
+  <div class="mdc-layout-grid__inner reserve">
+    <div 
+      class="
+        mdc-layout-grid__cell--span-6-desktop
+        mdc-layout-grid__cell--span-8-tablet
+        mdc-layout-grid__cell--span-4-phone
+        image"
+    >
+      <div class="line"></div>
+      <h3 class="resource">スタジオ</h3>
+      <img class="mdc-image-list__image" src="image/studio.jpg" />
+    </div>
+    <div 
+      class="
+        mdc-layout-grid__cell--span-6-desktop
+        mdc-layout-grid__cell--span-8-tablet
+        mdc-layout-grid__cell--span-4-phone
+        description"
+    >
+      <div class="description--inner">
+        <div class="description--set">
+          <%- include('components/subsubtitle', {subsubtitle: 'サービス'}) %>
+          <p>
+            会議やイベントスペースとしてお使い頂けます。<br />プロジェクター、マイク、スクリーンは有料で貸し出しております。
+          </p>
+        </div>
+        <div class="description--set">
+          <%- include('components/subsubtitle', {subsubtitle: '設備'}) %>
+          <ul>
+            <li>面積：89㎡</li>
+            <li>wifi・電源有り</li>
+            <li>無料貸出し：机・椅子</li>
+            <li>有料貸出し：プロジェクター、マイク、スクリーン</li>
+          </ul>
+        </div>
+        <div class="description--set">
+          <%- include('components/subsubtitle', {subsubtitle: 'ご利用料金'}) %>
+          <p>¥1,000/h</p>
+        </div>
+        <div class="right">
+          <a
+            class="mdc-button mdc-button--raised right"
+            href="https://airrsv.net/yamorisyamomonone/calendar?schdlId=s00002A1F7"
+            target="_blank"
+            >空き状況確認・ご予約</a
+          >
+        </div>
+      </div>
     </div>
   </div>
-  <div class="mdc-layout-grid__inner access">
-    <div class="mdc-layout-grid__cell--span-6 cell-centering">
-      <img class="mdc-image-list__image" src="image/yard.png" />
+  <div class="mdc-layout-grid__inner reserve">
+    <div 
+      class="
+        mdc-layout-grid__cell--span-6-desktop
+        mdc-layout-grid__cell--span-8-tablet
+        mdc-layout-grid__cell--span-4-phone
+        image"
+    >
+      <div class="line"></div>
+      <h2 class="resource">アカリパーク</h2>
+      <img class="mdc-image-list__image" src="image/akaripark.jpg" />
     </div>
-    <div class="mdc-layout-grid__cell--span-6">
-      <h3 class="mdc-typography--headline3">サービス</h3>
-      <p>aaaaaa</p>
-      <h3 class="mdc-typography--headline3">ご利用料金</h3>
-      <p>aaaaaa</p>
-      <div class="right">
-        <a
-          class="mdc-button mdc-button--raised right"
-          href="https://airrsv.net/yamorisyamomonone/calendar?schdlId=s000029417"
-          target="_blank"
-          >空き確認・予約</a
-        >
+    <div 
+      class="
+        mdc-layout-grid__cell--span-6-desktop
+        mdc-layout-grid__cell--span-8-tablet
+        mdc-layout-grid__cell--span-4-phone
+        description"
+    >
+      <div class="description--inner">
+        <div class="description--set">
+          <%- include('components/subsubtitle', {subsubtitle: 'サービス'}) %>
+          <p>
+            マルシェなど、屋外のイベントでご利用頂けます。１日単位でご利用頂けます。
+          </p>
+        </div>
+        <div class="description--set">
+          <%- include('components/subsubtitle', {subsubtitle: '設備'}) %>
+          <ul>
+            <li>面積：1,500㎡</li>
+            <li>駐車場有り</li>
+            <li>JR藤田駅徒歩１分</li>
+            <li>ほか、ご見学ください</li>
+          </ul>
+        </div>
+        <div class="description--set">
+          <%- include('components/subsubtitle', {subsubtitle: 'ご利用料金'}) %>
+          <p>¥10,000/day</p>
+        </div>
+        <div class="right">
+          <a
+            class="mdc-button mdc-button--raised right"
+            href="https://airrsv.net/yamorisyamomonone/calendar?schdlId=s000029C7B"
+            target="_blank"
+            >空き状況確認・ご予約</a
+          >
+        </div>
       </div>
     </div>
   </div>
 </div>
 <div class="mdc-layout-grid">
-  <div class="mdc-layout-grid__inner subtitle">
-    <div class="mdc-layout-grid__cell--span-12">
-      <h2 class="mdc-typography--headline6">park</h2>
-      <div class="marker"></div>
-    </div>
-  </div>
-  <div class="mdc-layout-grid__inner access">
-    <div class="mdc-layout-grid__cell--span-6 cell-centering">
-      <img class="mdc-image-list__image" src="image/yard.png" />
-    </div>
-    <div class="mdc-layout-grid__cell--span-6">
-      <a
-        class="mdc-button mdc-button--raised"
-        href="https://airrsv.net/yamorisyamomonone/calendar?schdlId=s000029C7B"
-        target="_blank"
-        >空き確認・予約</a
-      >
-    </div>
-  </div>
-</div>
-<div class="mdc-layout-grid">
-  <div class="mdc-layout-grid__inner subtitle">
-    <div class="mdc-layout-grid__cell--span-12">
-      <h2 class="mdc-typography--headline6">usecase</h2>
-      <div class="marker"></div>
-    </div>
-  </div>
+  <%- include('components/subtitle', {subtitle: 'use case'}) %>
   <div class="mdc-layout-grid__inner">
-    <div class="mdc-layout-grid__cell--span-4 news">
-      <img src="image/yard.png" />
-      <p class="date">2019/9/12</p>
-      <p class="text">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-      <a
-        href="https://airrsv.net/yamorisyamomonone/calendar?schdlId=s000029C7B"
-        target="_blank"
-        >くわしく見る</a
-      >
-    </div>
+    <%
+      news = [
+        {
+          image: 'image/news/maturi_ato.jpg',
+          date: 'Akari park',
+          text: '『アカリ夏マツリ』と題して、地域のショップをお招きしお祭りが開催されました！広場の一角ではワークショップも。写真掲載していますのでご覧ください。',
+          more: {
+            url: 'https://www.facebook.com/pg/yamorisyamomonone2018/photos/?tab=album&album_id=407041663275450&ref=page_internal',
+            text: '詳しくみる',
+          }
+        },
+        {
+          image: 'image/news/ima_ba2.jpg',
+          date: 'Studio',
+          text: '『いま、地域に求められる場とは？』と題して、福島県内各地で豊かなコミュニティを生み出している人たちをお招きし、なぜそんな“場”をつくったの？運営体制はどのようにして実現させている？彼らが生み出す“場”の魅力とは？などについてお聞きできるイベントが開催されました。',
+          more: {
+            url: 'https://www.facebook.com/pg/yamorisyamomonone2018/photos/?tab=album&album_id=377448239568126&ref=page_internal',
+            text: '詳しくみる',
+          }
+        },
+        {
+          image: 'image/news/kaigi1.jpg',
+          date: 'Studio',
+          text: '『ふくしまの暮らし方、働き方会議#1』と題して、もっと違う暮らし方、働き方、自分が触れてこなかった別の世界を考えるトークセッションが開催されました。',
+          more: {
+            url: 'https://www.facebook.com/pg/yamorisyamomonone2018/photos/?tab=album&album_id=291734231472861&ref=page_internal',
+            text: '詳しくみる',
+          }
+        },
+        {
+          image: 'image/news/marche.jpg',
+          date: 'Akari Park',
+          text: '『空想マルシェ』と題して、１日限定のマルシェが誕生しました。みんなの空想を持ち寄って、理想のまちを自分の手でつくろう！を合言葉に多くの方々がご来場されました。',
+          more: {
+            url: 'https://www.facebook.com/pg/yamorisyamomonone2018/photos/?tab=album&album_id=267465137233104&ref=page_internal',
+            text: '詳しくみる',
+          }
+        },
+      ]
+    %>
+    <%- include('components/news', news[0]) %>
+    <%- include('components/news', news[1]) %>
+    <%- include('components/news', news[2]) %>
+    <%- include('components/news', news[3]) %>
   </div>
 </div>

@@ -33,9 +33,13 @@
   .news {
     margin-bottom: 1rem;
     .image {
+      width: 15vw;
+      height: 15vw;
+      margin: auto;
+      overflow: hidden;
       img {
-        width: 15vw;
-        height: 15vw;
+        width: 100%;
+        height: 100%;
       }
     }
     .date {
@@ -52,4 +56,4 @@
       line-height: 1.3em;
     }
   }
-}  
+}
