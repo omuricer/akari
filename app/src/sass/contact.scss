@@ -1,0 +1,16 @@
+.contact {
+  p.desc {
+    margin-left: 6vw;
+    margin-right: 6vw;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  p.desc {
+    margin-left: 8.5vw;
+    margin-right: 8.5vw;
+    margin-bottom: 3rem;
+  }
+}

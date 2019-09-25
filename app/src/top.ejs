@@ -1,5 +1,5 @@
 <div class="mdc-layout-grid no-margin">
-  <div class="mdc-layout-grid__inner fixed-bg fixed-bg__concept-main">
+  <div class="mdc-layout-grid__inner fixed-bg">
     <div class="mdc-layout-grid__cell--span-12">
       <div class="concept-text">
         <p class="main mdc-typography--headline2">ともに学びあう</p>
@@ -14,31 +14,41 @@
     </div>
   </div>
 </div>
-<div class="mdc-layout-grid" id="about">
+<div class="mdc-layout-grid about" id="about">
   <%- include('components/subtitle', {subtitle: 'about akari'}) %>
   <div class="mdc-layout-grid__inner">
+    <div class="
+    mdc-layout-grid__cell--span-12-desktop
+    mdc-layout-grid__cell--span-8-tablet
+    mdc-layout-grid__cell--span-4-phone">
+      <p>この地域に、多様な人々がともに学び合う場をつくっています。ここは、共感できる仲間と、空間も価値観もシェアして、１人１人に灯る”想い”を大切にする場所です。</p>
+    </div>
     <%
       concept = [
         {
-          main: 'Share Local',
+          main_accent: 'Share',
+          main: ' Local',
           sub: '地域の価値を分かち合う。',
           image: 'image/concept1.jpg',
           reverse: false
         },
         {
-          main: 'Share Space',
+          main_accent: 'Share',
+          main: ' Space',
           sub: '多様な価値観に気づく。',
           image: 'image/concept2.png',
           reverse: true
         },
         {
-          main: 'Share Park',
+          main_accent: 'Share',
+          main: ' Park',
           sub: '多様な文化を知る。',
           image: 'image/concept3.png',
           reverse: false
         },
         {
-          main: 'Share Office',
+          main_accent: 'Share',
+          main: ' Office',
           sub: '小さな産業が生まれる。',
           image: 'image/concept4.png',
           reverse: true
@@ -54,7 +64,9 @@
 <div class="mdc-layout-grid service" id="service">
   <%- include('components/subtitle', {subtitle: 'our service'}) %>
   <div class="mdc-layout-grid__inner">
-    <div class="mdc-layout-grid__cell--span-6">
+    <div class="mdc-layout-grid__cell--span-6-desktop
+    mdc-layout-grid__cell--span-8-tablet
+    mdc-layout-grid__cell--span-4-phone">
       <%
         images = [
           {
@@ -70,7 +82,9 @@
   
       <%- include('components/swiper', {images: images}) %>
     </div>
-    <h4 class="mdc-layout-grid__cell--span-6">
+    <div class="mdc-layout-grid__cell--span-6-desktop
+    mdc-layout-grid__cell--span-8-tablet
+    mdc-layout-grid__cell--span-4-phone">
       <ul>
         <li>
           <h4 class="headline">Trattoria da martino ( イタリアン )</h4>
@@ -102,17 +116,18 @@
         </li>
         <li>
           <h4 class="headline">Share Office</h4>
-          <div class="text">地域の魅力を高める業種の方を対象に、格安でスペースをお貸ししています。随時入居者を募集しておりますので、紙面下のメールアドレスまで、お気軽にお問い合わせください。</div>
+          <div class="text">主に地域の魅力を高める業態の方を対象に、オフィススペースを貸し出しています。随時入居者を募集しておりますので、お問合わせフォームよりお気軽にご相談ください。</div>
           <div class="attr">部屋面積：11㎡</div>
           <div class="attr">賃料：¥20,000/月</div>
           <div class="attr">光熱費：¥5,000/月</div>
-          <div class="attr">共益費：¥3,000/月</div>
+          <div class="attr">共益費：¥5,000/月</div>
           <div class="attr">月極駐車場有</div>
           <div class="attr">wifi・電源完備</div>
           <div class="attr">空調有り</div><br>
           <div class="attr">＜入居者特典＞</div><br>
-          <div class="attr">①Trattoria da Martino のまかないメシ</div>
+          <div class="attr">①Trattoria da Martino のまかないメシ（¥500）</div>
           <div class="attr">②Studio・akaripark 利用料割引</div>
+          <div class="attr">③スタジオ・アカリパーク利用料割引（１割引）</div>
         </li>
       </ul>
     </div>
@@ -137,7 +152,7 @@
           date: '2019/9/3',
           text: '8/31に開催したアカリ夏マツリの写真を掲載します。ご来場いただいた皆様、ご出店いただいた方々、ありがとうございました(^^)',
           more: {
-            url: 'https://www.facebook.com/pg/yamorisyamomonone2018/photos/?tab=album&album_id=407041663275450&__tn__=-UC-R',
+            url: 'https://www.facebook.com/pg/yamorisyamomonone2018/photos/?tab=album&album_id=407041663275450&ref=page_internal',
             text: '詳しくみる',
           }
         },
@@ -182,7 +197,7 @@
           date: '2019/7/5',
           text: '福島県内各地で豊かなコミュニティ形成と消費活動がなされる“場”を生み出している人たちをお招きし、なぜそんな“場”をつくったの？運営体制はどのようにして実現させている？彼らが生み出す“場”の魅力とは？などについてお聞きできるイベントを開催しました！',
           more: {
-            url: 'https://www.facebook.com/events/392767397995315/',
+            url: 'https://www.facebook.com/pg/yamorisyamomonone2018/photos/?tab=album&album_id=377448239568126&ref=page_internal',
             text: '詳しくみる',
           }
         },
@@ -226,33 +241,35 @@
   <%- include('components/subtitle', {subtitle: 'access'}) %>
   <div class="mdc-layout-grid__inner access">
     <div class="mdc-layout-grid__cell--span-12">
-      <p>
-        Co-working & Co-learning Space
-      </p>
-      <p class="mdc-typography--headline5">
+      <p class="effect-fade">
+        Co-working &<br>
+        Co-learning<br>
+        Space<br>
+      </p><br>
+      <p class="mdc-typography--headline5 effect-fade">
         アカリ
       </p>
-      <div class="headline">
+      <div class="headline effect-fade">
         <i class="fas fa-map-pin"></i>
         <p>所在地</p>
       </div>
-      <p>
+      <p class="effect-fade">
         福島県伊達郡国見町山﨑舘東14番地8
       </p>
-      <div class="headline">
+      <div class="headline effect-fade">
         <i class="fas fa-car"></i>
         <p>お車でお越しの場合</p>
       </div>
-      <p>
+      <p class="effect-fade">
         東北自動車道 国見インターから約5分<br />
         JR福島駅から約30分<br />
         ※駐車場あります
       </p>
-      <div class="headline">
+      <div class="headline effect-fade">
         <i class="fas fa-train"></i>
         <p>電車でお越しの場合</p>
       </div>
-      <p>
+      <p class="effect-fade">
         JR藤田駅から徒歩1分
       </p>
     </div>

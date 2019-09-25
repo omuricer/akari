@@ -1,12 +1,14 @@
 $mdc-theme-primary: #485859; // 錆鉄御納戸（さびてつおなんど）
-$mdc-theme-on-primary: #FBFAF5; // 生成り色（きなりいろ）
-// $mdc-theme-secondary: #FFDC4F; // 黄支子（きくちなしいろ）
-$mdc-theme-secondary: #F9A638; // 黄支子（きくちなしいろ）
-$mdc-theme-on-secondary: #FBFAF5; // 生成り色（きなりいろ）
-// $mdc-theme-surface: #FFFBFA;
-// $mdc-theme-on-surface: #442C2E;
+$mdc-theme-on-primary: #FFFFFF;
+
+$mdc-theme-secondary: #474a4d; // 藍墨茶（あいすみちゃ）
+$mdc-theme-on-secondary: #FFFFFF; // 生成り色（きなりいろ）
+
+$mdc-theme-tertiary: #F9A638; // 黄支子（きくちなしいろ）
+
 $mdc-theme-background: #FFFFFF; // 生成り色（きなりいろ）
 $mdc-theme-on-background: #485859; // 錆鉄御納戸（さびてつおなんど）
+$mdc-theme-background-secondary: #FBFAF5; // 生成り色（きなりいろ）
 
 $mdc-theme-primary2: #606060; // 湊鼠（みなとねずみ）
 $mdc-theme-primary3: #EBF6F7; // 藍白（あいじろ）
@@ -18,6 +20,10 @@ $mdc-typography-styles-headline2: (
 );
 $mdc-typography-styles-headline3: (
   font-size: 1rem
+);
+$mdc-typography-styles-headline4: (
+  font-size: 1rem,
+  line-height: 2rem
 );
 $mdc-typography-styles-subtitle1: (
   font-weight: 500
