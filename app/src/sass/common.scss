@@ -1,8 +1,8 @@
 @import "./variable";
-@import "@material/layout-grid/mdc-layout-grid";
-@import "@material/top-app-bar/mdc-top-app-bar";
-@import "@material/typography/mdc-typography";
-@import "@material/button/mdc-button";
+// @import "@material/layout-grid/mdc-layout-grid";
+// @import "@material/top-app-bar/mdc-top-app-bar";
+// @import "@material/typography/mdc-typography";
+// @import "@material/button/mdc-button";
 @import "../css/swiper.min";
 
 :root {
@@ -223,7 +223,7 @@ a img:not(.logo):hover {
 
 
 #content .page{
-  display: none;
+  // display: none;
 }
 #content .page.select {
   display: block;
