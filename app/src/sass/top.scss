@@ -15,7 +15,7 @@
 
 .fixed-bg {
   min-height: 100vh;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-size: cover;
   background-position: -200px 0px;
   background-image: url(../image/concept_main.jpg);
@@ -110,6 +110,7 @@
 @media (min-width: 768px) {
   .fixed-bg {
     background-position: center;
+    background-attachment: fixed;
   }
 
   .concept-text {
