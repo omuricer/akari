@@ -125,14 +125,3 @@ function effectFade() {
   }
 }
 
-/**
- * https://qiita.com/yukiTTT/items/773356c2483b96c9d4e0
- * //スクロール禁止
- * document.addEventListener('touchmove', handleTouchMove, { passive: false });
- * //スクロール復帰
- * document.removeEventListener('touchmove', handleTouchMove, { passive: false });
- * @param {*} event
- */
-function handleTouchMove(event) {
-  event.preventDefault();
-}
