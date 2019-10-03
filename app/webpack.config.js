@@ -81,7 +81,8 @@ module.exports = {
             name: "./image/[name].[ext]"
           }
         }
-      }
+      },
+      { test: /\.json$/, loader: 'json-loader', type: "javascript/auto" }
     ]
   },
   plugins: [

@@ -1,0 +1,30 @@
+[
+  {
+    "main_accent": "Share",
+    "main": " Local",
+    "sub": "地域の価値を分かち合う。",
+    "image": "image/concept1.jpg",
+    "reverse": false
+  },
+  {
+    "main_accent": "Share",
+    "main": " Space",
+    "sub": "多様な価値観に気づく。",
+    "image": "image/concept2.png",
+    "reverse": true
+  },
+  {
+    "main_accent": "Share",
+    "main": " Park",
+    "sub": "多様な文化を知る。",
+    "image": "image/concept3.png",
+    "reverse": false
+  },
+  {
+    "main_accent": "Share",
+    "main": " Office",
+    "sub": "小さな産業が生まれる。",
+    "image": "image/concept4.png",
+    "reverse": true
+  }
+]

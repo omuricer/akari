@@ -11,6 +11,7 @@ import MaterialIcon from "@material/react-material-icon";
 import "@material/react-top-app-bar/index.scss";
 import "@material/react-material-icon/index.scss";
 import "./template.scss";
+import Footer from "./footer";
 
 export default class Template extends React.Component {
   render() {
@@ -162,7 +163,9 @@ export default class Template extends React.Component {
           <section id="content">
             <section className="page">{this.props.children}</section>
           </section>
-          <section id="footer">footer</section>
+          <section id="footer">
+            <Footer />
+          </section>
         </TopAppBarFixedAdjust>
       </div>
     );
