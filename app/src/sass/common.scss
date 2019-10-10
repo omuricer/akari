@@ -261,3 +261,30 @@ a img:not(.logo):hover {
     opacity: 1;
   }
 }
+
+
+.center-desc {
+  text-align: center;
+  p {
+    line-height: 1.5rem;
+  }
+  .center-desc-headline {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    i {
+      font-size: 1.6rem;
+      width: 30px;
+      text-align: center;
+    }
+    p {
+      display: inline;
+    }
+  }
+  a {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    i {
+      font-size: 1.3rem;
+    }
+  }
+}
