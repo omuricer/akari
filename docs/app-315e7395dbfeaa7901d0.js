@@ -123,18 +123,18 @@ var sass = __webpack_require__(2);
 
 // CONCATENATED MODULE: ./node_modules/tslib/tslib.es6.js
 /*! *****************************************************************************
-Copyright (c) Microsoft Corporation. All rights reserved.
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-this file except in compliance with the License. You may obtain a copy of the
-License at http://www.apache.org/licenses/LICENSE-2.0
+Copyright (c) Microsoft Corporation.
 
-THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-MERCHANTABLITY OR NON-INFRINGEMENT.
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
 
-See the Apache Version 2.0 License for specific language governing permissions
-and limitations under the License.
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
 /* global Reflect, Promise */
 
@@ -227,8 +227,13 @@ function __generator(thisArg, body) {
     }
 }
 
+function __createBinding(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}
+
 function __exportStar(m, exports) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 
 function __values(o) {
@@ -2878,19 +2883,44 @@ var ripple_component_MDCRipple = /** @class */ (function (_super) {
 }(base_component_MDCComponent));
 
 //# sourceMappingURL=component.js.map
-// CONCATENATED MODULE: ./node_modules/ssr-window/dist/ssr-window.esm.js
+// CONCATENATED MODULE: ./node_modules/dom7/node_modules/ssr-window/dist/ssr-window.esm.js
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 /**
- * SSR Window 1.0.1
+ * SSR Window 2.0.0
  * Better handling for window object in SSR environment
  * https://github.com/nolimits4web/ssr-window
  *
- * Copyright 2018, Vladimir Kharlampidi
+ * Copyright 2020, Vladimir Kharlampidi
  *
  * Licensed under MIT
  *
- * Released on: July 18, 2018
+ * Released on: May 12, 2020
  */
-var doc = typeof document === 'undefined' ? {
+
+/* eslint-disable no-param-reassign */
+function isObject(obj) {
+  return obj !== null && _typeof(obj) === 'object' && 'constructor' in obj && obj.constructor === Object;
+}
+
+function extend(target, src) {
+  if (target === void 0) {
+    target = {};
+  }
+
+  if (src === void 0) {
+    src = {};
+  }
+
+  Object.keys(src).forEach(function (key) {
+    if (typeof target[key] === 'undefined') target[key] = src[key];else if (isObject(src[key]) && isObject(target[key]) && Object.keys(src[key]).length > 0) {
+      extend(target[key], src[key]);
+    }
+  });
+}
+
+var doc = typeof document !== 'undefined' ? document : {};
+var ssrDocument = {
   body: {},
   addEventListener: function addEventListener() {},
   removeEventListener: function removeEventListener() {},
@@ -2923,18 +2953,46 @@ var doc = typeof document === 'undefined' ? {
       }
     };
   },
+  createElementNS: function createElementNS() {
+    return {};
+  },
+  importNode: function importNode() {
+    return null;
+  },
   location: {
-    hash: ''
+    hash: '',
+    host: '',
+    hostname: '',
+    href: '',
+    origin: '',
+    pathname: '',
+    protocol: '',
+    search: ''
   }
-} : document; // eslint-disable-line
-
-var win = typeof window === 'undefined' ? {
-  document: doc,
+};
+extend(doc, ssrDocument);
+var win = typeof window !== 'undefined' ? window : {};
+var ssrWindow = {
+  document: ssrDocument,
   navigator: {
     userAgent: ''
   },
-  location: {},
-  history: {},
+  location: {
+    hash: '',
+    host: '',
+    hostname: '',
+    href: '',
+    origin: '',
+    pathname: '',
+    protocol: '',
+    search: ''
+  },
+  history: {
+    replaceState: function replaceState() {},
+    pushState: function pushState() {},
+    go: function go() {},
+    back: function back() {}
+  },
   CustomEvent: function CustomEvent() {
     return this;
   },
@@ -2951,25 +3009,28 @@ var win = typeof window === 'undefined' ? {
   Date: function Date() {},
   screen: {},
   setTimeout: function setTimeout() {},
-  clearTimeout: function clearTimeout() {}
-} : window; // eslint-disable-line
-
+  clearTimeout: function clearTimeout() {},
+  matchMedia: function matchMedia() {
+    return {};
+  }
+};
+extend(win, ssrWindow);
 
 // CONCATENATED MODULE: ./node_modules/dom7/dist/dom7.modular.js
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
- * Dom7 2.1.3
+ * Dom7 2.1.5
  * Minimalistic JavaScript library for DOM manipulation, with a jQuery-compatible API
  * http://framework7.io/docs/dom.html
  *
- * Copyright 2019, Vladimir Kharlampidi
+ * Copyright 2020, Vladimir Kharlampidi
  * The iDangero.us
  * http://www.idangero.us/
  *
  * Licensed under MIT
  *
- * Released on: February 11, 2019
+ * Released on: May 15, 2020
  */
 
 
@@ -4752,14 +4813,91 @@ function dom7_modular_scroll() {
 }
 
 
+// CONCATENATED MODULE: ./node_modules/ssr-window/dist/ssr-window.esm.js
+/**
+ * SSR Window 1.0.1
+ * Better handling for window object in SSR environment
+ * https://github.com/nolimits4web/ssr-window
+ *
+ * Copyright 2018, Vladimir Kharlampidi
+ *
+ * Licensed under MIT
+ *
+ * Released on: July 18, 2018
+ */
+var ssr_window_esm_doc = typeof document === 'undefined' ? {
+  body: {},
+  addEventListener: function addEventListener() {},
+  removeEventListener: function removeEventListener() {},
+  activeElement: {
+    blur: function blur() {},
+    nodeName: ''
+  },
+  querySelector: function querySelector() {
+    return null;
+  },
+  querySelectorAll: function querySelectorAll() {
+    return [];
+  },
+  getElementById: function getElementById() {
+    return null;
+  },
+  createEvent: function createEvent() {
+    return {
+      initEvent: function initEvent() {}
+    };
+  },
+  createElement: function createElement() {
+    return {
+      children: [],
+      childNodes: [],
+      style: {},
+      setAttribute: function setAttribute() {},
+      getElementsByTagName: function getElementsByTagName() {
+        return [];
+      }
+    };
+  },
+  location: {
+    hash: ''
+  }
+} : document; // eslint-disable-line
+
+var ssr_window_esm_win = typeof window === 'undefined' ? {
+  document: ssr_window_esm_doc,
+  navigator: {
+    userAgent: ''
+  },
+  location: {},
+  history: {},
+  CustomEvent: function CustomEvent() {
+    return this;
+  },
+  addEventListener: function addEventListener() {},
+  removeEventListener: function removeEventListener() {},
+  getComputedStyle: function getComputedStyle() {
+    return {
+      getPropertyValue: function getPropertyValue() {
+        return '';
+      }
+    };
+  },
+  Image: function Image() {},
+  Date: function Date() {},
+  screen: {},
+  setTimeout: function setTimeout() {},
+  clearTimeout: function clearTimeout() {}
+} : window; // eslint-disable-line
+
+
 // CONCATENATED MODULE: ./node_modules/swiper/dist/js/swiper.esm.bundle.js
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+function _possibleConstructorReturn(self, call) { if (call && (swiper_esm_bundle_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -4773,7 +4911,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function swiper_esm_bundle_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { swiper_esm_bundle_typeof = function _typeof(obj) { return typeof obj; }; } else { swiper_esm_bundle_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return swiper_esm_bundle_typeof(obj); }
 
 /**
  * Swiper 4.5.1
@@ -4857,9 +4995,9 @@ var Utils = {
     var matrix;
     var curTransform;
     var transformMatrix;
-    var curStyle = win.getComputedStyle(el, null);
+    var curStyle = ssr_window_esm_win.getComputedStyle(el, null);
 
-    if (win.WebKitCSSMatrix) {
+    if (ssr_window_esm_win.WebKitCSSMatrix) {
       curTransform = curStyle.transform || curStyle.webkitTransform;
 
       if (curTransform.split(',').length > 6) {
@@ -4870,7 +5008,7 @@ var Utils = {
       // empty string instead in this case
 
 
-      transformMatrix = new win.WebKitCSSMatrix(curTransform === 'none' ? '' : curTransform);
+      transformMatrix = new ssr_window_esm_win.WebKitCSSMatrix(curTransform === 'none' ? '' : curTransform);
     } else {
       transformMatrix = curStyle.MozTransform || curStyle.OTransform || curStyle.MsTransform || curStyle.msTransform || curStyle.transform || curStyle.getPropertyValue('transform').replace('translate(', 'matrix(1, 0, 0, 1,');
       matrix = transformMatrix.toString().split(',');
@@ -4878,14 +5016,14 @@ var Utils = {
 
     if (axis === 'x') {
       // Latest Chrome and webkits Fix
-      if (win.WebKitCSSMatrix) curTransform = transformMatrix.m41; // Crazy IE10 Matrix
+      if (ssr_window_esm_win.WebKitCSSMatrix) curTransform = transformMatrix.m41; // Crazy IE10 Matrix
       else if (matrix.length === 16) curTransform = parseFloat(matrix[12]); // Normal Browsers
         else curTransform = parseFloat(matrix[4]);
     }
 
     if (axis === 'y') {
       // Latest Chrome and webkits Fix
-      if (win.WebKitCSSMatrix) curTransform = transformMatrix.m42; // Crazy IE10 Matrix
+      if (ssr_window_esm_win.WebKitCSSMatrix) curTransform = transformMatrix.m42; // Crazy IE10 Matrix
       else if (matrix.length === 16) curTransform = parseFloat(matrix[13]); // Normal Browsers
         else curTransform = parseFloat(matrix[5]);
     }
@@ -4894,7 +5032,7 @@ var Utils = {
   },
   parseUrlQuery: function parseUrlQuery(url) {
     var query = {};
-    var urlToParse = url || win.location.href;
+    var urlToParse = url || ssr_window_esm_win.location.href;
     var i;
     var params;
     var param;
@@ -4916,7 +5054,7 @@ var Utils = {
     return query;
   },
   isObject: function isObject(o) {
-    return _typeof(o) === 'object' && o !== null && o.constructor && o.constructor === Object;
+    return swiper_esm_bundle_typeof(o) === 'object' && o !== null && o.constructor && o.constructor === Object;
   },
   extend: function extend() {
     var to = Object(arguments.length <= 0 ? undefined : arguments[0]);
@@ -4950,18 +5088,18 @@ var Utils = {
 };
 
 var swiper_esm_bundle_Support = function Support() {
-  var testDiv = doc.createElement('div');
+  var testDiv = ssr_window_esm_doc.createElement('div');
   return {
-    touch: win.Modernizr && win.Modernizr.touch === true || function checkTouch() {
-      return !!(win.navigator.maxTouchPoints > 0 || 'ontouchstart' in win || win.DocumentTouch && doc instanceof win.DocumentTouch);
+    touch: ssr_window_esm_win.Modernizr && ssr_window_esm_win.Modernizr.touch === true || function checkTouch() {
+      return !!(ssr_window_esm_win.navigator.maxTouchPoints > 0 || 'ontouchstart' in ssr_window_esm_win || ssr_window_esm_win.DocumentTouch && ssr_window_esm_doc instanceof ssr_window_esm_win.DocumentTouch);
     }(),
-    pointerEvents: !!(win.navigator.pointerEnabled || win.PointerEvent || 'maxTouchPoints' in win.navigator && win.navigator.maxTouchPoints > 0),
-    prefixedPointerEvents: !!win.navigator.msPointerEnabled,
+    pointerEvents: !!(ssr_window_esm_win.navigator.pointerEnabled || ssr_window_esm_win.PointerEvent || 'maxTouchPoints' in ssr_window_esm_win.navigator && ssr_window_esm_win.navigator.maxTouchPoints > 0),
+    prefixedPointerEvents: !!ssr_window_esm_win.navigator.msPointerEnabled,
     transition: function checkTransition() {
       var style = testDiv.style;
       return 'transition' in style || 'webkitTransition' in style || 'MozTransition' in style;
     }(),
-    transforms3d: win.Modernizr && win.Modernizr.csstransforms3d === true || function checkTransforms3d() {
+    transforms3d: ssr_window_esm_win.Modernizr && ssr_window_esm_win.Modernizr.csstransforms3d === true || function checkTransforms3d() {
       var style = testDiv.style;
       return 'webkitPerspective' in style || 'MozPerspective' in style || 'OPerspective' in style || 'MsPerspective' in style || 'perspective' in style;
     }(),
@@ -4976,7 +5114,7 @@ var swiper_esm_bundle_Support = function Support() {
       return false;
     }(),
     observer: function checkObserver() {
-      return 'MutationObserver' in win || 'WebkitMutationObserver' in win;
+      return 'MutationObserver' in ssr_window_esm_win || 'WebkitMutationObserver' in ssr_window_esm_win;
     }(),
     passiveListener: function checkPassiveListener() {
       var supportsPassive = false;
@@ -4988,29 +5126,29 @@ var swiper_esm_bundle_Support = function Support() {
             supportsPassive = true;
           }
         });
-        win.addEventListener('testPassiveListener', null, opts);
+        ssr_window_esm_win.addEventListener('testPassiveListener', null, opts);
       } catch (e) {// No support
       }
 
       return supportsPassive;
     }(),
     gestures: function checkGestures() {
-      return 'ongesturestart' in win;
+      return 'ongesturestart' in ssr_window_esm_win;
     }()
   };
 }();
 
 var swiper_esm_bundle_Browser = function Browser() {
   function isSafari() {
-    var ua = win.navigator.userAgent.toLowerCase();
+    var ua = ssr_window_esm_win.navigator.userAgent.toLowerCase();
     return ua.indexOf('safari') >= 0 && ua.indexOf('chrome') < 0 && ua.indexOf('android') < 0;
   }
 
   return {
-    isIE: !!win.navigator.userAgent.match(/Trident/g) || !!win.navigator.userAgent.match(/MSIE/g),
-    isEdge: !!win.navigator.userAgent.match(/Edge/g),
+    isIE: !!ssr_window_esm_win.navigator.userAgent.match(/Trident/g) || !!ssr_window_esm_win.navigator.userAgent.match(/MSIE/g),
+    isEdge: !!ssr_window_esm_win.navigator.userAgent.match(/Edge/g),
     isSafari: isSafari(),
-    isUiWebView: /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(win.navigator.userAgent)
+    isUiWebView: /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(ssr_window_esm_win.navigator.userAgent)
   };
 }();
 
@@ -5383,7 +5521,7 @@ function updateSlides() {
     if (_slide.css('display') === 'none') continue; // eslint-disable-line
 
     if (params.slidesPerView === 'auto') {
-      var slideStyles = win.getComputedStyle(_slide[0], null);
+      var slideStyles = ssr_window_esm_win.getComputedStyle(_slide[0], null);
       var currentTransform = _slide[0].style.transform;
       var currentWebKitTransform = _slide[0].style.webkitTransform;
 
@@ -6333,7 +6471,7 @@ function loopCreate() {
 
     if (blankSlidesNum !== params.slidesPerGroup) {
       for (var i = 0; i < blankSlidesNum; i += 1) {
-        var blankNode = $(doc.createElement('div')).addClass("".concat(params.slideClass, " ").concat(params.slideBlankClass));
+        var blankNode = $(ssr_window_esm_doc.createElement('div')).addClass("".concat(params.slideClass, " ").concat(params.slideBlankClass));
         $wrapperEl.append(blankNode);
       }
 
@@ -6452,7 +6590,7 @@ function appendSlide(slides) {
     swiper.loopDestroy();
   }
 
-  if (_typeof(slides) === 'object' && 'length' in slides) {
+  if (swiper_esm_bundle_typeof(slides) === 'object' && 'length' in slides) {
     for (var i = 0; i < slides.length; i += 1) {
       if (slides[i]) $wrapperEl.append(slides[i]);
     }
@@ -6481,7 +6619,7 @@ function prependSlide(slides) {
 
   var newActiveIndex = activeIndex + 1;
 
-  if (_typeof(slides) === 'object' && 'length' in slides) {
+  if (swiper_esm_bundle_typeof(slides) === 'object' && 'length' in slides) {
     for (var i = 0; i < slides.length; i += 1) {
       if (slides[i]) $wrapperEl.prepend(slides[i]);
     }
@@ -6536,7 +6674,7 @@ function addSlide(index, slides) {
     slidesBuffer.unshift(currentSlide);
   }
 
-  if (_typeof(slides) === 'object' && 'length' in slides) {
+  if (swiper_esm_bundle_typeof(slides) === 'object' && 'length' in slides) {
     for (var _i5 = 0; _i5 < slides.length; _i5 += 1) {
       if (slides[_i5]) $wrapperEl.append(slides[_i5]);
     }
@@ -6581,7 +6719,7 @@ function removeSlide(slidesIndexes) {
   var newActiveIndex = activeIndexBuffer;
   var indexToRemove;
 
-  if (_typeof(slidesIndexes) === 'object' && 'length' in slidesIndexes) {
+  if (swiper_esm_bundle_typeof(slidesIndexes) === 'object' && 'length' in slidesIndexes) {
     for (var i = 0; i < slidesIndexes.length; i += 1) {
       indexToRemove = slidesIndexes[i];
       if (swiper.slides[indexToRemove]) swiper.slides.eq(indexToRemove).remove();
@@ -6631,7 +6769,7 @@ var manipulation = {
 };
 
 var swiper_esm_bundle_Device = function Device() {
-  var ua = win.navigator.userAgent;
+  var ua = ssr_window_esm_win.navigator.userAgent;
   var device = {
     ios: false,
     android: false,
@@ -6641,8 +6779,8 @@ var swiper_esm_bundle_Device = function Device() {
     iphone: false,
     ipod: false,
     ipad: false,
-    cordova: win.cordova || win.phonegap,
-    phonegap: win.cordova || win.phonegap
+    cordova: ssr_window_esm_win.cordova || ssr_window_esm_win.phonegap,
+    phonegap: ssr_window_esm_win.cordova || ssr_window_esm_win.phonegap
   };
   var windows = ua.match(/(Windows Phone);?[\s\/]+([\d.]+)?/); // eslint-disable-line
 
@@ -6701,12 +6839,12 @@ var swiper_esm_bundle_Device = function Device() {
 
   if (device.os && device.os === 'ios') {
     var osVersionArr = device.osVersion.split('.');
-    var metaViewport = doc.querySelector('meta[name="viewport"]');
+    var metaViewport = ssr_window_esm_doc.querySelector('meta[name="viewport"]');
     device.minimalUi = !device.webView && (ipod || iphone) && (osVersionArr[0] * 1 === 7 ? osVersionArr[1] * 1 >= 1 : osVersionArr[0] * 1 > 7) && metaViewport && metaViewport.getAttribute('content').indexOf('minimal-ui') >= 0;
   } // Pixel Ratio
 
 
-  device.pixelRatio = win.devicePixelRatio || 1; // Export object
+  device.pixelRatio = ssr_window_esm_win.devicePixelRatio || 1; // Export object
 
   return device;
 }();
@@ -6745,7 +6883,7 @@ function onTouchStart(event) {
   var edgeSwipeDetection = params.edgeSwipeDetection || params.iOSEdgeSwipeDetection;
   var edgeSwipeThreshold = params.edgeSwipeThreshold || params.iOSEdgeSwipeThreshold;
 
-  if (edgeSwipeDetection && (startX <= edgeSwipeThreshold || startX >= win.screen.width - edgeSwipeThreshold)) {
+  if (edgeSwipeDetection && (startX <= edgeSwipeThreshold || startX >= ssr_window_esm_win.screen.width - edgeSwipeThreshold)) {
     return;
   }
 
@@ -6768,8 +6906,8 @@ function onTouchStart(event) {
     var preventDefault = true;
     if ($(e.target).is(data.formElements)) preventDefault = false;
 
-    if (doc.activeElement && $(doc.activeElement).is(data.formElements) && doc.activeElement !== e.target) {
-      doc.activeElement.blur();
+    if (ssr_window_esm_doc.activeElement && $(ssr_window_esm_doc.activeElement).is(data.formElements) && ssr_window_esm_doc.activeElement !== e.target) {
+      ssr_window_esm_doc.activeElement.blur();
     }
 
     var shouldPreventDefault = preventDefault && swiper.allowTouchMove && params.touchStartPreventDefault;
@@ -6839,8 +6977,8 @@ function onTouchMove(event) {
     }
   }
 
-  if (data.isTouchEvent && doc.activeElement) {
-    if (e.target === doc.activeElement && $(e.target).is(data.formElements)) {
+  if (data.isTouchEvent && ssr_window_esm_doc.activeElement) {
+    if (e.target === ssr_window_esm_doc.activeElement && $(e.target).is(data.formElements)) {
       data.isMoved = true;
       swiper.allowClick = false;
       return;
@@ -7374,8 +7512,8 @@ function attachEvents() {
   {
     if (!swiper_esm_bundle_Support.touch && (swiper_esm_bundle_Support.pointerEvents || swiper_esm_bundle_Support.prefixedPointerEvents)) {
       target.addEventListener(touchEvents.start, swiper.onTouchStart, false);
-      doc.addEventListener(touchEvents.move, swiper.onTouchMove, capture);
-      doc.addEventListener(touchEvents.end, swiper.onTouchEnd, false);
+      ssr_window_esm_doc.addEventListener(touchEvents.move, swiper.onTouchMove, capture);
+      ssr_window_esm_doc.addEventListener(touchEvents.end, swiper.onTouchEnd, false);
     } else {
       if (swiper_esm_bundle_Support.touch) {
         var passiveListener = touchEvents.start === 'touchstart' && swiper_esm_bundle_Support.passiveListener && params.passiveListeners ? {
@@ -7392,8 +7530,8 @@ function attachEvents() {
 
       if (params.simulateTouch && !swiper_esm_bundle_Device.ios && !swiper_esm_bundle_Device.android || params.simulateTouch && !swiper_esm_bundle_Support.touch && swiper_esm_bundle_Device.ios) {
         target.addEventListener('mousedown', swiper.onTouchStart, false);
-        doc.addEventListener('mousemove', swiper.onTouchMove, capture);
-        doc.addEventListener('mouseup', swiper.onTouchEnd, false);
+        ssr_window_esm_doc.addEventListener('mousemove', swiper.onTouchMove, capture);
+        ssr_window_esm_doc.addEventListener('mouseup', swiper.onTouchEnd, false);
       }
     } // Prevent Links Clicks
 
@@ -7418,8 +7556,8 @@ function detachEvents() {
   {
     if (!swiper_esm_bundle_Support.touch && (swiper_esm_bundle_Support.pointerEvents || swiper_esm_bundle_Support.prefixedPointerEvents)) {
       target.removeEventListener(touchEvents.start, swiper.onTouchStart, false);
-      doc.removeEventListener(touchEvents.move, swiper.onTouchMove, capture);
-      doc.removeEventListener(touchEvents.end, swiper.onTouchEnd, false);
+      ssr_window_esm_doc.removeEventListener(touchEvents.move, swiper.onTouchMove, capture);
+      ssr_window_esm_doc.removeEventListener(touchEvents.end, swiper.onTouchEnd, false);
     } else {
       if (swiper_esm_bundle_Support.touch) {
         var passiveListener = touchEvents.start === 'onTouchStart' && swiper_esm_bundle_Support.passiveListener && params.passiveListeners ? {
@@ -7433,8 +7571,8 @@ function detachEvents() {
 
       if (params.simulateTouch && !swiper_esm_bundle_Device.ios && !swiper_esm_bundle_Device.android || params.simulateTouch && !swiper_esm_bundle_Support.touch && swiper_esm_bundle_Device.ios) {
         target.removeEventListener('mousedown', swiper.onTouchStart, false);
-        doc.removeEventListener('mousemove', swiper.onTouchMove, capture);
-        doc.removeEventListener('mouseup', swiper.onTouchEnd, false);
+        ssr_window_esm_doc.removeEventListener('mousemove', swiper.onTouchMove, capture);
+        ssr_window_esm_doc.removeEventListener('mouseup', swiper.onTouchEnd, false);
       }
     } // Prevent Links Clicks
 
@@ -7526,10 +7664,10 @@ function getBreakpoint(breakpoints) {
     var point = points[i];
 
     if (swiper.params.breakpointsInverse) {
-      if (point <= win.innerWidth) {
+      if (point <= ssr_window_esm_win.innerWidth) {
         breakpoint = point;
       }
-    } else if (point >= win.innerWidth && !breakpoint) {
+    } else if (point >= ssr_window_esm_win.innerWidth && !breakpoint) {
       breakpoint = point;
     }
   }
@@ -7612,7 +7750,7 @@ function loadImage(imageEl, src, srcset, sizes, checkForComplete, callback) {
 
   if (!imageEl.complete || !checkForComplete) {
     if (src) {
-      image = new win.Image();
+      image = new ssr_window_esm_win.Image();
       image.onload = onReady;
       image.onerror = onReady;
 
@@ -7858,7 +7996,7 @@ var swiper_esm_bundle_Swiper = /*#__PURE__*/function (_SwiperClass) {
       if (module.params) {
         var moduleParamName = Object.keys(module.params)[0];
         var moduleParams = module.params[moduleParamName];
-        if (_typeof(moduleParams) !== 'object' || moduleParams === null) return;
+        if (swiper_esm_bundle_typeof(moduleParams) !== 'object' || moduleParams === null) return;
         if (!(moduleParamName in params && 'enabled' in moduleParams)) return;
 
         if (params[moduleParamName] === true) {
@@ -7867,7 +8005,7 @@ var swiper_esm_bundle_Swiper = /*#__PURE__*/function (_SwiperClass) {
           };
         }
 
-        if (_typeof(params[moduleParamName]) === 'object' && !('enabled' in params[moduleParamName])) {
+        if (swiper_esm_bundle_typeof(params[moduleParamName]) === 'object' && !('enabled' in params[moduleParamName])) {
           params[moduleParamName].enabled = true;
         }
 
@@ -8321,19 +8459,19 @@ var Resize = {
     init: function init() {
       var swiper = this; // Emit resize
 
-      win.addEventListener('resize', swiper.resize.resizeHandler); // Emit orientationchange
+      ssr_window_esm_win.addEventListener('resize', swiper.resize.resizeHandler); // Emit orientationchange
 
-      win.addEventListener('orientationchange', swiper.resize.orientationChangeHandler);
+      ssr_window_esm_win.addEventListener('orientationchange', swiper.resize.orientationChangeHandler);
     },
     destroy: function destroy() {
       var swiper = this;
-      win.removeEventListener('resize', swiper.resize.resizeHandler);
-      win.removeEventListener('orientationchange', swiper.resize.orientationChangeHandler);
+      ssr_window_esm_win.removeEventListener('resize', swiper.resize.resizeHandler);
+      ssr_window_esm_win.removeEventListener('orientationchange', swiper.resize.orientationChangeHandler);
     }
   }
 };
 var Observer = {
-  func: win.MutationObserver || win.WebkitMutationObserver,
+  func: ssr_window_esm_win.MutationObserver || ssr_window_esm_win.WebkitMutationObserver,
   attach: function attach(target) {
     var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
     var swiper = this;
@@ -8351,10 +8489,10 @@ var Observer = {
         swiper.emit('observerUpdate', mutations[0]);
       };
 
-      if (win.requestAnimationFrame) {
-        win.requestAnimationFrame(observerUpdate);
+      if (ssr_window_esm_win.requestAnimationFrame) {
+        ssr_window_esm_win.requestAnimationFrame(observerUpdate);
       } else {
-        win.setTimeout(observerUpdate, 0);
+        ssr_window_esm_win.setTimeout(observerUpdate, 0);
       }
     });
     observer.observe(target, {
@@ -8553,7 +8691,7 @@ var Virtual = {
   appendSlide: function appendSlide(slides) {
     var swiper = this;
 
-    if (_typeof(slides) === 'object' && 'length' in slides) {
+    if (swiper_esm_bundle_typeof(slides) === 'object' && 'length' in slides) {
       for (var i = 0; i < slides.length; i += 1) {
         if (slides[i]) swiper.virtual.slides.push(slides[i]);
       }
@@ -8705,7 +8843,7 @@ var Keyboard = {
       return undefined;
     }
 
-    if (doc.activeElement && doc.activeElement.nodeName && (doc.activeElement.nodeName.toLowerCase() === 'input' || doc.activeElement.nodeName.toLowerCase() === 'textarea')) {
+    if (ssr_window_esm_doc.activeElement && ssr_window_esm_doc.activeElement.nodeName && (ssr_window_esm_doc.activeElement.nodeName.toLowerCase() === 'input' || ssr_window_esm_doc.activeElement.nodeName.toLowerCase() === 'textarea')) {
       return undefined;
     }
 
@@ -8716,8 +8854,8 @@ var Keyboard = {
         return undefined;
       }
 
-      var windowWidth = win.innerWidth;
-      var windowHeight = win.innerHeight;
+      var windowWidth = ssr_window_esm_win.innerWidth;
+      var windowHeight = ssr_window_esm_win.innerHeight;
       var swiperOffset = swiper.$el.offset();
       if (rtl) swiperOffset.left -= swiper.$el[0].scrollLeft;
       var swiperCoord = [[swiperOffset.left, swiperOffset.top], [swiperOffset.left + swiper.width, swiperOffset.top], [swiperOffset.left, swiperOffset.top + swiper.height], [swiperOffset.left + swiper.width, swiperOffset.top + swiper.height]];
@@ -8755,13 +8893,13 @@ var Keyboard = {
   enable: function enable() {
     var swiper = this;
     if (swiper.keyboard.enabled) return;
-    $(doc).on('keydown', swiper.keyboard.handle);
+    $(ssr_window_esm_doc).on('keydown', swiper.keyboard.handle);
     swiper.keyboard.enabled = true;
   },
   disable: function disable() {
     var swiper = this;
     if (!swiper.keyboard.enabled) return;
-    $(doc).off('keydown', swiper.keyboard.handle);
+    $(ssr_window_esm_doc).off('keydown', swiper.keyboard.handle);
     swiper.keyboard.enabled = false;
   }
 };
@@ -8804,19 +8942,19 @@ var Keyboard$1 = {
 
 function isEventSupported() {
   var eventName = 'onwheel';
-  var isSupported = (eventName in doc);
+  var isSupported = (eventName in ssr_window_esm_doc);
 
   if (!isSupported) {
-    var element = doc.createElement('div');
+    var element = ssr_window_esm_doc.createElement('div');
     element.setAttribute(eventName, 'return;');
     isSupported = typeof element[eventName] === 'function';
   }
 
-  if (!isSupported && doc.implementation && doc.implementation.hasFeature // always returns true in newer browsers as per the standard.
+  if (!isSupported && ssr_window_esm_doc.implementation && ssr_window_esm_doc.implementation.hasFeature // always returns true in newer browsers as per the standard.
   // @see http://dom.spec.whatwg.org/#dom-domimplementation-hasfeature
-  && doc.implementation.hasFeature('', '') !== true) {
+  && ssr_window_esm_doc.implementation.hasFeature('', '') !== true) {
     // This is the only way to test support for the `wheel` event in IE9+.
-    isSupported = doc.implementation.hasFeature('Events.wheel', '3.0');
+    isSupported = ssr_window_esm_doc.implementation.hasFeature('Events.wheel', '3.0');
   }
 
   return isSupported;
@@ -8825,7 +8963,7 @@ function isEventSupported() {
 var Mousewheel = {
   lastScrollTime: Utils.now(),
   event: function getEvent() {
-    if (win.navigator.userAgent.indexOf('firefox') > -1) return 'DOMMouseScroll';
+    if (ssr_window_esm_win.navigator.userAgent.indexOf('firefox') > -1) return 'DOMMouseScroll';
     return isEventSupported() ? 'wheel' : 'mousewheel';
   }(),
   normalize: function normalize(e) {
@@ -8944,7 +9082,7 @@ var Mousewheel = {
         } else if (params.releaseOnEdges) return true;
       }
 
-      swiper.mousewheel.lastScrollTime = new win.Date().getTime();
+      swiper.mousewheel.lastScrollTime = new ssr_window_esm_win.Date().getTime();
     } else {
       // Freemode or scrollContainer:
       if (swiper.params.loop) {
@@ -9794,8 +9932,8 @@ var Scrollbar = {
 
     if (!swiper_esm_bundle_Support.touch) {
       target.addEventListener(touchEventsDesktop.start, swiper.scrollbar.onDragStart, activeListener);
-      doc.addEventListener(touchEventsDesktop.move, swiper.scrollbar.onDragMove, activeListener);
-      doc.addEventListener(touchEventsDesktop.end, swiper.scrollbar.onDragEnd, passiveListener);
+      ssr_window_esm_doc.addEventListener(touchEventsDesktop.move, swiper.scrollbar.onDragMove, activeListener);
+      ssr_window_esm_doc.addEventListener(touchEventsDesktop.end, swiper.scrollbar.onDragEnd, passiveListener);
     } else {
       target.addEventListener(touchEventsTouch.start, swiper.scrollbar.onDragStart, activeListener);
       target.addEventListener(touchEventsTouch.move, swiper.scrollbar.onDragMove, activeListener);
@@ -9822,8 +9960,8 @@ var Scrollbar = {
 
     if (!swiper_esm_bundle_Support.touch) {
       target.removeEventListener(touchEventsDesktop.start, swiper.scrollbar.onDragStart, activeListener);
-      doc.removeEventListener(touchEventsDesktop.move, swiper.scrollbar.onDragMove, activeListener);
-      doc.removeEventListener(touchEventsDesktop.end, swiper.scrollbar.onDragEnd, passiveListener);
+      ssr_window_esm_doc.removeEventListener(touchEventsDesktop.move, swiper.scrollbar.onDragMove, activeListener);
+      ssr_window_esm_doc.removeEventListener(touchEventsDesktop.end, swiper.scrollbar.onDragEnd, passiveListener);
     } else {
       target.removeEventListener(touchEventsTouch.start, swiper.scrollbar.onDragStart, activeListener);
       target.removeEventListener(touchEventsTouch.move, swiper.scrollbar.onDragMove, activeListener);
@@ -11221,7 +11359,7 @@ var History = {
     var swiper = this;
     if (!swiper.params.history) return;
 
-    if (!win.history || !win.history.pushState) {
+    if (!ssr_window_esm_win.history || !ssr_window_esm_win.history.pushState) {
       swiper.params.history.enabled = false;
       swiper.params.hashNavigation.enabled = true;
       return;
@@ -11234,14 +11372,14 @@ var History = {
     history.scrollToSlide(0, history.paths.value, swiper.params.runCallbacksOnInit);
 
     if (!swiper.params.history.replaceState) {
-      win.addEventListener('popstate', swiper.history.setHistoryPopState);
+      ssr_window_esm_win.addEventListener('popstate', swiper.history.setHistoryPopState);
     }
   },
   destroy: function destroy() {
     var swiper = this;
 
     if (!swiper.params.history.replaceState) {
-      win.removeEventListener('popstate', swiper.history.setHistoryPopState);
+      ssr_window_esm_win.removeEventListener('popstate', swiper.history.setHistoryPopState);
     }
   },
   setHistoryPopState: function setHistoryPopState() {
@@ -11250,7 +11388,7 @@ var History = {
     swiper.history.scrollToSlide(swiper.params.speed, swiper.history.paths.value, false);
   },
   getPathValues: function getPathValues() {
-    var pathArray = win.location.pathname.slice(1).split('/').filter(function (part) {
+    var pathArray = ssr_window_esm_win.location.pathname.slice(1).split('/').filter(function (part) {
       return part !== '';
     });
     var total = pathArray.length;
@@ -11267,22 +11405,22 @@ var History = {
     var slide = swiper.slides.eq(index);
     var value = History.slugify(slide.attr('data-history'));
 
-    if (!win.location.pathname.includes(key)) {
+    if (!ssr_window_esm_win.location.pathname.includes(key)) {
       value = "".concat(key, "/").concat(value);
     }
 
-    var currentState = win.history.state;
+    var currentState = ssr_window_esm_win.history.state;
 
     if (currentState && currentState.value === value) {
       return;
     }
 
     if (swiper.params.history.replaceState) {
-      win.history.replaceState({
+      ssr_window_esm_win.history.replaceState({
         value: value
       }, null, value);
     } else {
-      win.history.pushState({
+      ssr_window_esm_win.history.pushState({
         value: value
       }, null, value);
     }
@@ -11358,7 +11496,7 @@ var History$1 = {
 var HashNavigation = {
   onHashCange: function onHashCange() {
     var swiper = this;
-    var newHash = doc.location.hash.replace('#', '');
+    var newHash = ssr_window_esm_doc.location.hash.replace('#', '');
     var activeSlideHash = swiper.slides.eq(swiper.activeIndex).attr('data-hash');
 
     if (newHash !== activeSlideHash) {
@@ -11371,21 +11509,21 @@ var HashNavigation = {
     var swiper = this;
     if (!swiper.hashNavigation.initialized || !swiper.params.hashNavigation.enabled) return;
 
-    if (swiper.params.hashNavigation.replaceState && win.history && win.history.replaceState) {
-      win.history.replaceState(null, null, "#".concat(swiper.slides.eq(swiper.activeIndex).attr('data-hash')) || false);
+    if (swiper.params.hashNavigation.replaceState && ssr_window_esm_win.history && ssr_window_esm_win.history.replaceState) {
+      ssr_window_esm_win.history.replaceState(null, null, "#".concat(swiper.slides.eq(swiper.activeIndex).attr('data-hash')) || false);
     } else {
       var _slide4 = swiper.slides.eq(swiper.activeIndex);
 
       var hash = _slide4.attr('data-hash') || _slide4.attr('data-history');
 
-      doc.location.hash = hash || '';
+      ssr_window_esm_doc.location.hash = hash || '';
     }
   },
   init: function init() {
     var swiper = this;
     if (!swiper.params.hashNavigation.enabled || swiper.params.history && swiper.params.history.enabled) return;
     swiper.hashNavigation.initialized = true;
-    var hash = doc.location.hash.replace('#', '');
+    var hash = ssr_window_esm_doc.location.hash.replace('#', '');
 
     if (hash) {
       var speed = 0;
@@ -11404,14 +11542,14 @@ var HashNavigation = {
     }
 
     if (swiper.params.hashNavigation.watchState) {
-      $(win).on('hashchange', swiper.hashNavigation.onHashCange);
+      $(ssr_window_esm_win).on('hashchange', swiper.hashNavigation.onHashCange);
     }
   },
   destroy: function destroy() {
     var swiper = this;
 
     if (swiper.params.hashNavigation.watchState) {
-      $(win).off('hashchange', swiper.hashNavigation.onHashCange);
+      $(ssr_window_esm_win).off('hashchange', swiper.hashNavigation.onHashCange);
     }
   }
 };
