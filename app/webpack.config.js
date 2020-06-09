@@ -95,6 +95,10 @@ module.exports = {
       template: "./src/contact.ejs",
       filename: 'contact.html'
     }),
+    new HtmlWebPackPlugin({
+      template: "./src/bonchi.ejs",
+      filename: 'bonchi.html'
+    }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
