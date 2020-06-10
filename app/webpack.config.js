@@ -78,7 +78,8 @@ module.exports = {
         use: {
           loader: "file-loader",
           options: {
-            name: "./image/[name].[ext]"
+            context: path.resolve(__dirname, 'src'),
+            name: '[path][name].[ext]?[contenthash]',
           }
         }
       }
