@@ -3,13 +3,18 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const autoprefixer = require("autoprefixer");
 const CompressionPlugin = require("compression-webpack-plugin");
+const zopfli = require("node-zopfli");
+const path = require("path");
+
 
 module.exports = {
   entry: {
-    app: ["./src/css/html5reset-1.6.1.css", "./src/index.js"]
+    akari: ["@babel/polyfill", "./src/index.js"]
   },
   output: {
-    filename: 'app-[hash].js'
+    filename: "js/[name]-[hash].js",
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "/"
   },
   module: {
     rules: [
@@ -36,12 +41,10 @@ module.exports = {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader"]
-        // use: ["style-loader", MiniCssExtractPlugin.loader, "css-loader"]
       },
       {
-        test: /\.scss$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
-          // "style-loader",
           MiniCssExtractPlugin.loader,
           "css-loader",
           {
@@ -83,7 +86,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./src/index.ejs"
+      template: "./src/index.ejs",
+      filename: "index.html"
     }),
     new HtmlWebPackPlugin({
       template: "./src/reserve.ejs",
@@ -98,17 +102,34 @@ module.exports = {
       filename: 'bonchi.html'
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: "css/[name]-[hash].css",
       chunkFilename: "[id].css"
     }),
     new CompressionPlugin({
       test: /\.(css|js)$/,
-      compressionOptions: {
-        level: 9
+      algorithm(input, compressionOptions, callback) {
+        return zopfli.gzip(input, compressionOptions, callback);
       }
     })
   ],
   optimization: {
     minimizer: [new OptimizeCSSAssetsPlugin({})]
-  }
+  },
+
+  devServer: {
+    open: true,
+    openPage: "",
+    contentBase: path.join(__dirname, "src"),
+    watchContentBase: true,
+    port: 8080,
+    historyApiFallback: {
+      rewrites: [
+        // { from: /^\/js\/jsstore.worker.ie.js/, to: "/js/jsstore.worker.ie.js" },
+        { from: /^\/reserve/, to: "/reserve.html" },
+        { from: /^\/contact/, to: "/contact.html" },
+        { from: /^\/bonchi/, to: "/bonchi.html" },
+      ]
+    }
+  },
+  devtool: "inline-source-map"
 };
