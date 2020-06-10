@@ -102,15 +102,15 @@ module.exports = {
       template: "./src/bonchi.ejs",
       filename: 'bonchi.html'
     }),
-    new AppManifestWebpackPlugin({
-      logo: "./src/image/favicon/favicon_saurce.png",
-      statsFilename: "iconstats.json",
-      persistentCache: false,
-      output: '/image/icons-[hash:8]/'
-      // config: {
-      //   path: "/dist/image/favicons/"
-      // }
-    }),
+    // new AppManifestWebpackPlugin({
+    //   logo: "./src/image/favicon/favicon_saurce.png",
+    //   statsFilename: "iconstats.json",
+    //   persistentCache: false,
+    //   output: '/image/icons-[hash:8]/'
+    //   // config: {
+    //   //   path: "/dist/image/favicons/"
+    //   // }
+    // }),
     new MiniCssExtractPlugin({
       filename: "css/[name]-[hash].css",
       chunkFilename: "[id].css"
