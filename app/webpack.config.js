@@ -16,21 +16,19 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/,
-        use: [
-          {
-            loader: "babel-loader",
-            query: {
-              presets: ["@babel/preset-env"]
-            }
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"]
           }
-        ]
+        }
       },
       {
         test: /\.ejs$/,
         use: [
           {
             loader: "html-loader",
-            options: { minimize: true }
+            // options: { minimize: true }
           },
           "ejs-html-loader"
         ]
