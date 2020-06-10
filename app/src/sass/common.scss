@@ -209,13 +209,13 @@ div.right {
 }
 
 // https://littlethings.jp/blog/web/css-hover-effect
-a img:not(.logo.no-hover-effect) {
+a img:not(.logo):not(.no-hover-effect) {
   -webkit-transform: scale(1);
   transform: scale(1);
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-a img:not(.logo.no-hover-effect):hover {
+a img:not(.logo):not(.no-hover-effect):hover {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
   opacity: 0.6;

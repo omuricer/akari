@@ -3,34 +3,37 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const autoprefixer = require("autoprefixer");
 const CompressionPlugin = require("compression-webpack-plugin");
+const zopfli = require("node-zopfli");
+const path = require("path");
+const AppManifestWebpackPlugin = require("app-manifest-webpack-plugin");
 
 module.exports = {
   entry: {
-    app: ["./src/css/html5reset-1.6.1.css", "./src/index.js"]
+    akari: ["@babel/polyfill", "./src/index.js"]
   },
   output: {
-    filename: 'app-[hash].js'
+    filename: "js/[name]-[hash].js",
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "/"
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/,
-        use: [
-          {
-            loader: "babel-loader",
-            query: {
-              presets: ["@babel/preset-env"]
-            }
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"]
           }
-        ]
+        }
       },
       {
         test: /\.ejs$/,
         use: [
           {
             loader: "html-loader",
-            options: { minimize: true }
+            // options: { minimize: true }
           },
           "ejs-html-loader"
         ]
@@ -38,12 +41,10 @@ module.exports = {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader"]
-        // use: ["style-loader", MiniCssExtractPlugin.loader, "css-loader"]
       },
       {
-        test: /\.scss$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
-          // "style-loader",
           MiniCssExtractPlugin.loader,
           "css-loader",
           {
@@ -77,7 +78,8 @@ module.exports = {
         use: {
           loader: "file-loader",
           options: {
-            name: "./image/[name].[ext]"
+            context: path.resolve(__dirname, 'src'),
+            name: '[path][name].[ext]?[contenthash]',
           }
         }
       }
@@ -85,7 +87,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./src/index.ejs"
+      template: "./src/index.ejs",
+      filename: "index.html"
     }),
     new HtmlWebPackPlugin({
       template: "./src/reserve.ejs",
@@ -99,18 +102,44 @@ module.exports = {
       template: "./src/bonchi.ejs",
       filename: 'bonchi.html'
     }),
+    new AppManifestWebpackPlugin({
+      logo: "./src/image/favicon/favicon_saurce.png",
+      statsFilename: "iconstats.json",
+      persistentCache: false,
+      output: '/image/icons-[hash:8]/'
+      // config: {
+      //   path: "/dist/image/favicons/"
+      // }
+    }),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: "css/[name]-[hash].css",
       chunkFilename: "[id].css"
     }),
     new CompressionPlugin({
       test: /\.(css|js)$/,
-      compressionOptions: {
-        level: 9
+      algorithm(input, compressionOptions, callback) {
+        return zopfli.gzip(input, compressionOptions, callback);
       }
     })
   ],
   optimization: {
     minimizer: [new OptimizeCSSAssetsPlugin({})]
-  }
+  },
+
+  devServer: {
+    open: true,
+    openPage: "",
+    contentBase: path.join(__dirname, "src"),
+    watchContentBase: true,
+    port: 8080,
+    historyApiFallback: {
+      rewrites: [
+        // { from: /^\/js\/jsstore.worker.ie.js/, to: "/js/jsstore.worker.ie.js" },
+        { from: /^\/reserve/, to: "/reserve.html" },
+        { from: /^\/contact/, to: "/contact.html" },
+        { from: /^\/bonchi/, to: "/bonchi.html" },
+      ]
+    }
+  },
+  devtool: "inline-source-map"
 };
