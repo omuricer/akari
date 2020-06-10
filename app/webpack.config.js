@@ -5,7 +5,7 @@ const autoprefixer = require("autoprefixer");
 const CompressionPlugin = require("compression-webpack-plugin");
 const zopfli = require("node-zopfli");
 const path = require("path");
-
+const AppManifestWebpackPlugin = require("app-manifest-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -101,6 +101,15 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/bonchi.ejs",
       filename: 'bonchi.html'
+    }),
+    new AppManifestWebpackPlugin({
+      logo: "./src/image/favicon/favicon_saurce.png",
+      statsFilename: "iconstats.json",
+      persistentCache: false,
+      output: '/image/icons-[hash:8]/'
+      // config: {
+      //   path: "/dist/image/favicons/"
+      // }
     }),
     new MiniCssExtractPlugin({
       filename: "css/[name]-[hash].css",
