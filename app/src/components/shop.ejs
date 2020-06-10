@@ -1,7 +1,7 @@
-<div class="shop fade" style="top: <%= position.y %>px; left: <%= position.x %>px;">
-  <div class="image">
-    <a href="<%= '#' %>">
-      <img class="no-hover-effect" src="<%= image %>" />
-    </a>
-  </div>
+<div class="shop fade" style="
+  top: calc(50% + <%= position.y %>px);
+  left: calc(50% + <%= position.x %>px);
+  background-image: url(../<%= image %>);
+  animation-delay: <%= delay %>s; 
+">
 </div>
