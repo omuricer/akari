@@ -8,8 +8,13 @@ const path = require("path");
 const AppManifestWebpackPlugin = require("app-manifest-webpack-plugin");
 
 module.exports = {
+  resolve: {
+    alias: {
+      'assets': path.resolve(__dirname, 'src')
+    }
+  },
   entry: {
-    akari: ["@babel/polyfill", "./src/index.js"]
+    akari: ["@babel/polyfill", "./src/index.tsx"]
   },
   output: {
     filename: "js/[name]-[hash].js",
@@ -27,6 +32,10 @@ module.exports = {
             presets: ["@babel/preset-env"]
           }
         }
+      },
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader"
       },
       {
         test: /\.ejs$/,
@@ -63,18 +72,8 @@ module.exports = {
           }
         ]
       },
-      // {
-      //   test: /\.(jpe?g|png|gif|svg|ico)$/,
-      //   use: {
-      //     loader: 'url-loader',
-      //     options: {
-      //       name: './image/[name].[ext]'
-      //     }
-      //   }
-      // },
       {
         test: /\.(jpe?g|png|gif|svg|ico)$/,
-        // use: ['file-loader?name=image/[name].[ext]']
         use: {
           loader: "file-loader",
           options: {

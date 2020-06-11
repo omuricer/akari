@@ -1,3 +1,5 @@
+// TODO: index_old.jsの中身をコンポーネントに移行する
+
 import "./sass/index.scss";
 import { MDCTopAppBar } from "@material/top-app-bar/index";
 import { MDCRipple } from "@material/ripple";
