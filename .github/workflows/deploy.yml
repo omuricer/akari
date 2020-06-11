@@ -24,6 +24,7 @@ jobs:
         run: |
           git config --local user.email "guts.inaq@gmail.com"
           git config --local user.name "omricer"
+          git add .
           git commit -m "Deploy GitHub Pages" -a
 
       - name: Push changes
