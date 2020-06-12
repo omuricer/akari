@@ -1,6 +1,19 @@
 import React, { useState, useEffect } from "react";
-
+import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Shop from "@/components/bonchi/shop";
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    content: {
+      minHeight: "100vh",
+      backgroundAttachment: "scroll",
+      backgroundSize: "cover",
+      backgroundImage: "url(../image/bonchi/world_map.jpg)",
+      backgroundPosition: "center center",
+      position: "relative",
+    },
+  })
+);
 
 const shopDefinitions = [
   {
@@ -19,6 +32,8 @@ const shopDefinitions = [
 
 interface IBonchiProps {}
 const Bonchi: React.FC<IBonchiProps> = (props) => {
+  const classes = useStyles();
+
   var shopElements: JSX.Element[] = [];
   shopDefinitions.map((s) =>
     shopElements.push(
@@ -28,7 +43,9 @@ const Bonchi: React.FC<IBonchiProps> = (props) => {
 
   return (
     <div className="mdc-layout-grid no-margin bonchi">
-      <div className="mdc-layout-grid__inner content">{shopElements}</div>
+      <div className={`mdc-layout-grid__inner ${classes.content}`}>
+        {shopElements}
+      </div>
     </div>
   );
 };
