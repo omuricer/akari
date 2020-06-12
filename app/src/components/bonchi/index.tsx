@@ -17,15 +17,15 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const shopDefinitions = [
   {
-    image: "image/bonchi/shop1.png",
+    image: "../image/bonchi/shop1.png",
     position: { x: 10, y: 10 },
   },
   {
-    image: "image/bonchi/shop1.png",
+    image: "../image/bonchi/shop1.png",
     position: { x: 170, y: 90 },
   },
   {
-    image: "image/bonchi/shop1.png",
+    image: "../image/bonchi/shop1.png",
     position: { x: 50, y: 100 },
   },
 ];

@@ -50,13 +50,15 @@ interface IShopProps {
 const Shop: React.FC<IShopProps> = (props) => {
   const classes = useStyles();
 
+  console.log(props);
+
   return (
     <div
       className={classes.shop}
       style={{
         top: `${props.positionY}px`,
         left: `${props.positionX}px`,
-        backgroundImage: props.image,
+        backgroundImage: `url(${props.image})`,
         animationDelay: `${generateRondomDelay()}s`,
       }}
     />
