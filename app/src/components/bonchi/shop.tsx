@@ -6,8 +6,8 @@ const useStyles = makeStyles((theme: Theme) =>
     shop: {
       // Abount looks
       position: "absolute",
-      width: "70px",
-      height: "70px",
+      width: "4.5vw",
+      height: "4.5vw",
       backgroundSize: "cover",
 
       // 縦に揺れる
@@ -56,8 +56,8 @@ const Shop: React.FC<IShopProps> = (props) => {
     <div
       className={classes.shop}
       style={{
-        top: `calc(50% + ${props.positionY}px)`,
-        left: `calc(50% + ${props.positionX}px)`,
+        top: `calc(50% + ${props.positionY}vw)`,
+        left: `calc(50% + ${props.positionX}vw)`,
         backgroundImage: `url(${props.image})`,
         animationDelay: `${generateRondomDelay()}s`,
       }}

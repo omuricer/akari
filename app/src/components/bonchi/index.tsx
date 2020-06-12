@@ -8,9 +8,13 @@ const useStyles = makeStyles((theme: Theme) =>
       minHeight: "100vh",
       backgroundAttachment: "scroll",
       backgroundSize: "cover",
-      backgroundImage: "url(../image/bonchi/world_map.jpg)",
+      backgroundImage: "url(../image/bonchi/world_map.png)",
       backgroundPosition: "center center",
       position: "relative",
+
+      "@media screen and (max-width: 480px)": {
+        backgroundSize: "auto",
+      },
     },
   })
 );
@@ -18,15 +22,15 @@ const useStyles = makeStyles((theme: Theme) =>
 const shopDefinitions = [
   {
     image: "../image/bonchi/shop1.png",
-    position: { x: 10, y: 10 },
+    position: { x: 5, y: 7 }, // x:-15～15, y:-10～10
   },
   {
     image: "../image/bonchi/shop1.png",
-    position: { x: 170, y: 90 },
+    position: { x: -12, y: 5 },
   },
   {
     image: "../image/bonchi/shop1.png",
-    position: { x: 50, y: 100 },
+    position: { x: 3, y: -8 },
   },
 ];
 
