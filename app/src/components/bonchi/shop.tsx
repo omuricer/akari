@@ -56,8 +56,8 @@ const Shop: React.FC<IShopProps> = (props) => {
     <div
       className={classes.shop}
       style={{
-        top: `${props.positionY}px`,
-        left: `${props.positionX}px`,
+        top: `calc(50% + ${props.positionY}px)`,
+        left: `calc(50% + ${props.positionX}px)`,
         backgroundImage: `url(${props.image})`,
         animationDelay: `${generateRondomDelay()}s`,
       }}
