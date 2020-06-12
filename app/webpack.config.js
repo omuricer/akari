@@ -6,6 +6,7 @@ const CompressionPlugin = require("compression-webpack-plugin");
 const zopfli = require("node-zopfli");
 const path = require("path");
 const AppManifestWebpackPlugin = require("app-manifest-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
   resolve: {
@@ -128,7 +129,10 @@ module.exports = {
     }),
   ],
   optimization: {
-    minimizer: [new OptimizeCSSAssetsPlugin({})],
+    minimizer: [
+      new OptimizeCSSAssetsPlugin({}),
+      new UglifyJsPlugin({ parallel: true, cache: true }),
+    ],
   },
 
   devServer: {
