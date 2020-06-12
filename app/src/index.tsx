@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 
 // import ErrorBoundary from "./components/errorBoundary";
-import Bonchi from "@/components/bonchi";
+import FukushimaBonchi from "@/components/fukushimaBonchi";
 
 import "./sass/index.scss";
 
@@ -11,4 +11,4 @@ import "./sass/index.scss";
 // TODO: index_old.jsの中身をコンポーネントに移行する
 require("./index_old.js");
 
-render(<Bonchi />, document.getElementById("bonchi"));
+render(<FukushimaBonchi />, document.getElementById("bonchi"));

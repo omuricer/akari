@@ -12,6 +12,16 @@ const useStyles = makeStyles((theme: Theme) =>
 
       // 縦に揺れる
       animation: "$fluffy 3s ease infinite",
+
+      // https://littlethings.jp/blog/web/css-hover-effect
+      WebkitTransform: "scale(1)",
+      transform: "scale(1)",
+      WebkitTransition: "0.5s ease-in-out",
+      transition: "0.5s ease-in-out",
+      ":hover": {
+        WebkitTransform: "scale(1.3)",
+        transform: "scale(1.3)",
+      },
     },
     "@keyframes fluffy": {
       "0%": {

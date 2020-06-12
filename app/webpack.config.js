@@ -108,8 +108,8 @@ module.exports = {
       filename: "contact.html",
     }),
     new HtmlWebPackPlugin({
-      template: "./src/bonchi.ejs",
-      filename: "bonchi.html",
+      template: "./src/fukushimabonchi.ejs",
+      filename: "fukushimabonchi.html",
     }),
     // new AppManifestWebpackPlugin({
     //   logo: "./src/image/favicon/favicon_saurce.png",
@@ -146,7 +146,7 @@ module.exports = {
         // { from: /^\/js\/jsstore.worker.ie.js/, to: "/js/jsstore.worker.ie.js" },
         { from: /^\/reserve/, to: "/reserve.html" },
         { from: /^\/contact/, to: "/contact.html" },
-        { from: /^\/bonchi/, to: "/bonchi.html" },
+        { from: /^\/fukushimabonchi/, to: "/fukushimabonchi.html" },
       ],
     },
   },
