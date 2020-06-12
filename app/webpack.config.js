@@ -28,7 +28,7 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/,
         use: {
-          loader: "babel-loader",
+          loader: "babel-loader?cacheDirectory",
           options: {
             presets: ["@babel/preset-env"],
           },
@@ -36,7 +36,15 @@ module.exports = {
       },
       {
         test: /\.tsx?$/,
-        use: "ts-loader",
+        use: [
+          {
+            loader: "babel-loader?cacheDirectory",
+            options: {
+              presets: ["@babel/preset-env"],
+            },
+          },
+          "ts-loader",
+        ],
       },
       {
         test: /\.ejs$/,
