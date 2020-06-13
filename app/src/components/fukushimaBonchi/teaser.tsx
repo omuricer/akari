@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+const worldMap = require("@/image//fukushimabonchi/world_map.png");
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -12,7 +13,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     left: {
       backgroundSize: "contain",
-      backgroundImage: "url(../image/fukushimabonchi/world_map.png)",
+      // backgroundImage: "url(../image/fukushimabonchi/world_map.png)",
+      backgroundImage: `url(${worldMap})`,
       backgroundPosition: "center center",
       backgroundRepeat: "no-repeat",
     },
