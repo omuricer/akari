@@ -6,15 +6,22 @@ const CompressionPlugin = require("compression-webpack-plugin");
 const zopfli = require("node-zopfli");
 const path = require("path");
 const AppManifestWebpackPlugin = require("app-manifest-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+    },
+  },
   entry: {
-    akari: ["@babel/polyfill", "./src/index.js"]
+    akari: ["@babel/polyfill", "./src/index.tsx"],
   },
   output: {
     filename: "js/[name]-[hash].js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "/"
+    publicPath: "/",
   },
   module: {
     rules: [
@@ -22,11 +29,23 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/,
         use: {
-          loader: "babel-loader",
+          loader: "babel-loader?cacheDirectory",
           options: {
-            presets: ["@babel/preset-env"]
-          }
-        }
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
+      {
+        test: /\.tsx?$/,
+        use: [
+          {
+            loader: "babel-loader?cacheDirectory",
+            options: {
+              presets: ["@babel/preset-env"],
+            },
+          },
+          "ts-loader",
+        ],
       },
       {
         test: /\.ejs$/,
@@ -35,12 +54,12 @@ module.exports = {
             loader: "html-loader",
             // options: { minimize: true }
           },
-          "ejs-html-loader"
-        ]
+          "ejs-html-loader",
+        ],
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"]
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.(sa|sc|c)ss$/,
@@ -50,80 +69,70 @@ module.exports = {
           {
             loader: "postcss-loader",
             options: {
-              plugins: () => [autoprefixer()]
-            }
+              plugins: () => [autoprefixer()],
+            },
           },
           {
             loader: "sass-loader",
             options: {
               sassOptions: {
-                includePaths: ["./node_modules"]
-              }
-            }
-          }
-        ]
+                includePaths: ["./node_modules"],
+              },
+            },
+          },
+        ],
       },
-      // {
-      //   test: /\.(jpe?g|png|gif|svg|ico)$/,
-      //   use: {
-      //     loader: 'url-loader',
-      //     options: {
-      //       name: './image/[name].[ext]'
-      //     }
-      //   }
-      // },
       {
         test: /\.(jpe?g|png|gif|svg|ico)$/,
-        // use: ['file-loader?name=image/[name].[ext]']
         use: {
           loader: "file-loader",
           options: {
-            context: path.resolve(__dirname, 'src'),
-            name: '[path][name].[ext]?[contenthash]',
-          }
-        }
-      }
-    ]
+            context: path.resolve(__dirname, "src"),
+            name: "[path][name].[ext]?[contenthash]",
+          },
+        },
+      },
+    ],
   },
   plugins: [
     new HtmlWebPackPlugin({
       template: "./src/index.ejs",
-      filename: "index.html"
+      filename: "index.html",
     }),
     new HtmlWebPackPlugin({
       template: "./src/reserve.ejs",
-      filename: 'reserve.html'
+      filename: "reserve.html",
     }),
     new HtmlWebPackPlugin({
       template: "./src/contact.ejs",
-      filename: 'contact.html'
+      filename: "contact.html",
     }),
     new HtmlWebPackPlugin({
-      template: "./src/bonchi.ejs",
-      filename: 'bonchi.html'
+      template: "./src/fukushimabonchi.ejs",
+      filename: "fukushimabonchi.html",
     }),
-    new AppManifestWebpackPlugin({
-      logo: "./src/image/favicon/favicon_saurce.png",
-      statsFilename: "iconstats.json",
-      persistentCache: false,
-      output: '/image/icons-[hash:8]/'
-      // config: {
-      //   path: "/dist/image/favicons/"
-      // }
-    }),
+    // new AppManifestWebpackPlugin({
+    //   logo: "./src/image/favicon/favicon_saurce.png",
+    //   statsFilename: "iconstats.json",
+    //   persistentCache: false,
+    //   output: "/image/icons-[hash:8]/",
+    // }),
     new MiniCssExtractPlugin({
       filename: "css/[name]-[hash].css",
-      chunkFilename: "[id].css"
+      chunkFilename: "[id].css",
     }),
     new CompressionPlugin({
       test: /\.(css|js)$/,
       algorithm(input, compressionOptions, callback) {
         return zopfli.gzip(input, compressionOptions, callback);
-      }
-    })
+      },
+    }),
   ],
   optimization: {
-    minimizer: [new OptimizeCSSAssetsPlugin({})]
+    minimizer: [
+      new OptimizeCSSAssetsPlugin({}),
+      new UglifyJsPlugin({ parallel: true, cache: true }),
+    ],
   },
 
   devServer: {
@@ -137,9 +146,9 @@ module.exports = {
         // { from: /^\/js\/jsstore.worker.ie.js/, to: "/js/jsstore.worker.ie.js" },
         { from: /^\/reserve/, to: "/reserve.html" },
         { from: /^\/contact/, to: "/contact.html" },
-        { from: /^\/bonchi/, to: "/bonchi.html" },
-      ]
-    }
+        { from: /^\/fukushimabonchi/, to: "/fukushimabonchi.html" },
+      ],
+    },
   },
-  devtool: "inline-source-map"
+  devtool: "inline-source-map",
 };
