@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme: Theme) =>
     content: {
       minHeight: "calc(100vh - 64px - 84px)",
       "@media screen and (max-width: 480px)": {
-        minHeight: "calc(100vh - 56px - 81px)",
+        minHeight: "calc(100vh - 56px - 56px - 81px)",
       },
       backgroundColor: "#CAF2FA",
     },
