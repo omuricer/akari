@@ -1,8 +1,8 @@
 import React from "react";
 import { render } from "react-dom";
 
-// import ErrorBoundary from "./components/errorBoundary";
-import FukushimaBonchi from "@/components/fukushimaBonchi";
+// import FukushimaBonchi from "@/components/fukushimaBonchi";
+import FukushimaBonchi from "@/components/fukushimaBonchi/teaser";
 
 import "./sass/index.scss";
 

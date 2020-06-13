@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import Shop from "@/components/fukushimaBonchi/shop";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     content: {
-      minHeight: "100vh",
-      backgroundAttachment: "scroll",
-      backgroundSize: "cover",
+      minHeight: "calc(100vh - 64px - 84px)",
+      backgroundColor: "#CAF2FA",
+    },
+    left: {
+      backgroundSize: "contain",
       backgroundImage: "url(../image/fukushimabonchi/world_map.png)",
       backgroundPosition: "center center",
-      position: "relative",
+      backgroundRepeat: "no-repeat",
 
       "@media screen and (max-width: 480px)": {
         backgroundSize: "auto",
       },
+    },
+    right: {
+      position: "relative",
     },
     teaserPop: {
       top: `50%`,
@@ -22,46 +26,35 @@ const useStyles = makeStyles((theme: Theme) =>
       transform: "translate(-50%, -50%)",
       WebTransform: "translate(-50%, -50%)",
       MsTransform: "translate(-50%, -50%)",
+      width: "100%",
 
       position: "absolute",
     },
   })
 );
 
-// TODO: あとで有効化する
-// const shopDefinitions = [
-//   {
-//     image: "../image/fukushimabonchi/shop1.png",
-//     position: { x: 5, y: 7 }, // x:-15～15, y:-10～10
-//   },
-//   {
-//     image: "../image/fukushimabonchi/shop1.png",
-//     position: { x: -12, y: 5 },
-//   },
-//   {
-//     image: "../image/fukushimabonchi/shop1.png",
-//     position: { x: 3, y: -8 },
-//   },
-// ];
-
 interface IFukushimaBonchiProps {}
 const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
   const classes = useStyles();
 
-  // TODO: あとで有効化する
-  // var shopElements: JSX.Element[] = [];
-  // shopDefinitions.map((s) =>
-  //   shopElements.push(
-  //     <Shop positionX={s.position.x} positionY={s.position.y} image={s.image} />
-  //   )
-  // );
-
   return (
     <div className="mdc-layout-grid no-margin">
       <div className={`mdc-layout-grid__inner ${classes.content}`}>
-        {/* TODO: あとで有効化する */}
-        {/* {shopElements} */}
-        <div className={classes.teaserPop}>Test</div>
+        <div className={`mdc-layout-grid__cell--span-8 ${classes.left}`} />
+        <div className={`mdc-layout-grid__cell--span-4 ${classes.right}`}>
+          <div className={classes.teaserPop}>
+            <p>comming soon...</p>
+            <p style={{ fontSize: "1.6rem" }}>
+              空想都市
+              <br />
+              FUKUSHIMA BONCHI
+            </p>
+            <p>空き地あります。 Free for join!</p>
+            <a href="https://note.com/fukushimakuusou/n/n46a4bd26bb81?magazine_key=m9ae2736da177">
+              詳しくはこちら
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );
