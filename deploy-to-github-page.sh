@@ -1,7 +1,7 @@
 #!/bin/bash
 
 rm -rdf docs app/dist
-cp -r docs-for-github-pages docs
+cp -rd docs-for-github-pages docs
 cd app
 npm install
 npx webpack --mode production
