@@ -29,6 +29,9 @@ body {
     letter-spacing: 1px;
   }
 }
+body.no-scroll {
+  height: 100vh;
+}
 
 $transration-sec: 0.5s;
 a {
@@ -221,8 +224,7 @@ a img:not(.logo):not(.no-hover-effect):hover {
   opacity: 0.6;
 }
 
-
-#content .page{
+#content .page {
   display: none;
 }
 #content .page.select {
@@ -261,7 +263,6 @@ a img:not(.logo):not(.no-hover-effect):hover {
     opacity: 1;
   }
 }
-
 
 .center-desc {
   text-align: center;

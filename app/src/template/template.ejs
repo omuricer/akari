@@ -2,7 +2,7 @@
 <html lang="ja">
   <%- include('head') %>
 
-  <body class="mdc-typography">
+  <body class="mdc-typography <%= scroll == 'no' ? 'no-scroll' : '' %>">
     <section id="header">
       <%- include('../components/header') %>
     </section>
