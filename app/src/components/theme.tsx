@@ -33,7 +33,7 @@ let theme = createMuiTheme({
     },
     secondary: {
       light: "#ff7961",
-      main: "#ff3300",
+      main: "#606060",
       dark: "#ba000d",
       contrastText: "#000",
     },
