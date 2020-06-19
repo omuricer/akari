@@ -44,15 +44,36 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
+const detectDevice = () => {
+  const ua = window.navigator.userAgent.toLowerCase();
+  if (
+    ua.indexOf("iphone") > 0 ||
+    ua.indexOf("ipod") > 0 ||
+    (ua.indexOf("android") > 0 && ua.indexOf("mobile") > 0)
+  ) {
+    return "sp";
+  }
+  if (ua.indexOf("ipad") > 0 || ua.indexOf("android") > 0) {
+    // iOS12 まで
+    return "tab";
+  }
+  if (
+    ua.indexOf("ipad") > -1 ||
+    (ua.indexOf("macintosh") > -1 && "ontouchend" in document)
+  ) {
+    // iOS13 以降
+    return "tab";
+  }
+  return "pc";
+};
+
 interface IFukushimaBonchiProps {}
 const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
-  const [device, setDevice] = useState<string>("undefined");
   const classes = useStyles();
 
   return (
     <React.Fragment>
-      <DeviceDetector setDevice={setDevice} />
-      <Bar logo="image/logo_akari.svg" device={device}></Bar>
+      <Bar logo="image/logo_akari.svg" device={detectDevice()}></Bar>
       {/* <section id="header">
         <header className="mdc-top-app-bar header" id="header">
           <div className="mdc-top-app-bar__row">

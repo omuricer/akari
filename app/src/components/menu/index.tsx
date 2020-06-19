@@ -34,11 +34,13 @@ interface IMenuProps {
     href: string;
     icon: JSX.Element;
   }[];
+  openMobile: boolean;
+  setOpenMobile: (open: boolean) => void;
 }
 const Menu: React.FC<IMenuProps> = (props) => {
   const classes = useStyles();
   const menu = isMobile(props.device) ? (
-    <Mobile {...props} />
+    <Mobile {...props} open={props.openMobile} setOpen={props.setOpenMobile} />
   ) : (
     <Desktop {...props} />
   );

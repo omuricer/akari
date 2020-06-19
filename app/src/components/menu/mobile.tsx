@@ -38,6 +38,35 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface IMobileProps {
+  open: boolean;
+  setOpen: (open: boolean) => void;
+}
+const Mobile: React.FC<IMobileProps> = (props) => {
+  const classes = useStyles();
+
+  const toggle = () => {
+    props.setOpen(!props.open);
+  };
+
+  const button = props.open ? (
+    <i
+      className="fas fa-times"
+      onClick={toggle}
+      style={{ fontSize: "1.4rem" }}
+    />
+  ) : (
+    <i
+      className="fas fa-bars"
+      onClick={toggle}
+      style={{ fontSize: "1.4rem" }}
+    />
+  );
+
+  return <React.Fragment>{button}</React.Fragment>;
+};
+export default Mobile;
+
+interface IMobileMenuProps {
   menu: {
     href: string;
     label: string;
@@ -46,10 +75,10 @@ interface IMobileProps {
     href: string;
     icon: JSX.Element;
   }[];
+  open: boolean;
 }
-const Mobile: React.FC<IMobileProps> = (props) => {
+export const MobileMenu: React.FC<IMobileMenuProps> = (props) => {
   const classes = useStyles();
-  const [open, setOpen] = useState<boolean>(false);
 
   const menu: JSX.Element[] = [];
   props.menu.map((item) => {
@@ -69,36 +98,11 @@ const Mobile: React.FC<IMobileProps> = (props) => {
       </a>
     );
   });
-  const toggle = () => {
-    setOpen(!open);
-  };
-
-  const button = open ? (
-    <i
-      className="fas fa-times"
-      onClick={toggle}
-      style={{ fontSize: "1.4rem" }}
-    />
-  ) : (
-    <i
-      className="fas fa-bars"
-      onClick={toggle}
-      style={{ fontSize: "1.4rem" }}
-    />
-  );
 
   return (
-    <React.Fragment>
-      {button}
-      <nav className={classes.nav + (open ? " " + classes.navOpen : "")}>
-        <ul>{menu}</ul>
-        {snsIcons}
-      </nav>
-    </React.Fragment>
+    <nav className={classes.nav + (props.open ? " " + classes.navOpen : "")}>
+      <ul>{menu}</ul>
+      {snsIcons}
+    </nav>
   );
-
-  // <nav>
-  //   <ul>{menu}</ul>
-  // </nav>
 };
-export default Mobile;
