@@ -5,45 +5,31 @@
 @import "@material/button/mdc-button";
 @import "../css/swiper.min";
 
-div.plane {
-  :root {
-    font-size: 14px;
-    letter-spacing: 0.2em;
-    scroll-behavior: smooth;
-    background-color: $mdc-theme-background;
-    @media screen and (max-width: 480px) {
-      font-size: 12px;
-      letter-spacing: 1px;
-    }
-  }
+.plane {
+  margin: 0;
+  background-color: $mdc-theme-background;
+  color: $mdc-theme-on-background;
 
-  :root {
-    font-size: 14px;
-    letter-spacing: 0.2em;
-    scroll-behavior: smooth;
-    background-color: $mdc-theme-background;
-    @media screen and (max-width: 480px) {
-      font-size: 12px;
-      letter-spacing: 1px;
-    }
+  font-family: $mdc-typography-font-family;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  vertical-align: top;
+  @media screen and (max-width: 480px) {
+    font-size: 12px;
+    letter-spacing: 1px;
   }
-  body {
-    margin: 0;
-    background-color: $mdc-theme-background;
-    color: $mdc-theme-on-background;
-
-    font-family: $mdc-typography-font-family;
-    font-weight: 500;
-    -webkit-font-smoothing: antialiased;
-    vertical-align: top;
-    @media screen and (max-width: 480px) {
-      font-size: 12px;
-      letter-spacing: 1px;
-    }
+}
+:root {
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  scroll-behavior: smooth;
+  background-color: $mdc-theme-background;
+  @media screen and (max-width: 480px) {
+    font-size: 12px;
+    letter-spacing: 1px;
   }
-  body.no-scroll {
-    height: 100vh;
-  }
+}
+.plane {
 
   $transration-sec: 0.5s;
   a {

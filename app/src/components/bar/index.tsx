@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface IBarProps {
   logo: string;
+  device: string;
 }
 const Bar: React.FC<IBarProps> = (props) => {
   const classes = useStyles();
@@ -39,6 +40,7 @@ const Bar: React.FC<IBarProps> = (props) => {
 
             <div className={classes.title}></div>
             <Menu
+              device={props.device}
               menu={[
                 { href: "/", label: "top" },
                 { href: "/#about", label: "about" },

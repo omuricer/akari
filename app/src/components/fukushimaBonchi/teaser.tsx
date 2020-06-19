@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Bar from "@/components/bar";
 import Typography from "@material-ui/core/Typography";
+import DeviceDetector from "@/components/deviceDetector";
 
 const worldMap = require("@/image//fukushimabonchi/world_map.png");
 
@@ -45,11 +46,13 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface IFukushimaBonchiProps {}
 const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
+  const [device, setDevice] = useState<string>("undefined");
   const classes = useStyles();
 
   return (
     <React.Fragment>
-      <Bar logo="image/logo_akari.svg"></Bar>
+      <DeviceDetector setDevice={setDevice} />
+      <Bar logo="image/logo_akari.svg" device={device}></Bar>
       {/* <section id="header">
         <header className="mdc-top-app-bar header" id="header">
           <div className="mdc-top-app-bar__row">

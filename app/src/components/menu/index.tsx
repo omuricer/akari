@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import Mobile from "@/components/menu/mobile";
 import Desktop from "@/components/menu/desktop";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -19,7 +20,12 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
+const isMobile = (device: string) => {
+  return device == "sp" || device == "tab";
+};
+
 interface IMenuProps {
+  device: string;
   menu: {
     href: string;
     label: string;
@@ -31,7 +37,12 @@ interface IMenuProps {
 }
 const Menu: React.FC<IMenuProps> = (props) => {
   const classes = useStyles();
+  const menu = isMobile(props.device) ? (
+    <Mobile {...props} />
+  ) : (
+    <Desktop {...props} />
+  );
 
-  return <Desktop {...props}></Desktop>;
+  return <React.Fragment>{menu}</React.Fragment>;
 };
 export default Menu;

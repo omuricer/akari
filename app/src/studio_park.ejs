@@ -1,15 +1,23 @@
 <div class="mdc-layout-grid">
   <%- include('components/subtitle', {subtitle: 'reservation'}) %>
   <div class="mdc-layout-grid__inner reserve">
-    <div
-      class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone image"
+    <div 
+      class="
+        mdc-layout-grid__cell--span-6-desktop
+        mdc-layout-grid__cell--span-8-tablet
+        mdc-layout-grid__cell--span-4-phone
+        image"
     >
       <div class="line"></div>
       <h3 class="resource">スタジオ</h3>
       <img class="mdc-image-list__image" src="image/studio.jpg" />
     </div>
-    <div
-      class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone description"
+    <div 
+      class="
+        mdc-layout-grid__cell--span-6-desktop
+        mdc-layout-grid__cell--span-8-tablet
+        mdc-layout-grid__cell--span-4-phone
+        description"
     >
       <div class="description--inner">
         <div class="description--set">
@@ -43,15 +51,23 @@
     </div>
   </div>
   <div class="mdc-layout-grid__inner reserve">
-    <div
-      class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone image"
+    <div 
+      class="
+        mdc-layout-grid__cell--span-6-desktop
+        mdc-layout-grid__cell--span-8-tablet
+        mdc-layout-grid__cell--span-4-phone
+        image"
     >
       <div class="line"></div>
       <h2 class="resource">アカリパーク</h2>
       <img class="mdc-image-list__image" src="image/akaripark.jpg" />
     </div>
-    <div
-      class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone description"
+    <div 
+      class="
+        mdc-layout-grid__cell--span-6-desktop
+        mdc-layout-grid__cell--span-8-tablet
+        mdc-layout-grid__cell--span-4-phone
+        description"
     >
       <div class="description--inner">
         <div class="description--set">
@@ -88,27 +104,49 @@
 <div class="mdc-layout-grid">
   <%- include('components/subtitle', {subtitle: 'use case'}) %>
   <div class="mdc-layout-grid__inner">
-    <% news = [ { image: 'image/news/maturi_ato.jpg', date: 'Akari park', text:
-    '『アカリ夏マツリ』と題して、地域のショップをお招きしお祭りが開催されました！広場の一角ではワークショップも。写真掲載していますのでご覧ください。',
-    more: { url:
-    'https://www.facebook.com/pg/yamorisyamomonone2018/photos/?tab=album&album_id=407041663275450&ref=page_internal',
-    text: '詳しくみる', } }, { image: 'image/news/ima_ba2.jpg', date: 'Studio',
-    text:
-    '『いま、地域に求められる場とは？』と題して、福島県内各地で豊かなコミュニティを生み出している人たちをお招きし、なぜそんな“場”をつくったの？運営体制はどのようにして実現させている？彼らが生み出す“場”の魅力とは？などについてお聞きできるイベントが開催されました。',
-    more: { url:
-    'https://www.facebook.com/pg/yamorisyamomonone2018/photos/?tab=album&album_id=377448239568126&ref=page_internal',
-    text: '詳しくみる', } }, { image: 'image/news/kaigi1.jpg', date: 'Studio',
-    text:
-    '『ふくしまの暮らし方、働き方会議#1』と題して、もっと違う暮らし方、働き方、自分が触れてこなかった別の世界を考えるトークセッションが開催されました。',
-    more: { url:
-    'https://www.facebook.com/pg/yamorisyamomonone2018/photos/?tab=album&album_id=291734231472861&ref=page_internal',
-    text: '詳しくみる', } }, { image: 'image/news/marche.jpg', date: 'Akari
-    Park', text:
-    '『空想マルシェ』と題して、１日限定のマルシェが誕生しました。みんなの空想を持ち寄って、理想のまちを自分の手でつくろう！を合言葉に多くの方々がご来場されました。',
-    more: { url:
-    'https://www.facebook.com/pg/yamorisyamomonone2018/photos/?tab=album&album_id=267465137233104&ref=page_internal',
-    text: '詳しくみる', } }, ] %> <%- include('components/news', news[0]) %> <%-
-    include('components/news', news[1]) %> <%- include('components/news',
-    news[2]) %> <%- include('components/news', news[3]) %>
+    <%
+      news = [
+        {
+          image: 'image/news/maturi_ato.jpg',
+          date: 'Akari park',
+          text: '『アカリ夏マツリ』と題して、地域のショップをお招きしお祭りが開催されました！広場の一角ではワークショップも。写真掲載していますのでご覧ください。',
+          more: {
+            url: 'https://www.facebook.com/pg/yamorisyamomonone2018/photos/?tab=album&album_id=407041663275450&ref=page_internal',
+            text: '詳しくみる',
+          }
+        },
+        {
+          image: 'image/news/ima_ba2.jpg',
+          date: 'Studio',
+          text: '『いま、地域に求められる場とは？』と題して、福島県内各地で豊かなコミュニティを生み出している人たちをお招きし、なぜそんな“場”をつくったの？運営体制はどのようにして実現させている？彼らが生み出す“場”の魅力とは？などについてお聞きできるイベントが開催されました。',
+          more: {
+            url: 'https://www.facebook.com/pg/yamorisyamomonone2018/photos/?tab=album&album_id=377448239568126&ref=page_internal',
+            text: '詳しくみる',
+          }
+        },
+        {
+          image: 'image/news/kaigi1.jpg',
+          date: 'Studio',
+          text: '『ふくしまの暮らし方、働き方会議#1』と題して、もっと違う暮らし方、働き方、自分が触れてこなかった別の世界を考えるトークセッションが開催されました。',
+          more: {
+            url: 'https://www.facebook.com/pg/yamorisyamomonone2018/photos/?tab=album&album_id=291734231472861&ref=page_internal',
+            text: '詳しくみる',
+          }
+        },
+        {
+          image: 'image/news/marche.jpg',
+          date: 'Akari Park',
+          text: '『空想マルシェ』と題して、１日限定のマルシェが誕生しました。みんなの空想を持ち寄って、理想のまちを自分の手でつくろう！を合言葉に多くの方々がご来場されました。',
+          more: {
+            url: 'https://www.facebook.com/pg/yamorisyamomonone2018/photos/?tab=album&album_id=267465137233104&ref=page_internal',
+            text: '詳しくみる',
+          }
+        },
+      ]
+    %>
+    <%- include('components/news', news[0]) %>
+    <%- include('components/news', news[1]) %>
+    <%- include('components/news', news[2]) %>
+    <%- include('components/news', news[3]) %>
   </div>
 </div>
