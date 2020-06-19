@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import Bar from "@/components/bar";
+import Typography from "@material-ui/core/Typography";
+
 const worldMap = require("@/image//fukushimabonchi/world_map.png");
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     content: {
-      height: "100%",
-      // minHeight: "calc(100vh - 64px - 84px)",
+      // height: "100%",
+      minHeight: "calc(100vh - 64px - 84px)",
       "@media screen and (max-width: 480px)": {
-        height: "100%",
-        // minHeight: "calc(100vh - 56px - 56px - 81px)",
+        // height: "100%",
+        minHeight: "calc(100vh - 56px - 56px - 81px)",
       },
       backgroundColor: "#CAF2FA",
     },
@@ -46,7 +49,8 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
 
   return (
     <React.Fragment>
-      <section id="header">
+      <Bar logo="image/logo_akari.svg"></Bar>
+      {/* <section id="header">
         <header className="mdc-top-app-bar header" id="header">
           <div className="mdc-top-app-bar__row">
             <section className="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
@@ -143,54 +147,54 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
             </div>
           </a>
         </nav>
+      </section> */}
 
-        <div className="mdc-top-app-bar--fixed-adjust">
-          <div id="loading">
-            <div className="animation-logo">
-              <img className="star" src="image/loading/star.gif" />
-              <img className="building" src="image/loading/lodo.svg" />
-            </div>
+      <div className="mdc-top-app-bar--fixed-adjust">
+        <div id="loading">
+          <div className="animation-logo">
+            <img className="star" src="image/loading/star.gif" />
+            <img className="building" src="image/loading/lodo.svg" />
           </div>
+        </div>
 
-          <section id="content">
-            <section className="page">
-              <div className="mdc-layout-grid no-margin">
-                <div className={`mdc-layout-grid__inner ${classes.content}`}>
-                  <div
-                    className={`mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-5-tablet mdc-layout-grid__cell--span-4-phone ${classes.left}`}
-                  />
-                  <div
-                    className={`mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone ${classes.right}`}
-                  >
-                    <div className={classes.teaserPop}>
-                      <p>comming soon...</p>
-                      <p style={{ fontSize: "1.6rem" }}>
-                        空想都市
-                        <br />
-                        FUKUSHIMA BONCHI
-                      </p>
-                      <p>空き地あります。 Free for join!</p>
-                      <a href="https://note.com/fukushimakuusou/n/n46a4bd26bb81?magazine_key=m9ae2736da177">
-                        詳しくはこちら
-                      </a>
-                    </div>
+        <section id="content">
+          <section className="page">
+            <div className="mdc-layout-grid no-margin">
+              <div className={`mdc-layout-grid__inner ${classes.content}`}>
+                <div
+                  className={`mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-5-tablet mdc-layout-grid__cell--span-4-phone ${classes.left}`}
+                />
+                <div
+                  className={`mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone ${classes.right}`}
+                >
+                  <div className={classes.teaserPop}>
+                    <Typography>comming soon...</Typography>
+                    <Typography variant="h2">
+                      空想都市
+                      <br />
+                      FUKUSHIMA BONCHI
+                    </Typography>
+                    <Typography>空き地あります。 Free for join!</Typography>
+                    <a href="https://note.com/fukushimakuusou/n/n46a4bd26bb81?magazine_key=m9ae2736da177">
+                      <Typography>詳しくはこちら</Typography>
+                    </a>
                   </div>
                 </div>
               </div>
-            </section>
-          </section>
-          <section id="footer">
-            <div className="footer">
-              <div className="wrap">
-                <p className="corporate">家守舎桃ノ音</p>
-                <p className="copyright">
-                  © Copyright 2019 yamorishamomonone All rights reserved.
-                </p>
-              </div>
             </div>
           </section>
-        </div>
-      </section>
+        </section>
+        <section id="footer">
+          <div className="footer">
+            <div className="wrap">
+              <p className="corporate">家守舎桃ノ音</p>
+              <p className="copyright">
+                © Copyright 2019 yamorishamomonone All rights reserved.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
     </React.Fragment>
   );
 };
