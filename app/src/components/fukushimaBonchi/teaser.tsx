@@ -12,17 +12,16 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     content: {
       minHeight: "100vh",
-      "@media screen and (max-width: 480px)": {
-        display: "flex",
-        flexDirection: "column",
-        minHeight: "100vh",
-      },
+      display: "flex",
+      flexDirection: "column",
       backgroundColor: "#CAF2FA",
     },
     main: {
       flex: 1,
       display: "flex",
-      flexDirection: "column",
+      "@media screen and (max-width: 480px)": {
+        flexDirection: "column",
+      },
     },
     left: {
       flexGrow: 1,
@@ -32,6 +31,9 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     right: {
       flexGrow: 1,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
     },
     teaserPop: {
       "@media screen and (max-width: 480px)": {
