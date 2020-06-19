@@ -53,6 +53,12 @@ const TemplateHCF: React.FC<ITemplateHCFProps> = (props) => {
   return (
     <React.Fragment>
       <Bar logo="image/logo_akari.svg" device={detectDevice()}></Bar>
+      <div id="loading">
+        <div className="animation-logo">
+          <img className="star" src="image/loading/star.gif" />
+          <img className="building" src="image/loading/lodo.svg" />
+        </div>
+      </div>
       <Grid container className={classes.content}>
         <Toolbar />
         <main className={classes.main}>{props.children}</main>
