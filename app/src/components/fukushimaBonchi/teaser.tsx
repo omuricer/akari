@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import DeviceDetector from "@/components/deviceDetector";
 import Grid from "@material-ui/core/Grid";
 import Toolbar from "@material-ui/core/Toolbar";
+import Footer from "@/components/footer";
 
 const worldMap = require("@/image//fukushimabonchi/world_map.png");
 
@@ -38,17 +39,6 @@ const useStyles = makeStyles((theme: Theme) =>
     teaserPop: {
       "@media screen and (max-width: 480px)": {
         textAlign: "center",
-      },
-    },
-    footer: {
-      fontWeight: 400,
-      backgroundColor: theme.palette.secondary.main,
-      color: theme.palette.primary.main,
-      textAlign: "center",
-      height: "90px",
-      marginTop: "auto",
-      "@media screen and (max-width: 480px)": {
-        height: "70px",
       },
     },
   })
@@ -111,31 +101,8 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
             </div>
           </Grid>
         </main>
-        <footer className={classes.footer}>
-          <Grid item xs={12}>
-            <div
-              style={{
-                paddingTop: "20px",
-                paddingBottom: "20px",
-              }}
-            >
-              <p
-                style={{
-                  margin: "0 0 10px 0",
-                }}
-              >
-                家守舎桃ノ音
-              </p>
-              <p
-                style={{
-                  margin: 0,
-                  fontSize: "0.7rem",
-                }}
-              >
-                © Copyright 2019 yamorishamomonone All rights reserved.
-              </p>
-            </div>
-          </Grid>
+        <footer>
+          <Footer />
         </footer>
       </Grid>
     </React.Fragment>
