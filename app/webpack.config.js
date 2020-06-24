@@ -108,7 +108,7 @@ module.exports = {
       filename: "contact.html",
     }),
     new HtmlWebPackPlugin({
-      template: "./src/fukushimabonchi.ejs",
+      template: "./src/fukushimabonchi.html",
       filename: "fukushimabonchi.html",
     }),
     new AppManifestWebpackPlugin({
