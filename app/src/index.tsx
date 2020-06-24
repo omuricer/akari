@@ -6,7 +6,8 @@ import FukushimaBonchi from "@/components/fukushimaBonchi";
 import FukushimaBonchiTeaser from "@/components/fukushimaBonchi/teaser";
 import Typography from "@material-ui/core/Typography";
 
-import "./sass/index.scss";
+import "@/sass/index.scss";
+import "@/css/destyle.css";
 
 // import App from "./components/app";
 
