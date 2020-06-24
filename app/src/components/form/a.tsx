@@ -18,13 +18,11 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-interface IAProps {
-  href: string;
-}
+interface IAProps extends React.HTMLProps<HTMLAnchorElement> {}
 const A: React.FC<IAProps> = (props) => {
   const classes = useStyles();
   return (
-    <a href={props.href}>
+    <a {...props}>
       <Typography className={classes.a}>{props.children}</Typography>
     </a>
   );

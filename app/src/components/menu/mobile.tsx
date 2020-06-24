@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import A from "@/components/form/a";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -84,18 +85,18 @@ export const MobileMenu: React.FC<IMobileMenuProps> = (props) => {
   props.menu.map((item) => {
     menu.push(
       <li>
-        <a href={item.href}>
+        <A href={item.href} target="_self">
           <Typography className={classes.menuText}>{item.label}</Typography>
-        </a>
+        </A>
       </li>
     );
   });
   const snsIcons: JSX.Element[] = [];
   props.sns.map((sns) => {
     snsIcons.push(
-      <a href={sns.href} target="”_blank”" className={classes.menuIcon}>
+      <A href={sns.href} target="”_blank”" className={classes.menuIcon}>
         {sns.icon}
-      </a>
+      </A>
     );
   });
 

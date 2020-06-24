@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import A from "@/components/form/a";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -34,18 +35,16 @@ const Desktop: React.FC<IDesktopProps> = (props) => {
   props.menu.map((item) => {
     menu.push(
       <li className={classes.menuText}>
-        <a href={item.href}>
-          <Typography>{item.label}</Typography>
-        </a>
+        <A href={item.href}>{item.label}</A>
       </li>
     );
   });
   props.sns.map((sns) => {
     menu.push(
       <li className={classes.menuIcon}>
-        <a href={sns.href} target="”_blank”">
+        <A href={sns.href} target="_blank">
           {sns.icon}
-        </a>
+        </A>
       </li>
     );
   });
