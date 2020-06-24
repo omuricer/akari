@@ -39,8 +39,13 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
       </Grid>
       <Grid item sm={12} lg={6} className={classes.right}>
         <div className={classes.teaserPop}>
-          <Typography>comming soon...</Typography>
-          <Typography variant="h2">
+          <Typography style={{ marginTop: "1rem", marginBottom: "1rem" }}>
+            comming soon...
+          </Typography>
+          <Typography
+            variant="h2"
+            style={{ marginTop: "1rem", marginBottom: "1rem" }}
+          >
             空想都市
             <br />
             FUKUSHIMA BONCHI

@@ -7,7 +7,6 @@ import {
 
 let theme = createMuiTheme({
   typography: {
-    fontSize: 14,
     fontFamily: [
       "Georgia",
       "游明朝",
@@ -20,11 +19,44 @@ let theme = createMuiTheme({
       '"ＭＳ 明朝"',
       "serif",
     ].join(","),
+    fontSize: 14,
+    h1: {
+      color: "#485859",
+      fontSize: "1.8rem",
+      fontWeight: 500,
+      lineHeight: "1.3em",
+      letterSpacing: "0.2em",
+    },
+    h2: {
+      color: "#485859",
+      fontSize: "1.6rem",
+      fontWeight: 500,
+      lineHeight: "1.3em",
+      letterSpacing: "0.2em",
+    },
+    h3: {
+      color: "#485859",
+      fontSize: "1.3rem",
+      fontWeight: 500,
+      lineHeight: "1.3em",
+      letterSpacing: "0.2em",
+    },
+    body1: {
+      color: "#485859",
+      fontSize: "1.0rem",
+      fontWeight: 500,
+      lineHeight: "1.3em",
+      letterSpacing: "0.2em",
+    },
     button: {
       textTransform: "none",
     },
   },
   palette: {
+    text: {
+      primary: "#F9A638",
+      secondary: "#F9A638",
+    },
     primary: {
       light: "#757ce8",
       main: "#FFFFFF",
