@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface IBarProps {
   logo: string;
-  device: string;
+  breakPoint: string;
 }
 const Bar: React.FC<IBarProps> = (props) => {
   const [openMobileMenu, setOpenMobileMenu] = useState<boolean>(false);
@@ -61,9 +61,9 @@ const Bar: React.FC<IBarProps> = (props) => {
                 </a>
               </h1>
 
-              <div className={classes.title}></div>
+              <div className={classes.title} />
               <Menu
-                device={props.device}
+                breakPoint={props.breakPoint}
                 menu={menu}
                 sns={sns}
                 openMobile={openMobileMenu}

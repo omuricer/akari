@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: "center",
     },
     teaserPop: {
-      "@media screen and (max-width: 480px)": {
+      [theme.breakpoints.down("xs")]: {
         textAlign: "center",
       },
     },
@@ -34,10 +34,10 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
 
   return (
     <TemplateHCF>
-      <Grid item sm={4} lg={6} className={classes.left}>
+      <Grid item sm={12} lg={6} className={classes.left}>
         <img src={worldMap} style={{ width: "100%" }} />
       </Grid>
-      <Grid item sm={4} lg={6} className={classes.right}>
+      <Grid item sm={12} lg={6} className={classes.right}>
         <div className={classes.teaserPop}>
           <Typography>comming soon...</Typography>
           <Typography variant="h2">

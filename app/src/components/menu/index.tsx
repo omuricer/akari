@@ -20,12 +20,12 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const isMobile = (device: string) => {
-  return device == "sp" || device == "tab";
+const isMobile = (breakPoint: string) => {
+  return breakPoint == "xs" || breakPoint == "sm";
 };
 
 interface IMenuProps {
-  device: string;
+  breakPoint: string;
   menu: {
     href: string;
     label: string;
@@ -39,7 +39,7 @@ interface IMenuProps {
 }
 const Menu: React.FC<IMenuProps> = (props) => {
   const classes = useStyles();
-  const menu = isMobile(props.device) ? (
+  const menu = isMobile(props.breakPoint) ? (
     <Mobile {...props} open={props.openMobile} setOpen={props.setOpenMobile} />
   ) : (
     <Desktop {...props} />
