@@ -3,6 +3,7 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import TemplateHCF from "@/components/template/templateHCF";
+import A from "@/components/form/a";
 
 const worldMap = require("@/image//fukushimabonchi/world_map.png");
 
@@ -51,9 +52,9 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
             FUKUSHIMA BONCHI
           </Typography>
           <Typography>空き地あります。 Free for join!</Typography>
-          <a href="https://note.com/fukushimakuusou/n/n46a4bd26bb81?magazine_key=m9ae2736da177">
-            <Typography>詳しくはこちら</Typography>
-          </a>
+          <A href="https://note.com/fukushimakuusou/n/n46a4bd26bb81?magazine_key=m9ae2736da177">
+            詳しくはこちら
+          </A>
         </div>
       </Grid>
     </TemplateHCF>
