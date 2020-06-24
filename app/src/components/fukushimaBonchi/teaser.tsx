@@ -18,8 +18,12 @@ const useStyles = makeStyles((theme: Theme) =>
     right: {
       flexGrow: 1,
       display: "flex",
-      justifyContent: "center",
+      justifyContent: "left",
       alignItems: "center",
+      [theme.breakpoints.down("xs")]: {
+        justifyContent: "center",
+        alignItems: "baseline",
+      },
     },
     teaserPop: {
       [theme.breakpoints.down("xs")]: {
@@ -35,10 +39,10 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
 
   return (
     <TemplateHCF>
-      <Grid item sm={12} lg={6} className={classes.left}>
+      <Grid item sm={12} lg={8} className={classes.left}>
         <img src={worldMap} style={{ width: "100%" }} />
       </Grid>
-      <Grid item sm={12} lg={6} className={classes.right}>
+      <Grid item sm={12} lg={4} className={classes.right}>
         <div className={classes.teaserPop}>
           <Typography style={{ marginTop: "1rem", marginBottom: "1rem" }}>
             comming soon...
