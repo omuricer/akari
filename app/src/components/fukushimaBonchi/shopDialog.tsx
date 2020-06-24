@@ -11,7 +11,8 @@ import A from "@/components/form/a";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      background: "rgba(225,225,225, 0.9)", // 透過を子要素に継承しないためRBGで指定している
+      // background: "rgba(225,225,225, 0.9)", // 透過を子要素に継承しないためRBGで指定している
+      opacity: 0.9,
     },
     contentRoot: {
       minWidth: "600px",
