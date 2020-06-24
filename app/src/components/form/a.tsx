@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme: Theme) =>
       MsTransition: "0.5s",
       transition: "0.5s",
       "&:hover": {
-        color: theme.palette.text.primary,
+        color: theme.palette.text.secondary,
       },
     },
   })

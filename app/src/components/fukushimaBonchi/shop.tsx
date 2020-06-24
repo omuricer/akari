@@ -52,11 +52,20 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-interface IShopProps {
+export type TShop = {
   positionX: number;
   positionY: number;
-  image: string;
-}
+  icon: string;
+  logo: string;
+  name: string;
+  bussiness: string;
+  area: string;
+  shopURL: string;
+};
+type IShopProps = {
+  shop: TShop;
+  onClick: (shop: TShop) => void;
+};
 const Shop: React.FC<IShopProps> = (props) => {
   const classes = useStyles();
 
@@ -66,10 +75,13 @@ const Shop: React.FC<IShopProps> = (props) => {
     <div
       className={classes.shop}
       style={{
-        top: `calc(50% + ${props.positionY}vw)`,
-        left: `calc(50% + ${props.positionX}vw)`,
-        backgroundImage: `url(${props.image})`,
+        top: `calc(50% + ${props.shop.positionY}vw)`,
+        left: `calc(50% + ${props.shop.positionX}vw)`,
+        backgroundImage: `url(${props.shop.icon})`,
         animationDelay: `${generateRondomDelay()}s`,
+      }}
+      onClick={() => {
+        props.onClick(props.shop);
       }}
     />
   );
