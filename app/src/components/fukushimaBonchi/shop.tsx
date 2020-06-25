@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { TShop } from "@/components/fukushimaBonchi/shops";
+import ShopDialog from "@/components/fukushimaBonchi/shopDialog";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -58,23 +59,27 @@ type IShopProps = {
   onClick: (shop: TShop) => void;
 };
 const Shop: React.FC<IShopProps> = (props) => {
+  const [selected, setSelected] = useState<boolean>(false);
   const classes = useStyles();
 
   console.log(props);
 
   return (
-    <div
-      className={classes.shop}
-      style={{
-        top: `calc(50% + ${props.shop.positionY}vw)`,
-        left: `calc(50% + ${props.shop.positionX}vw)`,
-        backgroundImage: `url(${props.shop.icon})`,
-        animationDelay: `${generateRondomDelay()}s`,
-      }}
-      onClick={() => {
-        props.onClick(props.shop);
-      }}
-    />
+    <React.Fragment>
+      <div
+        className={classes.shop}
+        style={{
+          top: `calc(50% + ${props.shop.positionY}vw)`,
+          left: `calc(50% + ${props.shop.positionX}vw)`,
+          backgroundImage: `url(${props.shop.icon})`,
+          animationDelay: `${generateRondomDelay()}s`,
+        }}
+        onClick={() => {
+          setSelected(true);
+        }}
+      />
+      <ShopDialog open={selected} setOpen={setSelected} shop={props.shop} />
+    </React.Fragment>
   );
 };
 

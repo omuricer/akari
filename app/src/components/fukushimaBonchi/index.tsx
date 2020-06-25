@@ -4,7 +4,6 @@ import { TShop, Shops } from "@/components/fukushimaBonchi/shops";
 import Shop from "@/components/fukushimaBonchi/shop";
 import TemplateHero from "@/components/template/templateHero";
 import Grid from "@material-ui/core/Grid";
-import ShopDialog from "@/components/fukushimaBonchi/shopDialog";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -26,8 +25,6 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface IFukushimaBonchiProps {}
 const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
-  const [openShopDialog, setOpenShopDialog] = useState<boolean>(false);
-  const [selectedShop, setOpenSelectedShop] = useState<null | TShop>(null);
   const classes = useStyles();
 
   var shopElements: JSX.Element[] = [];
@@ -36,8 +33,8 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
       <Shop
         shop={s}
         onClick={(shop: TShop) => {
-          setOpenSelectedShop(shop);
-          setOpenShopDialog(true);
+          // setOpenSelectedShop(shop);
+          // setOpenShopDialog(true);
         }}
       />
     )
@@ -52,12 +49,6 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
           </div>
         </Grid>
       </TemplateHero>
-
-      <ShopDialog
-        open={openShopDialog}
-        setOpen={setOpenShopDialog}
-        shop={selectedShop}
-      />
     </React.Fragment>
   );
 };
