@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import { TShop } from "@/components/fukushimaBonchi/shops";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -52,16 +53,6 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export type TShop = {
-  positionX: number;
-  positionY: number;
-  icon: string;
-  logo: string;
-  name: string;
-  bussiness: string;
-  area: string;
-  shopURL: string;
-};
 type IShopProps = {
   shop: TShop;
   onClick: (shop: TShop) => void;

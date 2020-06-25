@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import Shop, { TShop } from "@/components/fukushimaBonchi/shop";
+import { TShop, Shops } from "@/components/fukushimaBonchi/shops";
+import Shop from "@/components/fukushimaBonchi/shop";
 import TemplateHero from "@/components/template/templateHero";
 import Grid from "@material-ui/core/Grid";
 import ShopDialog from "@/components/fukushimaBonchi/shopDialog";
@@ -23,39 +24,6 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const shopDefinitions: TShop[] = [
-  {
-    icon: "../image/fukushimabonchi/shop1.png",
-    logo: "../image/fukushimabonchi/shop1.png",
-    name: "野菜屋 kumando",
-    bussiness: "農家",
-    area: "伊達市",
-    shopURL: "https://yamorisyamomonone.com/fukushimabonchi",
-    positionX: 5,
-    positionY: 7,
-  },
-  {
-    icon: "../image/fukushimabonchi/shop1.png",
-    logo: "../image/fukushimabonchi/shop1.png",
-    name: "野菜屋 kumando",
-    bussiness: "農家",
-    area: "伊達市",
-    shopURL: "https://yamorisyamomonone.com/fukushimabonchi",
-    positionX: -12,
-    positionY: 5,
-  },
-  {
-    icon: "../image/fukushimabonchi/shop1.png",
-    logo: "../image/fukushimabonchi/shop1.png",
-    name: "野菜屋 kumando",
-    bussiness: "農家",
-    area: "伊達市",
-    shopURL: "https://yamorisyamomonone.com/fukushimabonchi",
-    positionX: 3,
-    positionY: -8,
-  },
-];
-
 interface IFukushimaBonchiProps {}
 const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
   const [openShopDialog, setOpenShopDialog] = useState<boolean>(false);
@@ -63,7 +31,7 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
   const classes = useStyles();
 
   var shopElements: JSX.Element[] = [];
-  shopDefinitions.map((s: TShop) =>
+  Shops.map((s: TShop) =>
     shopElements.push(
       <Shop
         shop={s}
