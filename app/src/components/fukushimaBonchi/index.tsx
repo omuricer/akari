@@ -18,7 +18,9 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundColor: "#CAF2FA",
 
       "@media screen and (max-width: 480px)": {
-        backgroundSize: "auto",
+        height: "980px",
+        width: "1700px",
+        backgroundSize: "contain",
       },
     },
   })

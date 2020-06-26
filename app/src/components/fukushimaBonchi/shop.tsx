@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { TShop } from "@/components/fukushimaBonchi/shops";
 import ShopDialog from "@/components/fukushimaBonchi/shopDialog";
+import { Bounds } from "@/animations/bounds";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -9,48 +10,21 @@ const useStyles = makeStyles((theme: Theme) =>
       // Abount looks
       position: "absolute",
       width: "4.5vw",
-      height: "4.5vw",
-      backgroundSize: "cover",
-
-      // 縦に揺れる
-      animation: "$fluffy 3s ease infinite",
 
       // https://littlethings.jp/blog/web/css-hover-effect
       WebkitTransform: "scale(1)",
       transform: "scale(1)",
       WebkitTransition: "0.5s ease-in-out",
       transition: "0.5s ease-in-out",
-      ":hover": {
+      "&:hover": {
         WebkitTransform: "scale(1.3)",
         transform: "scale(1.3)",
       },
-    },
-    "@keyframes fluffy": {
-      "0%": {
-        transform: "translateY(0)",
-      },
-      "5%": {
-        transform: "translateY(0)",
-      },
-      "10%": {
-        transform: "translateY(0)",
-      },
-      "20%": {
-        transform: "translateY(-10px)",
-      },
-      "25%": {
-        transform: "translateY(0)",
-      },
-      "30%": {
-        transform: "translateY(-8px)",
-      },
-      "50%": {
-        transform: "translateY(0)",
-      },
-      "100%": {
-        transform: "translateY(0)",
+      [theme.breakpoints.down("xs")]: {
+        width: "40px",
       },
     },
+    ...Bounds,
   })
 );
 
@@ -66,12 +40,12 @@ const Shop: React.FC<IShopProps> = (props) => {
 
   return (
     <React.Fragment>
-      <div
-        className={classes.shop}
+      <img
+        src={props.shop.icon}
+        className={[classes.shop, classes.bounds].join(" ")}
         style={{
-          top: `calc(50% + ${props.shop.positionY}vw)`,
-          left: `calc(50% + ${props.shop.positionX}vw)`,
-          backgroundImage: `url(${props.shop.icon})`,
+          top: `calc(50% + ${props.shop.positionY}%)`,
+          left: `calc(50% + ${props.shop.positionX}%)`,
           animationDelay: `${generateRondomDelay()}s`,
         }}
         onClick={() => {
