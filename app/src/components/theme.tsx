@@ -61,13 +61,13 @@ let theme = createMuiTheme({
       light: "#ffffff",
       main: "#485859",
       dark: "#002884",
-      contrastText: "#485859",
+      contrastText: "#ffffff",
     },
     secondary: {
       light: "#ff7961",
-      main: "#606060",
+      main: "#F9A638",
       dark: "#ba000d",
-      contrastText: "#000",
+      contrastText: "#485859",
     },
   },
   props: {

@@ -4,7 +4,7 @@ export type TShop = {
   icon: string;
   logo: string;
   name: string;
-  bussiness: string;
+  business: string;
   area: string;
   shopURL: string;
 };
@@ -14,7 +14,7 @@ export const Shops: TShop[] = [
     icon: "../image/fukushimabonchi/shop1.png",
     logo: "../image/fukushimabonchi/shop1.png",
     name: "野菜屋 kumando",
-    bussiness: "農家",
+    business: "農家",
     area: "伊達市",
     shopURL: "https://yamorisyamomonone.com/fukushimabonchi",
     positionX: 5,
@@ -24,7 +24,7 @@ export const Shops: TShop[] = [
     icon: "../image/fukushimabonchi/shop1.png",
     logo: "../image/fukushimabonchi/shop1.png",
     name: "野菜屋 kumando",
-    bussiness: "農家",
+    business: "農家",
     area: "伊達市",
     shopURL: "https://yamorisyamomonone.com/fukushimabonchi",
     positionX: -12,
@@ -34,7 +34,7 @@ export const Shops: TShop[] = [
     icon: "../image/fukushimabonchi/shop1.png",
     logo: "../image/fukushimabonchi/shop1.png",
     name: "野菜屋 kumando",
-    bussiness: "農家",
+    business: "農家",
     area: "伊達市",
     shopURL: "https://yamorisyamomonone.com/fukushimabonchi",
     positionX: 3,

@@ -10,9 +10,10 @@ const useStyles = makeStyles((theme: Theme) =>
     content: {
       minHeight: "100vh",
       backgroundAttachment: "scroll",
-      backgroundSize: "cover",
+      backgroundSize: "contain",
       backgroundImage: "url(../image/fukushimabonchi/world_map.png)",
       backgroundPosition: "center center",
+      backgroundRepeat: "no-repeat",
       position: "relative",
       backgroundColor: "#CAF2FA",
 
