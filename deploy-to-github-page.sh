@@ -6,6 +6,6 @@ cd app
 npm install
 npx webpack --mode production
 # TODO: webpackでバンドルする
-cp -rd src/image/fukushimabonchi dist/image/fukushimabonchi
+cp -rd src/image/fukushimabonchi dist/image
 mv dist/* ../docs
 exit
