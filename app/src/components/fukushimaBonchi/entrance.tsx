@@ -3,7 +3,7 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import TemplateHCF from "@/components/template/templateHCF";
-import A from "@/components/form/a";
+import Button from "@material-ui/core/Button";
 
 const worldMap = require("@/image//fukushimabonchi/world_map.png");
 
@@ -28,6 +28,9 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     teaserPop: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
       [theme.breakpoints.down("xs")]: {
         textAlign: "center",
       },
@@ -35,8 +38,8 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-interface ITeaserProps {}
-const Teaser: React.FC<ITeaserProps> = (props) => {
+interface IEntranceProps {}
+const Entrance: React.FC<IEntranceProps> = (props) => {
   const classes = useStyles();
 
   return (
@@ -46,9 +49,6 @@ const Teaser: React.FC<ITeaserProps> = (props) => {
       </Grid>
       <Grid item sm={12} lg={4} className={classes.right}>
         <div className={classes.teaserPop}>
-          <Typography style={{ marginTop: "1rem", marginBottom: "1rem" }}>
-            comming soon...
-          </Typography>
           <Typography
             variant="h2"
             style={{ marginTop: "1rem", marginBottom: "1rem" }}
@@ -57,13 +57,18 @@ const Teaser: React.FC<ITeaserProps> = (props) => {
             <br />
             FUKUSHIMA BONCHI
           </Typography>
-          <Typography>空き地あります。 Free for join!</Typography>
-          <A href="https://note.com/fukushimakuusou/n/n46a4bd26bb81?magazine_key=m9ae2736da177">
-            詳しくはこちら
-          </A>
+          <Button
+            variant="outlined"
+            size="large"
+            color="primary"
+            href="/fukushimabonchi-wip"
+            style={{ marginTop: "2rem", width: "110px" }}
+          >
+            訪れる
+          </Button>
         </div>
       </Grid>
     </TemplateHCF>
   );
 };
-export default Teaser;
+export default Entrance;

@@ -107,6 +107,14 @@ module.exports = {
       template: "./src/fukushimabonchi.html",
       filename: "fukushimabonchi.html",
     }),
+    new HtmlWebPackPlugin({
+      template: "./src/fukushimabonchi-wip.html",
+      filename: "fukushimabonchi-wip.html",
+    }),
+    new HtmlWebPackPlugin({
+      template: "./src/fukushimabonchi-entrance-wip.html",
+      filename: "fukushimabonchi-entrance-wip.html",
+    }),
     new AppManifestWebpackPlugin({
       logo: "./src/image/favicon/favicon_saurce.png",
       statsFilename: "iconstats.json",
@@ -142,6 +150,11 @@ module.exports = {
         // { from: /^\/js\/jsstore.worker.ie.js/, to: "/js/jsstore.worker.ie.js" },
         { from: /^\/reserve/, to: "/reserve.html" },
         { from: /^\/contact/, to: "/contact.html" },
+        {
+          from: /^\/fukushimabonchi-entrance-wip/,
+          to: "/fukushimabonchi-entrance-wip.html",
+        },
+        { from: /^\/fukushimabonchi-wip/, to: "/fukushimabonchi-wip.html" },
         { from: /^\/fukushimabonchi/, to: "/fukushimabonchi.html" },
       ],
     },

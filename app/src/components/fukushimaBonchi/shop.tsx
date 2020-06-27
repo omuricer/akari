@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import {
+  TIcon,
+  TContent,
+  TShop,
+  isTContent,
+} from "@/components/fukushimaBonchi/shops";
+import ShopDialog from "@/components/fukushimaBonchi/shopDialog";
+import ShopDialogApartment from "@/components/fukushimaBonchi/shopDialogApartment";
+import { Bounds } from "@/animations/bounds";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -7,71 +16,68 @@ const useStyles = makeStyles((theme: Theme) =>
       // Abount looks
       position: "absolute",
       width: "4.5vw",
-      height: "4.5vw",
-      backgroundSize: "cover",
-
-      // 縦に揺れる
-      animation: "$fluffy 3s ease infinite",
 
       // https://littlethings.jp/blog/web/css-hover-effect
       WebkitTransform: "scale(1)",
       transform: "scale(1)",
       WebkitTransition: "0.5s ease-in-out",
       transition: "0.5s ease-in-out",
-      ":hover": {
+      "&:hover": {
         WebkitTransform: "scale(1.3)",
         transform: "scale(1.3)",
       },
-    },
-    "@keyframes fluffy": {
-      "0%": {
-        transform: "translateY(0)",
-      },
-      "5%": {
-        transform: "translateY(0)",
-      },
-      "10%": {
-        transform: "translateY(0)",
-      },
-      "20%": {
-        transform: "translateY(-10px)",
-      },
-      "25%": {
-        transform: "translateY(0)",
-      },
-      "30%": {
-        transform: "translateY(-8px)",
-      },
-      "50%": {
-        transform: "translateY(0)",
-      },
-      "100%": {
-        transform: "translateY(0)",
+      [theme.breakpoints.down("xs")]: {
+        width: "80px",
       },
     },
+    ...Bounds,
   })
 );
 
-interface IShopProps {
-  positionX: number;
-  positionY: number;
-  image: string;
-}
+const generateIconPath = (id: number) => {
+  return `/image/fukushimabonchi/${id}/icon.png`;
+};
+
+type IShopProps = {
+  shop: TShop;
+};
 const Shop: React.FC<IShopProps> = (props) => {
+  const [selected, setSelected] = useState<boolean>(false);
   const classes = useStyles();
 
-  console.log(props);
+  const shopDialog = props.shop.rooms ? (
+    <ShopDialogApartment
+      open={selected}
+      setOpen={setSelected}
+      id={props.shop.id}
+      content={props.shop.content}
+      rooms={props.shop.rooms}
+    />
+  ) : (
+    <ShopDialog
+      open={selected}
+      setOpen={setSelected}
+      id={props.shop.id}
+      content={props.shop.content}
+    />
+  );
 
   return (
-    <div
-      className={classes.shop}
-      style={{
-        top: `calc(50% + ${props.positionY}vw)`,
-        left: `calc(50% + ${props.positionX}vw)`,
-        backgroundImage: `url(${props.image})`,
-        animationDelay: `${generateRondomDelay()}s`,
-      }}
-    />
+    <React.Fragment>
+      <img
+        src={generateIconPath(props.shop.id)}
+        className={[classes.shop, classes.bounds].join(" ")}
+        style={{
+          top: `calc(50% + ${props.shop.icon.positionY}%)`,
+          left: `calc(50% + ${props.shop.icon.positionX}%)`,
+          animationDelay: `${generateRondomDelay()}s`,
+        }}
+        onClick={() => {
+          setSelected(true);
+        }}
+      />
+      {shopDialog}
+    </React.Fragment>
   );
 };
 

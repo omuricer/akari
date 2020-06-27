@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     footer: {
       fontWeight: 400,
-      backgroundColor: theme.palette.secondary.main,
+      backgroundColor: theme.palette.primary.main,
       color: theme.palette.primary.main,
       textAlign: "center",
       height: "90px",
@@ -30,21 +31,23 @@ const Footer: React.FC<IFooterProps> = (props) => {
           paddingBottom: "20px",
         }}
       >
-        <p
+        <Typography
           style={{
             margin: "0 0 10px 0",
+            color: "#ffffff",
           }}
         >
           家守舎桃ノ音
-        </p>
-        <p
+        </Typography>
+        <Typography
           style={{
             margin: 0,
             fontSize: "0.7rem",
+            color: "#ffffff",
           }}
         >
           © Copyright 2019 yamorishamomonone All rights reserved.
-        </p>
+        </Typography>
       </div>
     </Grid>
   );

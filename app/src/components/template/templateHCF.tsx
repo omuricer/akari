@@ -13,7 +13,6 @@ const useStyles = makeStyles((theme: Theme) =>
       minHeight: "100vh",
       display: "flex",
       flexDirection: "column",
-      backgroundColor: "#CAF2FA",
     },
     main: {
       flex: 1,
