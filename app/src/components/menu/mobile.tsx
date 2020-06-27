@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme: Theme) =>
       width: "100vw",
       height: "100vh",
       zIndex: 3,
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: "#ffffff",
       opacity: 0.9,
       paddingTop: "4px",
       textAlign: "center",
@@ -53,13 +53,13 @@ const Mobile: React.FC<IMobileProps> = (props) => {
     <i
       className="fas fa-times"
       onClick={toggle}
-      style={{ fontSize: "1.4rem" }}
+      style={{ fontSize: "1.4rem", color: "#485859" }}
     />
   ) : (
     <i
       className="fas fa-bars"
       onClick={toggle}
-      style={{ fontSize: "1.4rem" }}
+      style={{ fontSize: "1.4rem", color: "#485859" }}
     />
   );
 
@@ -83,13 +83,33 @@ export const MobileMenu: React.FC<IMobileMenuProps> = (props) => {
 
   const menu: JSX.Element[] = [];
   props.menu.map((item) => {
-    menu.push(
-      <li>
-        <A href={item.href} target="_self">
-          <Typography className={classes.menuText}>{item.label}</Typography>
-        </A>
-      </li>
-    );
+    // TODO: bonchi期間だけ
+    if (item.label == "FUKUSHIMA BONCHI") {
+      menu.push(
+        <li>
+          <A href={item.href} target="_self">
+            <Typography
+              className={classes.menuText}
+              style={{
+                fontWeight: "bold",
+                letterSpacing: "0",
+                color: "#F9A638",
+              }}
+            >
+              {item.label}
+            </Typography>
+          </A>
+        </li>
+      );
+    } else {
+      menu.push(
+        <li>
+          <A href={item.href} target="_self">
+            <Typography className={classes.menuText}>{item.label}</Typography>
+          </A>
+        </li>
+      );
+    }
   });
   const snsIcons: JSX.Element[] = [];
   props.sns.map((sns) => {

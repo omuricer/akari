@@ -2,22 +2,42 @@ import React from "react";
 import { render } from "react-dom";
 
 import Theme from "@/components/theme";
+import Teaser from "@/components/fukushimaBonchi/teaser";
 import FukushimaBonchi from "@/components/fukushimaBonchi";
-import Typography from "@material-ui/core/Typography";
+import Entrance from "@/components/fukushimaBonchi/entrance";
 
 import "@/sass/index.scss";
 import "@/css/destyle.css";
 
-// import App from "./components/app";
-
 // TODO: index_old.jsの中身をコンポーネントに移行する
 require("./index_old.js");
 
-render(
-  <Theme>
-    <Typography>
+let target = document.getElementById("bonchi-teaser");
+if (target) {
+  render(
+    <Theme>
+      <Teaser />
+    </Theme>,
+    target
+  );
+}
+
+target = document.getElementById("bonchi");
+if (target) {
+  render(
+    <Theme>
       <FukushimaBonchi />
-    </Typography>
-  </Theme>,
-  document.getElementById("bonchi")
-);
+    </Theme>,
+    target
+  );
+}
+
+target = document.getElementById("bonchi-entrance");
+if (target) {
+  render(
+    <Theme>
+      <Entrance />
+    </Theme>,
+    target
+  );
+}

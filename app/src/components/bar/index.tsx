@@ -37,6 +37,7 @@ const Bar: React.FC<IBarProps> = (props) => {
     { href: "/#news", label: "news" },
     { href: "/reserve", label: "studio/akari park" },
     { href: "/contact", label: "contact" },
+    { href: "/fukushimabonchi", label: "FUKUSHIMA BONCHI" },
   ];
   const sns = [
     {
@@ -53,7 +54,7 @@ const Bar: React.FC<IBarProps> = (props) => {
     <React.Fragment>
       <HideOnScroll>
         <div className={classes.root}>
-          <AppBar>
+          <AppBar style={{ backgroundColor: "#ffffff" }}>
             <Toolbar>
               <h1>
                 <a href="/">

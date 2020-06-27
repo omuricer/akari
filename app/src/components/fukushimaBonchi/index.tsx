@@ -31,16 +31,8 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
   const classes = useStyles();
 
   var shopElements: JSX.Element[] = [];
-  Shops.map((s: TShop) =>
-    shopElements.push(
-      <Shop
-        shop={s}
-        onClick={(shop: TShop) => {
-          // setOpenSelectedShop(shop);
-          // setOpenShopDialog(true);
-        }}
-      />
-    )
+  Shops.map((s: TShop, i: number) =>
+    shopElements.push(<Shop shop={s} key={i} />)
   );
 
   return (

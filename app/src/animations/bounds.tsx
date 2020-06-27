@@ -1,7 +1,7 @@
 // 縦に揺れる
 export const Bounds = {
   bounds: {
-    animation: "$fluffy 3s ease infinite",
+    animation: "$fluffy 6s ease infinite",
   },
   "@keyframes fluffy": {
     "0%": {

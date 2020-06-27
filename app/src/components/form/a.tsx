@@ -23,7 +23,9 @@ const A: React.FC<IAProps> = (props) => {
   const classes = useStyles();
   return (
     <a {...props}>
-      <Typography className={classes.a}>{props.children}</Typography>
+      <Typography className={classes.a} style={props.style}>
+        {props.children}
+      </Typography>
     </a>
   );
 };

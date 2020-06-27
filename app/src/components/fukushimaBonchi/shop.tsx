@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import { TShop } from "@/components/fukushimaBonchi/shops";
+import {
+  TIcon,
+  TContent,
+  TShop,
+  isTContent,
+} from "@/components/fukushimaBonchi/shops";
 import ShopDialog from "@/components/fukushimaBonchi/shopDialog";
+import ShopDialogApartment from "@/components/fukushimaBonchi/shopDialogApartment";
 import { Bounds } from "@/animations/bounds";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -21,38 +27,56 @@ const useStyles = makeStyles((theme: Theme) =>
         transform: "scale(1.3)",
       },
       [theme.breakpoints.down("xs")]: {
-        width: "40px",
+        width: "80px",
       },
     },
     ...Bounds,
   })
 );
 
+const generateIconPath = (id: number) => {
+  return `/image/fukushimabonchi/${id}/icon.png`;
+};
+
 type IShopProps = {
   shop: TShop;
-  onClick: (shop: TShop) => void;
 };
 const Shop: React.FC<IShopProps> = (props) => {
   const [selected, setSelected] = useState<boolean>(false);
   const classes = useStyles();
 
-  console.log(props);
+  const shopDialog = props.shop.rooms ? (
+    <ShopDialogApartment
+      open={selected}
+      setOpen={setSelected}
+      id={props.shop.id}
+      content={props.shop.content}
+      rooms={props.shop.rooms}
+    />
+  ) : (
+    <ShopDialog
+      open={selected}
+      setOpen={setSelected}
+      id={props.shop.id}
+      content={props.shop.content}
+    />
+  );
 
   return (
     <React.Fragment>
       <img
-        src={props.shop.icon}
+        src={generateIconPath(props.shop.id)}
         className={[classes.shop, classes.bounds].join(" ")}
         style={{
-          top: `calc(50% + ${props.shop.positionY}%)`,
-          left: `calc(50% + ${props.shop.positionX}%)`,
+          top: `calc(50% + ${props.shop.icon.positionY}%)`,
+          left: `calc(50% + ${props.shop.icon.positionX}%)`,
           animationDelay: `${generateRondomDelay()}s`,
         }}
         onClick={() => {
           setSelected(true);
         }}
       />
-      <ShopDialog open={selected} setOpen={setSelected} shop={props.shop} />
+      {shopDialog}
     </React.Fragment>
   );
 };

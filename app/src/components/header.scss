@@ -85,14 +85,12 @@ nav.mobile.open {
   .menu.desktop {
     display: block;
     height: 100%;
-    width: 800px;
     padding-right: 1.5rem;
     position: relative;
 
     nav {
-      position: absolute;
-      bottom: 0;
-      right: 0;
+      display: flex;
+      justify-content: flex-end;
       padding-bottom: 0.2rem;
 
       li {

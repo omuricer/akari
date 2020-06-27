@@ -33,11 +33,29 @@ const Desktop: React.FC<IDesktopProps> = (props) => {
 
   const menu: JSX.Element[] = [];
   props.menu.map((item) => {
-    menu.push(
-      <li className={classes.menuText}>
-        <A href={item.href}>{item.label}</A>
-      </li>
-    );
+    // TODO: bonchi期間だけ
+    if (item.label == "FUKUSHIMA BONCHI") {
+      menu.push(
+        <li className={classes.menuText}>
+          <A
+            href={item.href}
+            style={{
+              fontWeight: "bold",
+              letterSpacing: "0",
+              color: "#F9A638",
+            }}
+          >
+            {item.label}
+          </A>
+        </li>
+      );
+    } else {
+      menu.push(
+        <li className={classes.menuText}>
+          <A href={item.href}>{item.label}</A>
+        </li>
+      );
+    }
   });
   props.sns.map((sns) => {
     menu.push(
