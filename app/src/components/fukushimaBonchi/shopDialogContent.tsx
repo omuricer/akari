@@ -101,23 +101,32 @@ const ShopDialogContent: React.FC<IShopDialogContentProps> = (props) => {
       color="primary"
       href={props.content.shopURL}
       target="_blank"
-      style={{ marginBottom: "1rem", width: "110px" }}
-      disabled={props.content.shopURL == ""}
+      style={{
+        marginBottom: "1rem",
+        width: "110px",
+        display: props.content.shopURL == "" ? "none" : "block",
+      }}
     >
       入店する
     </Button>
   ) : (
     ""
   );
+  const image =
+    props.content.logoExt == "" ? (
+      ""
+    ) : (
+      <img
+        src={generateLogoPath(props.id, props.content)}
+        className={classes.logo}
+      />
+    );
 
   return (
     <div className={classes.root}>
       {room}
       <div className={classes.content}>
-        <img
-          src={generateLogoPath(props.id, props.content)}
-          className={classes.logo}
-        />
+        {image}
         <div className={classes.shopContent}>
           <InfoItem label="kind">
             {props.content?.business ? (
