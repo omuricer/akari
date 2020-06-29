@@ -11,6 +11,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import Button from "@material-ui/core/Button";
 import { Typography, FormHelperText } from "@material-ui/core";
+import { useWindowDimensions } from "@/hooks/windowDimensions";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -52,14 +53,37 @@ const isMobile = () => {
   return breakPoint == "xs" || breakPoint == "sm";
 };
 
+const calcRatioBackgroundImage = (
+  originalWidth: number,
+  originalHeight: number,
+  actualWidth: number,
+  actualHeight: number
+) => {
+  if (isMobile()) {
+    return 1700 / 1920;
+  }
+  if (originalHeight / originalWidth > actualHeight / actualWidth) {
+    return actualHeight / originalHeight;
+  }
+  return actualWidth / originalWidth;
+};
+
 interface IFukushimaBonchiProps {}
 const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
   const [open, setOpen] = useState<boolean>(true);
   const classes = useStyles();
 
+  const { width, height } = useWindowDimensions();
+
   var shopElements: JSX.Element[] = [];
   Shops.map((s: TShop, i: number) =>
-    shopElements.push(<Shop shop={s} key={i} />)
+    shopElements.push(
+      <Shop
+        shop={s}
+        ratio={calcRatioBackgroundImage(1920, 1080, width, height)}
+        key={i}
+      />
+    )
   );
 
   const initDialog: JSX.Element = isMobile() ? (

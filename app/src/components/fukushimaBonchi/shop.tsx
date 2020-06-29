@@ -40,6 +40,7 @@ const generateIconPath = (id: number) => {
 
 type IShopProps = {
   shop: TShop;
+  ratio: number;
 };
 const Shop: React.FC<IShopProps> = (props) => {
   const [selected, setSelected] = useState<boolean>(false);
@@ -62,12 +63,16 @@ const Shop: React.FC<IShopProps> = (props) => {
     />
   );
 
+  const image = new Image();
+  image.src = generateIconPath(props.shop.id);
+
   return (
     <React.Fragment>
       <img
-        src={generateIconPath(props.shop.id)}
+        src={image.src}
         className={[classes.shop, classes.bounds].join(" ")}
         style={{
+          width: `calc(0.25 * ${props.ratio} * ${image.width}px)`,
           top: `calc(50% + ${props.shop.icon.positionY}%)`,
           left: `calc(50% + ${props.shop.icon.positionX}%)`,
           animationDelay: `${generateRondomDelay()}s`,
