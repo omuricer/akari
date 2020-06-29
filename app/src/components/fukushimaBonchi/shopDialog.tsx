@@ -61,8 +61,11 @@ const ShopDialog: React.FC<IShopDialogProps> = (props) => {
           color="primary"
           href={props.content?.shopURL}
           target="_blank"
-          style={{ marginRight: "1rem", width: "110px" }}
-          disabled={props.content.shopURL == ""}
+          style={{
+            marginRight: "1rem",
+            width: "110px",
+            display: props.content.shopURL == "" ? "none" : "block",
+          }}
         >
           入店する
         </Button>
