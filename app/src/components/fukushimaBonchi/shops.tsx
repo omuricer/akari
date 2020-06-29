@@ -29,8 +29,8 @@ export const Shops: TShop[] = [
   {
     id: 1,
     icon: {
-      positionX: -10,
-      positionY: -7,
+      positionY: -10,
+      positionX: -12,
     },
     content: {
       logoExt: "jpg",
@@ -43,8 +43,8 @@ export const Shops: TShop[] = [
   {
     id: 2,
     icon: {
-      positionX: 0,
-      positionY: 2,
+      positionY: -3,
+      positionX: -1,
     },
     content: {
       logoExt: "png",
@@ -76,7 +76,7 @@ export const Shops: TShop[] = [
         name: "アサノコウタ",
         business: "建築",
         area: "福島市",
-        shopURL: "http://www.bhis.jp/top.html",
+        shopURL: "https://www.instagram.com/casa_no/",
       },
       {
         room: "301",
@@ -123,8 +123,8 @@ export const Shops: TShop[] = [
   {
     id: 3,
     icon: {
-      positionX: -8,
-      positionY: -13,
+      positionY: -17,
+      positionX: -10,
     },
     content: {
       logoExt: "png",
@@ -137,8 +137,8 @@ export const Shops: TShop[] = [
   {
     id: 4,
     icon: {
-      positionX: -9,
-      positionY: 0,
+      positionY: -1,
+      positionX: -10,
     },
     content: {
       logoExt: "jpg",
@@ -151,8 +151,8 @@ export const Shops: TShop[] = [
   {
     id: 5,
     icon: {
-      positionX: 13,
-      positionY: -11,
+      positionY: -10,
+      positionX: 14,
     },
     content: {
       logoExt: "jpg",
@@ -165,8 +165,8 @@ export const Shops: TShop[] = [
   {
     id: 6,
     icon: {
-      positionX: -7,
-      positionY: 12,
+      positionY: 6,
+      positionX: -10,
     },
     content: {
       logoExt: "jpg",
@@ -179,8 +179,8 @@ export const Shops: TShop[] = [
   {
     id: 7,
     icon: {
-      positionX: 2.5,
-      positionY: -18,
+      positionY: -16,
+      positionX: 4,
     },
     content: {
       logoExt: "jpg",
@@ -193,8 +193,8 @@ export const Shops: TShop[] = [
   {
     id: 8,
     icon: {
+      positionY: 6,
       positionX: 11,
-      positionY: 7,
     },
     content: {
       logoExt: "jpg",
@@ -207,8 +207,8 @@ export const Shops: TShop[] = [
   {
     id: 9,
     icon: {
-      positionX: 10,
-      positionY: -11,
+      positionY: -9,
+      positionX: 11,
     },
     content: {
       logoExt: "jpg",
@@ -221,8 +221,8 @@ export const Shops: TShop[] = [
   {
     id: 10,
     icon: {
-      positionX: 12,
       positionY: 0,
+      positionX: 13,
     },
     content: {
       logoExt: "jpg",
@@ -235,8 +235,8 @@ export const Shops: TShop[] = [
   {
     id: 11,
     icon: {
-      positionX: -13,
-      positionY: 7,
+      positionY: 4,
+      positionX: -16,
     },
     content: {
       logoExt: "jpg",
@@ -249,8 +249,8 @@ export const Shops: TShop[] = [
   {
     id: 12,
     icon: {
-      positionX: -17,
-      positionY: 8,
+      positionY: 3,
+      positionX: -22,
     },
     content: {
       logoExt: "jpg",
@@ -263,8 +263,8 @@ export const Shops: TShop[] = [
   {
     id: 13,
     icon: {
-      positionX: -5,
-      positionY: 0,
+      positionY: -1,
+      positionX: -6,
     },
     content: {
       logoExt: "jpg",
@@ -277,11 +277,11 @@ export const Shops: TShop[] = [
   {
     id: 14,
     icon: {
+      positionY: -4,
       positionX: 8,
-      positionY: -2,
     },
     content: {
-      logoExt: "png",
+      logoExt: "jpg",
       name: "ヤブウチビル",
       business: "複合施設",
       area: "福島市",
