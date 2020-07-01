@@ -112,7 +112,7 @@ export const Shops: TShop[] = [
       },
       {
         room: "403",
-        logoExt: "png",
+        logoExt: "",
         name: "Hi-WORKS マルハ",
         business: "リユース",
         area: "国見町",
@@ -306,32 +306,4 @@ export const Shops: TShop[] = [
       },
     ],
   },
-  // {
-  //   id: 15,
-  //   icon: {
-  //     positionX: 5,
-  //     positionY: 7,
-  //   },
-  //   content: {
-  //     logoExt: "png",
-  //     name: "",
-  //     business: "",
-  //     area: "",
-  //     shopURL: "",
-  //   },
-  // },
-  // {
-  //   id: 16,
-  //   icon: {
-  //     positionX: 5,
-  //     positionY: 7,
-  //   },
-  //   content: {
-  //     logoExt: "png",
-  //     name: "",
-  //     business: "",
-  //     area: "",
-  //     shopURL: "",
-  //   },
-  // },
 ];

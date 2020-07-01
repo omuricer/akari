@@ -50,7 +50,7 @@ const detectBreakPoint = () => {
 };
 const isMobile = () => {
   const breakPoint = detectBreakPoint();
-  return breakPoint == "xs" || breakPoint == "sm";
+  return breakPoint == "xs";
 };
 
 const calcRatioBackgroundImage = (

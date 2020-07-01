@@ -114,7 +114,7 @@ const ShopDialogContent: React.FC<IShopDialogContentProps> = (props) => {
   );
   const image =
     props.content.logoExt == "" ? (
-      ""
+      <img src="/image/no-image.png" className={classes.logo} />
     ) : (
       <img
         src={generateLogoPath(props.id, props.content)}
