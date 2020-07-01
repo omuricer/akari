@@ -17,15 +17,6 @@ const useStyles = makeStyles((theme: Theme) =>
       position: "absolute",
       width: "4.5vw",
 
-      // https://littlethings.jp/blog/web/css-hover-effect
-      WebkitTransform: "scale(1)",
-      transform: "scale(1)",
-      WebkitTransition: "0.5s ease-in-out",
-      transition: "0.5s ease-in-out",
-      "&:hover": {
-        WebkitTransform: "scale(1.3)",
-        transform: "scale(1.3)",
-      },
       [theme.breakpoints.down("xs")]: {
         width: "80px",
       },
@@ -38,12 +29,34 @@ const generateIconPath = (id: number) => {
   return `/image/fukushimabonchi/${id}/icon.png`;
 };
 
+const requestImageNaturalSize = async (
+  src: string
+): Promise<{ natulalWidth: number; natulalHeight: number }> => {
+  const image = new Image();
+  image.src = src;
+  return new Promise<{ natulalWidth: number; natulalHeight: number }>(
+    (resolve) => {
+      image.addEventListener(
+        "load",
+        () => {
+          resolve({
+            natulalWidth: image.naturalWidth,
+            natulalHeight: image.naturalHeight,
+          });
+        },
+        false
+      );
+    }
+  );
+};
+
 type IShopProps = {
   shop: TShop;
   ratio: number;
 };
 const Shop: React.FC<IShopProps> = (props) => {
   const [selected, setSelected] = useState<boolean>(false);
+  const [naturalWidth, setNaturalWidth] = useState<number>(0);
   const classes = useStyles();
 
   const shopDialog = props.shop.rooms ? (
@@ -63,16 +76,22 @@ const Shop: React.FC<IShopProps> = (props) => {
     />
   );
 
-  const image = new Image();
-  image.src = generateIconPath(props.shop.id);
+  const imageSrc = generateIconPath(props.shop.id);
+  useEffect(() => {
+    const asyncs = async () => {
+      const naturalSize = await requestImageNaturalSize(imageSrc);
+      setNaturalWidth(naturalSize.natulalWidth);
+    };
+    asyncs();
+  }, []);
 
   return (
     <React.Fragment>
       <img
-        src={image.src}
+        src={imageSrc}
         className={[classes.shop, classes.bounds].join(" ")}
         style={{
-          width: `calc(0.25 * ${props.ratio} * ${image.width}px)`,
+          width: `calc(0.25 * ${props.ratio} * ${naturalWidth}px)`,
           top: `calc(50% + ${props.shop.icon.positionY}%)`,
           left: `calc(50% + ${props.shop.icon.positionX}%)`,
           animationDelay: `${generateRondomDelay()}s`,
