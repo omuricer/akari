@@ -108,12 +108,8 @@ module.exports = {
       filename: "fukushimabonchi.html",
     }),
     new HtmlWebPackPlugin({
-      template: "./src/fukushimabonchi-wip.html",
-      filename: "fukushimabonchi-wip.html",
-    }),
-    new HtmlWebPackPlugin({
-      template: "./src/fukushimabonchi-entrance-wip.html",
-      filename: "fukushimabonchi-entrance-wip.html",
+      template: "./src/fukushimabonchi-entrance.html",
+      filename: "fukushimabonchi-entrance.html",
     }),
     new AppManifestWebpackPlugin({
       logo: "./src/image/favicon/favicon_saurce.png",
@@ -151,10 +147,9 @@ module.exports = {
         { from: /^\/reserve/, to: "/reserve.html" },
         { from: /^\/contact/, to: "/contact.html" },
         {
-          from: /^\/fukushimabonchi-entrance-wip/,
-          to: "/fukushimabonchi-entrance-wip.html",
+          from: /^\/fukushimabonchi-entrance/,
+          to: "/fukushimabonchi-entrance.html",
         },
-        { from: /^\/fukushimabonchi-wip/, to: "/fukushimabonchi-wip.html" },
         { from: /^\/fukushimabonchi/, to: "/fukushimabonchi.html" },
       ],
     },

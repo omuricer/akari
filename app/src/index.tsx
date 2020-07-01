@@ -12,17 +12,7 @@ import "@/css/destyle.css";
 // TODO: index_old.jsの中身をコンポーネントに移行する
 require("./index_old.js");
 
-let target = document.getElementById("bonchi-teaser");
-if (target) {
-  render(
-    <Theme>
-      <Teaser />
-    </Theme>,
-    target
-  );
-}
-
-target = document.getElementById("bonchi");
+let target = document.getElementById("bonchi");
 if (target) {
   render(
     <Theme>
