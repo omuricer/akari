@@ -1,5 +1,3 @@
-import TablePaginationActions from "@material-ui/core/TablePagination/TablePaginationActions";
-
 export type TShop = {
   id: number;
   icon: TIcon;

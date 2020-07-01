@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-interface ITeaserProps {}
+interface ITeaserProps { }
 const Teaser: React.FC<ITeaserProps> = (props) => {
   const classes = useStyles();
 
