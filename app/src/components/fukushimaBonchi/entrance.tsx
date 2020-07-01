@@ -61,7 +61,7 @@ const Entrance: React.FC<IEntranceProps> = (props) => {
             variant="outlined"
             size="large"
             color="primary"
-            href="/fukushimabonchi-wip"
+            href="/fukushimabonchi"
             style={{ marginTop: "2rem", width: "110px" }}
           >
             訪れる
