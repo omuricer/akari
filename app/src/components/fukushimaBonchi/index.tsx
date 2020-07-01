@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
       minHeight: "100vh",
       backgroundAttachment: "scroll",
       backgroundSize: "contain",
-      backgroundImage: "url(../image/fukushimabonchi/world_map.png)",
+      backgroundImage: "url(../image/fukushimabonchi/world_map_base.png)",
       backgroundPosition: "center center",
       backgroundRepeat: "no-repeat",
       position: "relative",
