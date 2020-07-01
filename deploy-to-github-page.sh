@@ -5,7 +5,7 @@ cp -rd docs-for-github-pages docs
 cd app
 npm install
 npx webpack --mode production
-# TODO: webpackでバンドルする
+# TODO: webpackでバンドルする!
 cp -rd src/image/fukushimabonchi dist/image
 cp -rd docs/ogp dist/image
 mv dist/* ../docs
