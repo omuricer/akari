@@ -7,5 +7,6 @@ npm install
 npx webpack --mode production
 # TODO: webpackでバンドルする
 cp -rd src/image/fukushimabonchi dist/image
+cp -rd docs/ogp dist/image
 mv dist/* ../docs
 exit
