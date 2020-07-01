@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import {
-  TIcon,
-  TContent,
   TShop,
-  isTContent,
 } from "@/components/fukushimaBonchi/shops";
 import ShopDialog from "@/components/fukushimaBonchi/shopDialog";
 import ShopDialogApartment from "@/components/fukushimaBonchi/shopDialogApartment";
@@ -68,13 +65,13 @@ const Shop: React.FC<IShopProps> = (props) => {
       rooms={props.shop.rooms}
     />
   ) : (
-    <ShopDialog
-      open={selected}
-      setOpen={setSelected}
-      id={props.shop.id}
-      content={props.shop.content}
-    />
-  );
+      <ShopDialog
+        open={selected}
+        setOpen={setSelected}
+        id={props.shop.id}
+        content={props.shop.content}
+      />
+    );
 
   const imageSrc = generateIconPath(props.shop.id);
   useEffect(() => {
