@@ -9,5 +9,5 @@ npx webpack --mode production
 cp -rd src/image/fukushimabonchi dist/image
 cd ../
 cp -rd docs/ogp app/dist/image
-mv dist/* ../docs
+mv app/dist/* docs
 exit
