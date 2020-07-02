@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import {
-  TShop,
-} from "@/components/fukushimaBonchi/shops";
+import { TShop } from "@/components/fukushimaBonchi/shops";
 import ShopDialog from "@/components/fukushimaBonchi/shopDialog";
 import ShopDialogApartment from "@/components/fukushimaBonchi/shopDialogApartment";
 import { Bounds } from "@/animations/bounds";
+
+type imageSize = {
+  width: number;
+  height: number;
+};
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -26,25 +29,21 @@ const generateIconPath = (id: number) => {
   return `/image/fukushimabonchi/${id}/icon.png`;
 };
 
-const requestImageNaturalSize = async (
-  src: string
-): Promise<{ natulalWidth: number; natulalHeight: number }> => {
+const requestImageNaturalSize = async (src: string): Promise<imageSize> => {
   const image = new Image();
   image.src = src;
-  return new Promise<{ natulalWidth: number; natulalHeight: number }>(
-    (resolve) => {
-      image.addEventListener(
-        "load",
-        () => {
-          resolve({
-            natulalWidth: image.naturalWidth,
-            natulalHeight: image.naturalHeight,
-          });
-        },
-        false
-      );
-    }
-  );
+  return new Promise<imageSize>((resolve) => {
+    image.addEventListener(
+      "load",
+      () => {
+        resolve({
+          width: image.naturalWidth,
+          height: image.naturalHeight,
+        });
+      },
+      false
+    );
+  });
 };
 
 type IShopProps = {
@@ -53,7 +52,8 @@ type IShopProps = {
 };
 const Shop: React.FC<IShopProps> = (props) => {
   const [selected, setSelected] = useState<boolean>(false);
-  const [naturalWidth, setNaturalWidth] = useState<number>(0);
+  const [preLoadedImage, setPreLoadedImage] = useState<boolean>(false);
+  const [naturalSize, setNaturalSize] = useState<imageSize | null>(null);
   const classes = useStyles();
 
   const shopDialog = props.shop.rooms ? (
@@ -65,30 +65,31 @@ const Shop: React.FC<IShopProps> = (props) => {
       rooms={props.shop.rooms}
     />
   ) : (
-      <ShopDialog
-        open={selected}
-        setOpen={setSelected}
-        id={props.shop.id}
-        content={props.shop.content}
-      />
-    );
+    <ShopDialog
+      open={selected}
+      setOpen={setSelected}
+      id={props.shop.id}
+      content={props.shop.content}
+    />
+  );
 
   const imageSrc = generateIconPath(props.shop.id);
   useEffect(() => {
     const asyncs = async () => {
-      const naturalSize = await requestImageNaturalSize(imageSrc);
-      setNaturalWidth(naturalSize.natulalWidth);
+      setNaturalSize(await requestImageNaturalSize(imageSrc));
+      setPreLoadedImage(true);
     };
     asyncs();
   }, []);
 
+  if (!preLoadedImage) return null;
   return (
     <React.Fragment>
       <img
         src={imageSrc}
         className={[classes.shop, classes.bounds].join(" ")}
         style={{
-          width: `calc(0.25 * ${props.ratio} * ${naturalWidth}px)`,
+          width: `calc(0.25 * ${props.ratio} * ${naturalSize?.width}px)`,
           top: `calc(50% + ${props.shop.icon.positionY}%)`,
           left: `calc(50% + ${props.shop.icon.positionX}%)`,
           animationDelay: `${generateRondomDelay()}s`,
