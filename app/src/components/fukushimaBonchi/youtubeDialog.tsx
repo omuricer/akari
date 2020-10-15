@@ -4,6 +4,8 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import Button from "@material-ui/core/Button";
+import YoutubeAPI, { TSearchResponse } from "@/components/youtube/api";
+import PlayView from "@/components/youtube/playView";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -37,7 +39,35 @@ interface IYoutubeDialogProps {
   onClose: () => void;
 }
 const YoutubeDialog: React.FC<IYoutubeDialogProps> = (props) => {
+  const [movies, setMovies] = useState<TSearchResponse>([]);
+  const [playVideoId, setPlayVideoId] = useState<string | undefined>(undefined);
   const classes = useStyles();
+
+  /**
+   * Youtube Data APIをコールし、Stateのmoviesに設定する
+   * @param apiProps Youtube Data API の検索条件
+   */
+  const searchMovies = async (apiProps: { key: string; channelId: string }) => {
+    YoutubeAPI.init(apiProps.key);
+    const result = await YoutubeAPI.search({
+      part: "snippet",
+      type: "video",
+      eventType: "live",
+      maxResults: 1,
+      channelId: apiProps.channelId,
+    });
+    console.log(result);
+  };
+
+  useEffect(() => {
+    const asyncs = async () => {
+      await searchMovies({
+        key: "AIzaSyCOdHoXvxi2fferydOqo4O4Z-6o4p0s0fE",
+        channelId: "UCdZsC9AS5zcZEKOm6eIAC5w",
+      });
+    };
+    asyncs();
+  }, []);
 
   return (
     <Dialog open={props.open} onClose={props.onClose} className={classes.root}>

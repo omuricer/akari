@@ -45,11 +45,12 @@ export type TSearchResponse = {
 type SearchRequest = {
   part: "snippet" | "";
   type: "video" | "";
-  order: "date" | "";
-  maxResults: number;
+  eventType: "live" | "";
+  order?: "date" | "";
+  maxResults?: number;
   channelId: string;
-  q: string;
-  publishedAfter: string;
+  q?: string;
+  publishedAfter?: string;
 };
 type APIResponse = {
   pageInfo: {
