@@ -12,6 +12,8 @@ import DialogContent from "@material-ui/core/DialogContent";
 import Button from "@material-ui/core/Button";
 import { Typography, FormHelperText } from "@material-ui/core";
 import { useWindowDimensions } from "@/hooks/windowDimensions";
+import Icon from "@/components/fukushimaBonchi/icon";
+import YoutubeDialog from "@/components/fukushimaBonchi/youtubeDialog";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -72,6 +74,7 @@ interface IFukushimaBonchiProps {}
 const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
   const [open, setOpen] = useState<boolean>(true);
   const classes = useStyles();
+  const [openedDialog, setOpenedDialog] = useState<string | null>(null);
 
   const { width, height } = useWindowDimensions();
 
@@ -125,6 +128,23 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
         <Grid item sm={12} lg={12} className={classes.content}>
           <div className={`mdc-layout-grid__inner ${classes.content}`}>
             {shopElements}
+            <Icon
+              id={"youtube"}
+              image={"/src/aaaaaa"}
+              position={{ x: 100, y: 200 }}
+              ratio={calcRatioBackgroundImage(1920, 1080, width, height)}
+              onClick={() => {
+                setOpenedDialog("youtube");
+              }}
+              dialog={
+                <YoutubeDialog
+                  open={openedDialog === "youtube"}
+                  onClose={() => {
+                    setOpenedDialog(null);
+                  }}
+                />
+              }
+            />
           </div>
         </Grid>
       </TemplateHero>
