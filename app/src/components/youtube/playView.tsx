@@ -23,7 +23,7 @@ const PlayView: React.FC<IPlayViewProps> = (props) => {
           videoId={props.videoId}
           opts={opts}
           onReady={(e) => {
-            e.target.pauseVideo();
+            // e.target.pauseVideo();
           }}
         />
       )}
