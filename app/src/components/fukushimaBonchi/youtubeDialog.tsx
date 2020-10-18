@@ -66,7 +66,7 @@ const YoutubeDialog: React.FC<IYoutubeDialogProps> = (props) => {
     const asyncs = async () => {
       const movies = await searchMovies({
         key: "AIzaSyCOdHoXvxi2fferydOqo4O4Z-6o4p0s0fE",
-        channelId: "UCGCZAYq5Xxojl_tSXcVJhiQ",
+        channelId: "UCQhy6LDb4DjT3bz-hSCf-lg",
       });
       setPlayVideoId(movies ? movies[0].videoId : undefined);
     };
