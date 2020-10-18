@@ -50,7 +50,7 @@ const detectBreakPoint = () => {
   });
   return detectedBreakPoint ?? "lg";
 };
-const isMobile = () => {
+const detectIsMobile = () => {
   const breakPoint = detectBreakPoint();
   return breakPoint == "xs";
 };
@@ -61,7 +61,7 @@ const calcRatioBackgroundImage = (
   actualWidth: number,
   actualHeight: number
 ) => {
-  if (isMobile()) {
+  if (detectIsMobile()) {
     return 1700 / 1920;
   }
   if (originalHeight / originalWidth > actualHeight / actualWidth) {
@@ -75,6 +75,7 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
   const [open, setOpen] = useState<boolean>(true);
   const classes = useStyles();
   const [openedDialog, setOpenedDialog] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   const { width, height } = useWindowDimensions();
 
@@ -89,7 +90,7 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
     )
   );
 
-  const initDialog: JSX.Element = isMobile() ? (
+  const initDialog: JSX.Element = detectIsMobile() ? (
     <Dialog open={open}>
       <DialogContent
         style={{
@@ -131,7 +132,7 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
             <Icon
               id={"youtube"}
               image={"/src/aaaaaa"}
-              position={{ x: 100, y: 200 }}
+              position={{ x: 0, y: 0 }}
               ratio={calcRatioBackgroundImage(1920, 1080, width, height)}
               onClick={() => {
                 setOpenedDialog("youtube");
@@ -142,6 +143,7 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
                   onClose={() => {
                     setOpenedDialog(null);
                   }}
+                  isMobile={detectIsMobile()}
                 />
               }
             />

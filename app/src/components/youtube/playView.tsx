@@ -4,12 +4,13 @@ import YouTube, { Options } from "react-youtube";
 export interface IPlayViewProps {
   videoId: string | undefined;
   opts?: Options;
+  isMobile: boolean;
 }
 const PlayView: React.FC<IPlayViewProps> = (props) => {
   const opts: Options = {
     ...{
-      height: "auto",
-      width: "100%",
+      height: props.isMobile ? "auto" : "390",
+      width: props.isMobile ? "100%" : "640",
       playerVars: {
         autoplay: 1,
       },

@@ -9,21 +9,19 @@ import PlayView from "@/components/youtube/playView";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-      width: "80vw",
-      [theme.breakpoints.down("xs")]: {
-        width: "95vw",
-      },
+    paper: {
+      // override .MuiDialog-paper
+      maxWidth: "none",
     },
     contentRoot: {
       background: "rgba(225,225,225, 0.9)", // 透過を子要素に継承しないためRGBで指定している
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-
-      paddingTop: "2rem",
-      paddingLeft: "2rem",
-      paddingRight: "2rem",
+      padding: 0,
+      "&::first-child": {
+        padding: 0,
+      },
       [theme.breakpoints.down("xs")]: {
         minWidth: "auto",
       },
@@ -41,6 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
 interface IYoutubeDialogProps {
   open: boolean;
   onClose: () => void;
+  isMobile: boolean;
 }
 const YoutubeDialog: React.FC<IYoutubeDialogProps> = (props) => {
   const [movies, setMovies] = useState<TSearchResponse>([]);
@@ -74,9 +73,13 @@ const YoutubeDialog: React.FC<IYoutubeDialogProps> = (props) => {
   }, []);
 
   return (
-    <Dialog open={props.open} onClose={props.onClose} className={classes.root}>
+    <Dialog
+      open={props.open}
+      onClose={props.onClose}
+      classes={{ paper: classes.paper }}
+    >
       <DialogContent className={classes.contentRoot}>
-        <PlayView videoId={playVideoId} />
+        <PlayView videoId={playVideoId} isMobile={props.isMobile} />
       </DialogContent>
       <DialogActions className={classes.actionsRoot}>
         <Button
