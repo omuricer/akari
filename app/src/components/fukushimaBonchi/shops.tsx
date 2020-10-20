@@ -8,6 +8,7 @@ export type TShop = {
 export type TIcon = {
   positionX: number;
   positionY: number;
+  ratio?: number;
 };
 
 export type TContent = {
@@ -249,6 +250,7 @@ export const Shops: TShop[] = [
     icon: {
       positionY: 3,
       positionX: -22,
+      ratio: 1.9,
     },
     content: {
       logoExt: "jpg",
@@ -304,4 +306,50 @@ export const Shops: TShop[] = [
       },
     ],
   },
+  {
+    id: 15,
+    icon: {
+      positionY: 4,
+      positionX: -4,
+      ratio: 1.6,
+    },
+    content: {
+      logoExt: "jpg",
+      name: "磐椅神社",
+      business: "神社",
+      area: "猪苗代町",
+      shopURL: "https://www.instagram.com/iwahashijinjya/",
+    },
+  },
+  {
+    id: 16,
+    icon: {
+      positionY: -5,
+      positionX: -18,
+      ratio: 1.8,
+    },
+    content: {
+      logoExt: "jpg",
+      name: "はじまりの美術館",
+      business: "美術館",
+      area: "猪苗代町",
+      shopURL: "https://hajimari-ac.com",
+    },
+  },
+  {
+    id: 17,
+    icon: {
+      positionY: -15,
+      positionX: -3,
+      ratio: 2.1,
+    },
+    content: {
+      logoExt: "jpg",
+      name: "Books&cafeコトウ",
+      business: "ブックカフェ",
+      area: "福島市",
+      shopURL: "https://www.instagram.com/kotou.books.cafe/",
+    },
+  },
+
 ];

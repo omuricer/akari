@@ -75,7 +75,6 @@ const ShopDialog: React.FC<IShopDialogProps> = (props) => {
           onClick={() => {
             props.setOpen(false);
           }}
-          autoFocus
           style={{ width: "110px" }}
         >
           Close

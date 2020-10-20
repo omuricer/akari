@@ -89,7 +89,7 @@ const Shop: React.FC<IShopProps> = (props) => {
         src={imageSrc}
         className={[classes.shop, classes.bounds].join(" ")}
         style={{
-          width: `calc(0.25 * ${props.ratio} * ${naturalSize?.width}px)`,
+          width: `calc(0.25 * ${props.ratio} * ${props.shop.icon.ratio ?? 1} * ${naturalSize?.width}px)`,
           top: `calc(50% + ${props.shop.icon.positionY}%)`,
           left: `calc(50% + ${props.shop.icon.positionX}%)`,
           animationDelay: `${generateRondomDelay()}s`,
