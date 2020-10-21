@@ -250,7 +250,7 @@ export const Shops: TShop[] = [
     icon: {
       positionY: 3,
       positionX: -22,
-      ratio: 1.9,
+      ratio: 0.9,
     },
     content: {
       logoExt: "jpg",
@@ -351,5 +351,4 @@ export const Shops: TShop[] = [
       shopURL: "https://www.instagram.com/kotou.books.cafe/",
     },
   },
-
 ];
