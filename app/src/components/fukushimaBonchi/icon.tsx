@@ -68,7 +68,7 @@ const Icon: React.FC<IIconProps> = (props) => {
         src={props.image}
         className={[classes.shop, classes.bounds].join(" ")}
         style={{
-          width: `calc(0.25 * ${props.ratio} * ${naturalSize?.width}px)`,
+          width: `calc(1 * ${props.ratio} * ${naturalSize?.width}px)`,
           top: `calc(50% + ${props.position.y}%)`,
           left: `calc(50% + ${props.position.x}%)`,
           animationDelay: `${generateRondomDelay()}s`,

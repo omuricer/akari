@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import YouTube, { Options } from "react-youtube";
+import Image from "@/components/form/image";
+import UnStart from "@/image/fukushimabonchi/un_start.jpg";
 
 export interface IPlayViewProps {
   videoId: string | undefined;
@@ -19,7 +21,7 @@ const PlayView: React.FC<IPlayViewProps> = (props) => {
   };
   return (
     <React.Fragment>
-      {props.videoId && (
+      {props.videoId ? (
         <YouTube
           videoId={props.videoId}
           opts={opts}
@@ -27,6 +29,8 @@ const PlayView: React.FC<IPlayViewProps> = (props) => {
             // e.target.pauseVideo();
           }}
         />
+      ) : (
+        <Image src={UnStart} height={props.isMobile ? "auto" : "390"} width={props.isMobile ? "100%" : "640"} />
       )}
     </React.Fragment>
   );

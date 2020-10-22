@@ -15,6 +15,8 @@ import { useWindowDimensions } from "@/hooks/windowDimensions";
 import Icon from "@/components/fukushimaBonchi/icon";
 import YoutubeDialog from "@/components/fukushimaBonchi/youtubeDialog";
 
+import MarcheIcon from "@/image/fukushimabonchi/marche_icon.png";
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     content: {
@@ -131,8 +133,8 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
             {shopElements}
             <Icon
               id={"youtube"}
-              image={"/src/aaaaaa"}
-              position={{ x: 0, y: 0 }}
+              image={MarcheIcon}
+              position={{ x: -10, y: -9 }}
               ratio={calcRatioBackgroundImage(1920, 1080, width, height)}
               onClick={() => {
                 setOpenedDialog("youtube");
