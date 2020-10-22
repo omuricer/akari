@@ -15,6 +15,7 @@ import { useWindowDimensions } from "@/hooks/windowDimensions";
 import Icon from "@/components/fukushimaBonchi/icon";
 import YoutubeDialog from "@/components/fukushimaBonchi/youtubeDialog";
 
+import Marche from "./marche";
 import MarcheIcon from "@/image/fukushimabonchi/marche_icon.png";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -130,6 +131,10 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
       <TemplateHero>
         <Grid item sm={12} lg={12} className={classes.content}>
           <div className={`mdc-layout-grid__inner ${classes.content}`}>
+            <Marche
+              isMobile={detectIsMobile()}
+              ratio={calcRatioBackgroundImage(1920, 1080, width, height)}
+            />
             {shopElements}
             <Icon
               id={"youtube"}
