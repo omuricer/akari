@@ -8,26 +8,30 @@ import Logo from "@/image/fukushimabonchi/marche_logo.png";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     fukidashi: {
-      background: "rgba(225,225,225, 0.9)",
-      position: "relative",
+      background: "rgba(255,255,255, 0.9)",
+      position: "absolute",
       display: "inline-block",
       padding: "7px 10px",
 
-      top: "20px",
+      top: (props: IMarcheProps) => `calc(90 * ${props.ratio}px)`,
       left: "50%",
       transform: "translateX(-50%)",
       WebkitTransform: "translateX(-50%)",
       MsTransform: "translateX(-50%)",
+
+      borderRadius: "30px",
+      pointerEvents: "none",
 
       "&::before": {
         content: '""',
         position: "absolute",
         top: "100%",
         left: "50%",
-        marginLeft: "-15px",
-        border: "15px solid transparent",
+        marginLeft: "-35px",
+        border: "35px solid transparent",
         borderTop: (props: IMarcheProps) =>
-          `${150 * props.ratio}px solid #ffffff`,
+          `${160 * props.ratio}px solid rgba(255,255,255, 0.9)`,
+        pointerEvents: "none",
       },
     },
   })
@@ -41,7 +45,12 @@ const Marche: React.FC<IMarcheProps> = (props) => {
   const classes = useStyles(props);
   return (
     <div className={classes.fukidashi}>
-      <Image src={Logo} width={props.isMobile ? "320" : "320"} />
+      <Image
+        src={Logo}
+        width={
+          props.isMobile ? `${320 * props.ratio}px` : `${320 * props.ratio}px`
+        }
+      />
     </div>
   );
 };

@@ -131,10 +131,6 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
       <TemplateHero>
         <Grid item sm={12} lg={12} className={classes.content}>
           <div className={`mdc-layout-grid__inner ${classes.content}`}>
-            <Marche
-              isMobile={detectIsMobile()}
-              ratio={calcRatioBackgroundImage(1920, 1080, width, height)}
-            />
             {shopElements}
             <Icon
               id={"youtube"}
@@ -153,6 +149,10 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
                   isMobile={detectIsMobile()}
                 />
               }
+            />
+            <Marche
+              isMobile={detectIsMobile()}
+              ratio={calcRatioBackgroundImage(1920, 1080, width, height)}
             />
           </div>
         </Grid>
