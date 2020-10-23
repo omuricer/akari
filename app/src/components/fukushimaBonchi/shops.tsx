@@ -42,8 +42,9 @@ export const Shops: TShop[] = [
   {
     id: 2,
     icon: {
-      positionY: -3,
-      positionX: -1,
+      positionY: -1,
+      positionX: 1,
+      ratio: 0.8,
     },
     content: {
       logoExt: "png",
@@ -263,8 +264,9 @@ export const Shops: TShop[] = [
   {
     id: 13,
     icon: {
-      positionY: -1,
+      positionY: -0,
       positionX: -6,
+      ratio: 0.9,
     },
     content: {
       logoExt: "jpg",
@@ -310,7 +312,7 @@ export const Shops: TShop[] = [
     id: 15,
     icon: {
       positionY: 4,
-      positionX: -4,
+      positionX: -3,
       ratio: 1.6,
     },
     content: {

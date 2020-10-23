@@ -12,6 +12,11 @@ import DialogContent from "@material-ui/core/DialogContent";
 import Button from "@material-ui/core/Button";
 import { Typography, FormHelperText } from "@material-ui/core";
 import { useWindowDimensions } from "@/hooks/windowDimensions";
+import Icon from "@/components/fukushimaBonchi/icon";
+import YoutubeDialog from "@/components/fukushimaBonchi/youtubeDialog";
+
+import Marche from "./marche";
+import MarcheIcon from "@/image/fukushimabonchi/marche_icon.png";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -48,7 +53,7 @@ const detectBreakPoint = () => {
   });
   return detectedBreakPoint ?? "lg";
 };
-const isMobile = () => {
+const detectIsMobile = () => {
   const breakPoint = detectBreakPoint();
   return breakPoint == "xs";
 };
@@ -59,7 +64,7 @@ const calcRatioBackgroundImage = (
   actualWidth: number,
   actualHeight: number
 ) => {
-  if (isMobile()) {
+  if (detectIsMobile()) {
     return 1700 / 1920;
   }
   if (originalHeight / originalWidth > actualHeight / actualWidth) {
@@ -72,6 +77,8 @@ interface IFukushimaBonchiProps {}
 const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
   const [open, setOpen] = useState<boolean>(true);
   const classes = useStyles();
+  const [openedDialog, setOpenedDialog] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   const { width, height } = useWindowDimensions();
 
@@ -86,7 +93,7 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
     )
   );
 
-  const initDialog: JSX.Element = isMobile() ? (
+  const initDialog: JSX.Element = detectIsMobile() ? (
     <Dialog open={open}>
       <DialogContent
         style={{
@@ -125,6 +132,28 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
         <Grid item sm={12} lg={12} className={classes.content}>
           <div className={`mdc-layout-grid__inner ${classes.content}`}>
             {shopElements}
+            <Icon
+              id={"youtube"}
+              image={MarcheIcon}
+              position={{ x: -10, y: -9 }}
+              ratio={calcRatioBackgroundImage(1920, 1080, width, height)}
+              onClick={() => {
+                setOpenedDialog("youtube");
+              }}
+              dialog={
+                <YoutubeDialog
+                  open={openedDialog === "youtube"}
+                  onClose={() => {
+                    setOpenedDialog(null);
+                  }}
+                  isMobile={detectIsMobile()}
+                />
+              }
+            />
+            <Marche
+              isMobile={detectIsMobile()}
+              ratio={calcRatioBackgroundImage(1920, 1080, width, height)}
+            />
           </div>
         </Grid>
       </TemplateHero>
