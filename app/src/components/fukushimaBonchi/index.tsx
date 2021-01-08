@@ -137,9 +137,7 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
               image={MarcheIcon}
               position={{ x: -10, y: -9 }}
               ratio={calcRatioBackgroundImage(1920, 1080, width, height)}
-              onClick={() => {
-                setOpenedDialog("youtube");
-              }}
+              onClick={() => {}}
               dialog={
                 <YoutubeDialog
                   open={openedDialog === "youtube"}
@@ -149,10 +147,7 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
                   isMobile={detectIsMobile()}
                 />
               }
-            />
-            <Marche
-              isMobile={detectIsMobile()}
-              ratio={calcRatioBackgroundImage(1920, 1080, width, height)}
+              bounds={false}
             />
           </div>
         </Grid>

@@ -48,12 +48,16 @@ type IIconProps = {
     y: number;
   };
   ratio: number;
+  bounds: boolean;
   dialog: JSX.Element;
   onClick: () => void;
 };
 const Icon: React.FC<IIconProps> = (props) => {
   const [naturalSize, setNaturalSize] = useState<imageSize | null>(null);
   const classes = useStyles();
+  const classNames = props.bounds
+    ? [classes.shop, classes.bounds]
+    : [classes.shop];
 
   useEffect(() => {
     const asyncs = async () => {
@@ -62,11 +66,12 @@ const Icon: React.FC<IIconProps> = (props) => {
     asyncs();
   }, []);
 
+  [];
   return (
     <React.Fragment>
       <Img
         src={props.image}
-        className={[classes.shop, classes.bounds].join(" ")}
+        className={classNames.join(" ")}
         style={{
           width: `calc(1 * ${props.ratio} * ${naturalSize?.width}px)`,
           top: `calc(50% + ${props.position.y}%)`,
