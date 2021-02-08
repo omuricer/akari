@@ -70,20 +70,6 @@ let theme = createMuiTheme({
       contrastText: "#485859",
     },
   },
-  // props: {
-  //   MuiTextField: {
-  //     variant: "outlined",
-  //   },
-  //   MuiCheckbox: {
-  //     color: "primary",
-  //   },
-  //   MuiRadio: {
-  //     color: "primary",
-  //   },
-  //   MuiSwitch: {
-  //     color: "primary",
-  //   },
-  // },
 });
 // theme = responsiveFontSizes(theme);
 

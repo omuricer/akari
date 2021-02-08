@@ -44,7 +44,7 @@ const Bar: React.FC<IBarProps> = (props) => {
     { href: "/#news", label: "news" },
     { href: "/reserve", label: "studio/akari park" },
     { href: "/contact", label: "contact" },
-    { href: "/fukushimabonchi/entrance", label: "FUKUSHIMA BONCHI" },
+    { href: "/fukushimabonchi", label: "FUKUSHIMA BONCHI" },
   ];
   const sns = [
     {
