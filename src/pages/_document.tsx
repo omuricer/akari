@@ -3,7 +3,7 @@ import React from "react";
 import { ServerStyleSheets } from "@material-ui/core/styles";
 // import theme from "../src/theme";
 
-import { GA_TRACKING_ID } from "lib/gtag";
+import { GA_TRACKING_ID } from "libs/gtag";
 
 export default class MyDocument extends Document {
   render() {
