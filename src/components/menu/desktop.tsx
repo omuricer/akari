@@ -7,7 +7,7 @@ import Link from "next/link";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     menuText: {
-      display: "inline-block",
+      display: "inline-flex",
       marginLeft: "1rem",
       marginRight: "1rem",
     },
@@ -38,26 +38,22 @@ const Desktop: React.FC<IDesktopProps> = (props) => {
     if (item.label == "FUKUSHIMA BONCHI") {
       menu.push(
         <li className={classes.menuText} key={"menu" + index}>
-          <Link href={item.href}>
+          <Link href={item.href} passHref>
             <A
               style={{
                 fontWeight: "bold",
                 letterSpacing: "0",
-                color: "#F9A638",
               }}
             >
               {item.label}
             </A>
           </Link>
-          {/* <A href={item.href} style={{}}>
-            {item.label}
-          </A> */}
         </li>
       );
     } else {
       menu.push(
         <li className={classes.menuText} key={"menu" + index}>
-          <Link href={item.href}>
+          <Link href={item.href} passHref>
             <A>{item.label}</A>
           </Link>
         </li>

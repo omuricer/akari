@@ -19,14 +19,16 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface IAProps extends React.HTMLProps<HTMLAnchorElement> {}
-const A: React.FC<IAProps> = (props) => {
-  const classes = useStyles();
-  return (
-    <a {...props}>
-      <Typography className={classes.a} style={props.style}>
-        {props.children}
-      </Typography>
-    </a>
-  );
-};
+const A = React.forwardRef(
+  (props: IAProps, ref: React.Ref<HTMLAnchorElement>) => {
+    const classes = useStyles();
+    return (
+      <a ref={ref} {...props}>
+        <Typography className={classes.a} style={props.style}>
+          {props.children}
+        </Typography>
+      </a>
+    );
+  }
+);
 export default A;

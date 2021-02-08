@@ -6,6 +6,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import HideOnScroll from "./hideOnScroll";
 import Menu from "components/menu";
 import { MobileMenu } from "components/menu/mobile";
+import Link from "next/link";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -43,7 +44,7 @@ const Bar: React.FC<IBarProps> = (props) => {
     { href: "/#news", label: "news" },
     { href: "/reserve", label: "studio/akari park" },
     { href: "/contact", label: "contact" },
-    { href: "/fukushimabonchi-entrance", label: "FUKUSHIMA BONCHI" },
+    { href: "/fukushimabonchi/entrance", label: "FUKUSHIMA BONCHI" },
   ];
   const sns = [
     {
@@ -63,9 +64,11 @@ const Bar: React.FC<IBarProps> = (props) => {
           <AppBar style={{ backgroundColor: "#ffffff" }}>
             <Toolbar>
               <h1>
-                <a href="/">
-                  <img src={props.logo} className={classes.logo} />
-                </a>
+                <Link href="/">
+                  <a>
+                    <img src={props.logo} className={classes.logo} />
+                  </a>
+                </Link>
               </h1>
 
               <div className={classes.title} />
@@ -80,7 +83,7 @@ const Bar: React.FC<IBarProps> = (props) => {
           </AppBar>
         </div>
       </HideOnScroll>
-      {/* <MobileMenu open={openMobileMenu} menu={menu} sns={sns} /> */}
+      <MobileMenu open={openMobileMenu} menu={menu} sns={sns} />
     </React.Fragment>
   );
 };

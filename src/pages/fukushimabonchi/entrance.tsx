@@ -3,6 +3,7 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import Link from "next/link";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -57,15 +58,17 @@ const Page: React.FC<Props> = (props) => {
             <br />
             FUKUSHIMA BONCHI
           </Typography>
-          <Button
-            variant="outlined"
-            size="large"
-            color="primary"
-            href="/fukushimabonchi"
-            style={{ marginTop: "2rem", width: "110px" }}
-          >
-            訪れる
-          </Button>
+          <Link href="/fukushimabonchi">
+            <Button
+              variant="outlined"
+              size="large"
+              color="primary"
+              href=""
+              style={{ marginTop: "2rem", width: "110px" }}
+            >
+              訪れる
+            </Button>
+          </Link>
         </div>
       </Grid>
     </HCF>

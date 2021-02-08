@@ -7,6 +7,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Toolbar from "@material-ui/core/Toolbar";
 import Footer from "components/footer";
 import Loading from "components/loading";
+import Head from "./head";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -45,7 +46,8 @@ const HCF: React.FC<ITemplateHCFProps> = (props) => {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
+    <>
+      <Head />
       <Bar logo="/image/logo_akari.svg" breakPoint={detectBreakPoint()}></Bar>
       {/* <Loading /> */}
       <Grid container className={classes.content}>
@@ -55,7 +57,7 @@ const HCF: React.FC<ITemplateHCFProps> = (props) => {
           <Footer />
         </footer>
       </Grid>
-    </React.Fragment>
+    </>
   );
 };
 export default HCF;

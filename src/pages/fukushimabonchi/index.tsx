@@ -1,7 +1,7 @@
-import Layout, { siteTitle } from "components/layouts";
+import HCF from "components/layouts/hcf";
 
 interface Props {}
 const Page: React.FC<Props> = (props) => {
-  return <Layout>fukushimabonchi</Layout>;
+  return <HCF></HCF>;
 };
 export default Page;
