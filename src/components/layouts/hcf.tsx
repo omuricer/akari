@@ -41,7 +41,7 @@ const detectBreakPoint = () => {
   return detectedBreakPoint ?? "lg";
 };
 
-interface ITemplateHCFProps {}
+interface ITemplateHCFProps extends React.HTMLProps<HTMLElement> {}
 const HCF: React.FC<ITemplateHCFProps> = (props) => {
   const classes = useStyles();
 
@@ -52,7 +52,9 @@ const HCF: React.FC<ITemplateHCFProps> = (props) => {
       {/* <Loading /> */}
       <Grid container className={classes.content}>
         <Toolbar />
-        <main className={classes.main}>{props.children}</main>
+        <main className={classes.main} {...props}>
+          {props.children}
+        </main>
         <footer>
           <Footer />
         </footer>
