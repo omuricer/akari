@@ -58,12 +58,6 @@ export const global_onload = function () {
   if (document.querySelector("#content .page"))
     document.querySelector("#content .page").classList.add("select");
 
-  // .effect-fade
-  window.onscroll = () => {
-    effectFade();
-  };
-  effectFade();
-
   // Init swiper
   new Swiper(".swiper-container", {
     effect: "fade",
@@ -112,25 +106,4 @@ function offsetTop(e) {
   var rect = e.getBoundingClientRect();
   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   return rect.top + scrollTop;
-}
-
-/**
- * https://littlethings.jp/blog/web/css-effect-scroll
- */
-function effectFade() {
-  const effectFades = document.querySelectorAll(".effect-fade");
-  if (effectFades) {
-    let effectFades_ie = Array.prototype.slice.call(effectFades, 0);
-    effectFades_ie.forEach(function (e) {
-      var elemPos = offsetTop(e);
-      var scroll =
-        document.documentElement.scrollTop || document.body.scrollTop;
-      var windowHeight = document.documentElement.clientHeight;
-      if (scroll > elemPos - windowHeight) {
-        if (!e.classList.contains("effect-scroll")) {
-          e.classList.add("effect-scroll");
-        }
-      }
-    });
-  }
 }

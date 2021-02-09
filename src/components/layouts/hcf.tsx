@@ -52,8 +52,9 @@ const HCF: React.FC<ITemplateHCFProps> = (props) => {
       {/* <Loading /> */}
       <Grid container className={classes.content}>
         <Toolbar />
-        <main className={classes.main} {...props}>
-          {props.children}
+        {/* TODO: id content 消したい */}
+        <main className={classes.main} {...props} id="content">
+          <section className="page">{props.children}</section>
         </main>
         <footer>
           <Footer />
