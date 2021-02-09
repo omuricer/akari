@@ -11,15 +11,3 @@
 .swiper-button-next {
   background: url(../../public/image/arrow_right.svg) no-repeat center center / contain;
 }
-.swiper-slide {
-  img {
-    width: 100%;
-    // height: 30vw;
-    object-fit: cover;
-    display: none;
-    @media screen and (max-width: 480px) {
-      // height: 80vw;
-      width: 100%;
-    }
-  }
-}
