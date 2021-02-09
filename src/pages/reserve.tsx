@@ -87,8 +87,9 @@ interface Props {
   }[];
 }
 const Page: React.FC<Props> = (props) => {
-  const news = props.news.map((n) => (
+  const news = props.news.map((n, index) => (
     <div
+      key={index}
       className="
         mdc-layout-grid__cell--span-3-desktop
         mdc-layout-grid__cell--span-8-tablet
