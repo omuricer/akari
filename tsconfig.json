@@ -4,7 +4,8 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "esnext",
+      // "es6" // for InversifyJS(https://github.com/inversify/InversifyJS)
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -23,6 +24,9 @@
     //   "@/*": ["src/*"],
     //   "@": ["src"]
     // },
+    "types": ["reflect-metadata"],  // for InversifyJS(https://github.com/inversify/InversifyJS)
+    "experimentalDecorators": true, // for InversifyJS(https://github.com/inversify/InversifyJS)
+    "emitDecoratorMetadata": true,  // for InversifyJS(https://github.com/inversify/InversifyJS)
   },
   "include": [
     "next-env.d.ts",

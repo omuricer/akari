@@ -126,27 +126,29 @@ const FukushimaBonchi: React.FC<IFukushimaBonchiProps> = (props) => {
   );
   return (
     <>
-      <Grid item sm={12} lg={12} className={classes.content}>
-        <div className={`mdc-layout-grid__inner ${classes.content}`}>
-          {shopElements}
-          <Icon
-            id={"youtube"}
-            image={"/image/fukushimabonchi/marche_icon.png"}
-            position={{ x: -10, y: -9 }}
-            ratio={calcRatioBackgroundImage(1920, 1080, width, height)}
-            onClick={() => {}}
-            dialog={
-              <YoutubeDialog
-                open={openedDialog === "youtube"}
-                onClose={() => {
-                  setOpenedDialog(null);
-                }}
-                isMobile={detectIsMobile()}
-              />
-            }
-            bounds={false}
-          />
-        </div>
+      <Grid container className={classes.content}>
+        <Grid item sm={12} lg={12} className={classes.content}>
+          <div className={`mdc-layout-grid__inner ${classes.content}`}>
+            {shopElements}
+            <Icon
+              id={"youtube"}
+              image={"/image/fukushimabonchi/marche_icon.png"}
+              position={{ x: -10, y: -9 }}
+              ratio={calcRatioBackgroundImage(1920, 1080, width, height)}
+              onClick={() => {}}
+              dialog={
+                <YoutubeDialog
+                  open={openedDialog === "youtube"}
+                  onClose={() => {
+                    setOpenedDialog(null);
+                  }}
+                  isMobile={detectIsMobile()}
+                />
+              }
+              bounds={false}
+            />
+          </div>
+        </Grid>
       </Grid>
       {initDialog}
     </>

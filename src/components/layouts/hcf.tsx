@@ -50,16 +50,16 @@ const HCF: React.FC<ITemplateHCFProps> = (props) => {
       <Head />
       <Bar logo="/image/logo_akari.svg" breakPoint={detectBreakPoint()}></Bar>
       {/* <Loading /> */}
-      <Grid container className={classes.content}>
-        <Toolbar />
-        {/* TODO: id content 消したい */}
-        <main className={classes.main} {...props} id="content">
-          <section className="page">{props.children}</section>
-        </main>
-        <footer>
-          <Footer />
-        </footer>
-      </Grid>
+      {/* <Grid container className={classes.content}> */}
+      <Toolbar />
+      {/* TODO: id content 消したい */}
+      <main className={classes.main} {...props} id="content">
+        {props.children}
+      </main>
+      <footer>
+        <Footer />
+      </footer>
+      {/* </Grid> */}
     </>
   );
 };

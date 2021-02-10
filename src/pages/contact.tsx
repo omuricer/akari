@@ -1,7 +1,7 @@
 import HCF from "components/layouts/hcf";
 import SubTitle from "components/subTitle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faUser } from "@fortawesome/free-regular-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faPhone, faUserFriends } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebookSquare,
