@@ -2,13 +2,13 @@ import { GetStaticProps } from "next";
 import HCF from "components/layouts/hcf";
 import SubTitle from "components/subTitle";
 import Concept from "components/concept";
-import NewsComponent from "components/news";
+import News from "components/news";
 import FadeOnScroll from "components/fadeOnScroll";
 import Swiper from "react-id-swiper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapPin, faCar, faTrain } from "@fortawesome/free-solid-svg-icons";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
-import { News } from "domain/model/news";
+import { News as NewsModel } from "domain/model/news";
 import { DIContainer } from "di/inversify.config";
 import { TYPES } from "di/types";
 import { NewsRepository } from "domain/repository/newsRepository";
@@ -54,7 +54,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
 };
 
 interface Props {
-  news: News[];
+  news: NewsModel[];
 }
 const Page: React.FC<Props> = (props) => {
   const concepts = conceptsData.map((concept, index) => (
@@ -70,7 +70,7 @@ const Page: React.FC<Props> = (props) => {
       "
     >
       <FadeOnScroll>
-        <NewsComponent {...n} />
+        <News {...n} />
       </FadeOnScroll>
     </div>
   ));

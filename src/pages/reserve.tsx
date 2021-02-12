@@ -2,13 +2,14 @@ import { GetStaticProps } from "next";
 import HCF from "components/layouts/hcf";
 import SubTitle from "components/subTitle";
 import SubSubTitle from "components/subSubTitle";
-import News from "components/news";
+import UseCase from "components/useCase";
 import FadeOnScroll from "components/fadeOnScroll";
+import { UseCase as UseCaseModel } from "domain/model/useCase";
 
-const data = [
+const data: UseCaseModel[] = [
   {
     image: "image/news/maturi_ato.jpg",
-    date: "Akari park",
+    resource: "Akari park",
     text:
       "『アカリ夏マツリ』と題して、地域のショップをお招きしお祭りが開催されました！広場の一角ではワークショップも。写真掲載していますのでご覧ください。",
     more: {
@@ -19,7 +20,7 @@ const data = [
   },
   {
     image: "image/news/ima_ba2.jpg",
-    date: "Studio",
+    resource: "Studio",
     text:
       "『いま、地域に求められる場とは？』と題して、福島県内各地で豊かなコミュニティを生み出している人たちをお招きし、なぜそんな“場”をつくったの？運営体制はどのようにして実現させている？彼らが生み出す“場”の魅力とは？などについてお聞きできるイベントが開催されました。",
     more: {
@@ -30,7 +31,7 @@ const data = [
   },
   {
     image: "image/news/kaigi1.jpg",
-    date: "Studio",
+    resource: "Studio",
     text:
       "『ふくしまの暮らし方、働き方会議#1』と題して、もっと違う暮らし方、働き方、自分が触れてこなかった別の世界を考えるトークセッションが開催されました。",
     more: {
@@ -41,7 +42,7 @@ const data = [
   },
   {
     image: "image/news/marche.jpg",
-    date: "Akari Park",
+    resource: "Akari Park",
     text:
       "『空想マルシェ』と題して、１日限定のマルシェが誕生しました。みんなの空想を持ち寄って、理想のまちを自分の手でつくろう！を合言葉に多くの方々がご来場されました。",
     more: {
@@ -53,41 +54,23 @@ const data = [
 ];
 
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
-  const news = await (async () => {
-    return new Promise<
-      {
-        image: string;
-        date: string;
-        text: string;
-        more: {
-          url: string;
-          text: string;
-        };
-      }[]
-    >((resolve) => {
+  const useCases = await (async () => {
+    return new Promise<UseCaseModel[]>((resolve) => {
       resolve(data);
     });
   })();
   return {
     props: {
-      news: news,
+      useCases: useCases,
     },
   };
 };
 
 interface Props {
-  news: {
-    image: string;
-    date: string;
-    text: string;
-    more: {
-      url: string;
-      text: string;
-    };
-  }[];
+  useCases: UseCaseModel[];
 }
 const Page: React.FC<Props> = (props) => {
-  const news = props.news.map((n, index) => (
+  const useCases = props.useCases.map((n, index) => (
     <div
       key={index}
       className="
@@ -97,7 +80,7 @@ const Page: React.FC<Props> = (props) => {
       "
     >
       <FadeOnScroll>
-        <News {...n} />
+        <UseCase {...n} />
       </FadeOnScroll>
     </div>
   ));
@@ -213,7 +196,7 @@ const Page: React.FC<Props> = (props) => {
       </div>
       <div className="mdc-layout-grid">
         <SubTitle text={"use case"} />
-        <div className="mdc-layout-grid__inner">{news}</div>
+        <div className="mdc-layout-grid__inner">{useCases}</div>
       </div>
     </HCF>
   );
