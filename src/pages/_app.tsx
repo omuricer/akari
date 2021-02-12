@@ -4,6 +4,7 @@ import Theme from "components/theme";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import "styles/index.scss";
 import "styles/destyle.css";
+// import "tailwindcss/tailwind.css";
 
 // TODO: index_old.jsの中身をコンポーネントに移行する!
 // require("index_old.js");
