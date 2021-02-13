@@ -2,6 +2,7 @@ import React from "react";
 import { News as NewsModel } from "domain/model/news";
 import Date from "components/date";
 import style from "./index.module.scss";
+import Image from "next/image";
 
 interface Props extends NewsModel {}
 const News: React.FC<Props> = (props) => {
@@ -10,7 +11,12 @@ const News: React.FC<Props> = (props) => {
       <div className={style.root}>
         <div className={style.image}>
           <a href={props.more.url}>
-            <img src={props.image} />
+            <Image
+              src={props.image}
+              width={600}
+              height={600}
+              className={style.img}
+            />
           </a>
         </div>
         <Date value={props.date} className={style.date} />

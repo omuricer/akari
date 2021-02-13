@@ -13,7 +13,7 @@ export interface ContentfulNews extends ContentfulModel {
 export class NewsMapper implements Mapper<News, ContentfulNews> {
   map(entry: Entry<ContentfulNews>): News {
     return {
-      image: entry.fields.image.fields.file.url,
+      image: `https:${entry.fields.image.fields.file.url}`,
       date: entry.fields.postAt,
       text: entry.fields.text,
       more: {
