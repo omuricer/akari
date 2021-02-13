@@ -4,7 +4,7 @@ import { TShop } from "components/fukushimaBonchi/shops";
 import ShopDialog from "components/fukushimaBonchi/shopDialog";
 import ShopDialogApartment from "components/fukushimaBonchi/shopDialogApartment";
 import { Bounds } from "animations/bounds";
-import Image from "next/image";
+import ImageNext from "next/image";
 
 type imageSize = {
   width: number;
@@ -101,7 +101,7 @@ const Shop: React.FC<IShopProps> = (props) => {
           setSelected(true);
         }}
       />
-      {/* <Image
+      {/* <NextImage
         src={imageSrc}
         className={[classes.shop, classes.bounds].join(" ")}
         style={{
