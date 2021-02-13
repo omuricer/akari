@@ -31,19 +31,6 @@ const CommonHead: React.FC<Props> = (props) => {
       <meta property="fb:app_id" content="2590332120996026" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@yamorisyamomone" />
-
-      <link
-        href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap"
-        rel="stylesheet"
-      />
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
-      />
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      />
     </Head>
   );
 };

@@ -1,4 +1,6 @@
 import FadeOnScroll from "components/fadeOnScroll";
+import Image from "next/image";
+
 interface Props {
   main_accent: string;
   main: string;
@@ -21,6 +23,9 @@ const Concept: React.FC<Props> = (props) => {
         <p>{props.sub}</p>
       </div>
       <img src={props.image} />
+      {/* <div className="image-container">
+      <Image src={props.image} width={600} height={600} />
+      </div> */}
       {/* </FadeOnScroll> */}
     </div>
   );

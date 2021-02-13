@@ -14,6 +14,8 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
+import Image from "next/image";
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -22,9 +24,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     title: {
       flexGrow: 1,
-    },
-    logo: {
-      width: "230px",
     },
   })
 );
@@ -66,7 +65,7 @@ const Bar: React.FC<IBarProps> = (props) => {
               <h1>
                 <Link href="/">
                   <a>
-                    <img src={props.logo} className={classes.logo} />
+                    <Image src={props.logo} width={230} height={50} />
                   </a>
                 </Link>
               </h1>

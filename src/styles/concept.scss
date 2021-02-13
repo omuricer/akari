@@ -82,7 +82,26 @@
   height: 10rem;
   object-fit: cover;
 }
+.concept .image-container {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+  width: 80vw;
+  height: 10rem;
+  object-fit: cover;
+}
 .concept.reverse img {
+  top: auto;
+  bottom: 3rem;
+  left: auto;
+  right: 3vw;
+}
+.concept.reverse .image-container {
   top: auto;
   bottom: 3rem;
   left: auto;
@@ -144,7 +163,22 @@
     }
   }
 
-  .concept img {
+  // .concept img {
+  //   top: 3rem;
+  //   bottom: auto;
+  //   left: 3vw;
+  //   right: auto;
+
+  //   width: 35vw;
+  //   height: auto;
+  // }
+  // .concept.reverse img {
+  //   top: auto;
+  //   bottom: 3rem;
+  //   left: auto;
+  //   right: 3vw;
+  // }
+  .concept .image-container {
     top: 3rem;
     bottom: auto;
     left: 3vw;
@@ -153,7 +187,7 @@
     width: 35vw;
     height: auto;
   }
-  .concept.reverse img {
+  .concept.reverse .image-container {
     top: auto;
     bottom: 3rem;
     left: auto;

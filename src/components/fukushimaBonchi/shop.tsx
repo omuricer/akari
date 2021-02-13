@@ -4,6 +4,7 @@ import { TShop } from "components/fukushimaBonchi/shops";
 import ShopDialog from "components/fukushimaBonchi/shopDialog";
 import ShopDialogApartment from "components/fukushimaBonchi/shopDialogApartment";
 import { Bounds } from "animations/bounds";
+import Image from "next/image";
 
 type imageSize = {
   width: number;
@@ -84,7 +85,7 @@ const Shop: React.FC<IShopProps> = (props) => {
 
   if (!preLoadedImage) return null;
   return (
-    <React.Fragment>
+    <>
       <img
         src={imageSrc}
         className={[classes.shop, classes.bounds].join(" ")}
@@ -100,8 +101,23 @@ const Shop: React.FC<IShopProps> = (props) => {
           setSelected(true);
         }}
       />
+      {/* <Image
+        src={imageSrc}
+        className={[classes.shop, classes.bounds].join(" ")}
+        style={{
+          width: `calc(0.25 * ${props.ratio} * ${
+            props.shop.icon.ratio ?? 1
+          } * ${naturalSize?.width}px)`,
+          top: `calc(50% + ${props.shop.icon.positionY}%)`,
+          left: `calc(50% + ${props.shop.icon.positionX}%)`,
+          animationDelay: `${generateRondomDelay()}s`,
+        }}
+        onClick={() => {
+          setSelected(true);
+        }}
+      /> */}
       {shopDialog}
-    </React.Fragment>
+    </>
   );
 };
 
