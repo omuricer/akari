@@ -2,9 +2,10 @@
 @import "@material/layout-grid/mdc-layout-grid";
 @import "@material/typography/mdc-typography";
 @import "@material/button/mdc-button";
-@import "swiper.min.css";
 
 .plane {
+  position: relative;
+  z-index: 1;
   margin: 0;
   background-color: $mdc-theme-background;
   color: $mdc-theme-on-background;
@@ -51,6 +52,7 @@
     padding-right: 8.5vw;
     padding-bottom: 10rem;
     --mdc-layout-grid-gutter-desktop: 1vw;
+    background-color: $mdc-theme-background;
     @media screen and (max-width: 480px) {
       padding-left: 6vw;
       padding-right: 6vw;
@@ -167,24 +169,6 @@
     }
     .company td {
       padding-bottom: 14px;
-    }
-  }
-
-  // footer
-  .footer {
-    font-weight: 400;
-    background-color: $mdc-theme-primary2;
-    text-align: center;
-    .wrap {
-      padding-top: 20px;
-      padding-bottom: 20px;
-      .corporate {
-        margin: 0 0 10px 0;
-      }
-      .copyright {
-        margin: 0;
-        font-size: 0.7rem;
-      }
     }
   }
 

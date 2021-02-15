@@ -6,6 +6,8 @@ import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     footer: {
+      position: "relative",
+      zIndex: 1,
       fontWeight: 400,
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.primary.main,
@@ -28,7 +30,6 @@ const Footer: React.FC<IFooterProps> = (props) => {
       <div
         style={{
           paddingTop: "20px",
-          paddingBottom: "20px",
         }}
       >
         <Typography

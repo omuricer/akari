@@ -4,7 +4,6 @@ import SubTitle from "components/subTitle";
 import Concept from "components/concept";
 import News from "components/news";
 import FadeOnScroll from "components/fadeOnScroll";
-import Swiper from "react-id-swiper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapPin, faCar, faTrain } from "@fortawesome/free-solid-svg-icons";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
@@ -12,6 +11,9 @@ import { News as NewsModel } from "domain/model/news";
 import { DIContainer } from "di/inversify.config";
 import { TYPES } from "di/types";
 import { NewsRepository } from "domain/repository/newsRepository";
+import Image from "next/image";
+import Slider from "components/slider";
+import MainConcept from "components/mainConcept";
 
 let conceptsData = [
   {
@@ -77,28 +79,55 @@ const Page: React.FC<Props> = (props) => {
 
   return (
     <HCF className="plane">
-      <div className="mdc-layout-grid no-margin">
-        <div className="mdc-layout-grid__inner fixed-bg">
-          <div className="mdc-layout-grid__cell--span-12">
-            <div className="concept-text">
-              <p className="main mdc-typography--headline2">ともに学びあう</p>
-              <p className="text mdc-typography--body1">
-                ひとりひとりの想いが灯る、アカリ
-                <br />
-                <br />
-                眠っていた元書庫の施設が
-                <br />
-                リノベ－ションにより学びあいの場へと生まれ変わりました
-                <br />
-                <br />
-                多様な価値観が交差し、新しいモノ・コトが生まれる
-                <br />
-                多様な人との出会い、多様な文化との接点に、あなたもお越しください
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <MainConcept />
+      {/* <div style={{ width: 600, height: 600 }} />
+
+      <div className="mdc-layout-grid">
+        aaaa
+        <br />
+        aaaa
+        <br />
+        aaaa
+        <br />
+        aaaa
+        <br />
+        aaaa
+        <br />
+        aaaa
+        <br />
+        aaaa
+        <br />
+        aaaa
+        <br />
+        aaaa
+        <br />
+        aaaa
+        <br />
+        aaaa
+        <br />
+        aaaa
+        <br />
+        aaaa
+        <br />
+        aaaa
+        <br />
+        aaaa
+        <br />
+        aaaa
+        <br />
+        aaaa
+        <br />
+        aaaa
+        <br />
+        aaaa
+        <br />
+        aaaa
+        <br />
+        aaaa
+        <br />
+        aaaa
+        <br />
+      </div> */}
       <div className="mdc-layout-grid about" id="about">
         <SubTitle text={"about akari"} />
         <div className="mdc-layout-grid__inner">
@@ -123,36 +152,12 @@ const Page: React.FC<Props> = (props) => {
     mdc-layout-grid__cell--span-8-tablet
     mdc-layout-grid__cell--span-4-phone"
           >
-            {/* <%
-        images = [
-          {
-            src: 'image/1f.png',
-            alt: '地域の価値を分かち合う。',
-          },
-          {
-            src: 'image/2f.png',
-            alt: '地域の価値を分かち合う。',
-          },
-        ]
-      %> */}
-
-            {/* <%- include('components/swiper', {images: images}) %> */}
-            <Swiper
-              {...{
-                // slidesPerView: 1,
-                navigation: {
-                  nextEl: ".swiper-button-next",
-                  prevEl: ".swiper-button-prev",
-                },
-                // autoplay: {
-                //   delay: 2500,
-                //   disableOnInteraction: false,
-                // },
-              }}
-            >
-              <img src="/image/1f.png" alt="地域の価値を分かち合う。" />
-              <img src="/image/2f.png" alt="地域の価値を分かち合う。" />
-            </Swiper>
+            <Slider
+              images={[
+                { src: "/image/1f.png", alt: "地域の価値を分かち合う。" },
+                { src: "/image/2f.png", alt: "地域の価値を分かち合う。" },
+              ]}
+            />
           </div>
           <div
             className="mdc-layout-grid__cell--span-6-desktop
@@ -249,7 +254,6 @@ const Page: React.FC<Props> = (props) => {
                 Daily, <span className="headline">10:00</span> to{" "}
                 <span className="headline">22:00</span>
               </p>
-              {/* <!-- <p className="text">Trattoria da Martino: Daily, <span className="headline">11:30</span> to <span className="headline">14:00</span> L.O. / <span className="headline">18:00</span> to <span className="headline">21:30</span> L.O.</p> --> */}
               <div className="center-desc-headline">
                 Trattoria da Martino(イタリアン)
               </div>
