@@ -5,8 +5,8 @@ import { TContent } from "components/fukushimaBonchi/shops";
 import BusinessBadge from "components/fukushimaBonchi/businessBadge";
 import Button from "@material-ui/core/Button";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
+const useStyles = makeStyles((theme: Theme) => {
+  return createStyles({
     root: {
       display: "flex",
       alignItems: "center",
@@ -57,8 +57,8 @@ const useStyles = makeStyles((theme: Theme) =>
         marginLeft: "0",
       },
     },
-  })
-);
+  });
+});
 
 const isTenant = (content: TContent) => {
   return content.room !== undefined;

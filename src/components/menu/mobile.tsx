@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
 import A from "components/form/a";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -51,14 +52,14 @@ const Mobile: React.FC<IMobileProps> = (props) => {
   };
 
   const button = props.open ? (
-    <i
-      className="fas fa-times"
+    <FontAwesomeIcon
+      icon={faTimes}
       onClick={toggle}
       style={{ fontSize: "1.4rem", color: "#485859" }}
     />
   ) : (
-    <i
-      className="fas fa-bars"
+    <FontAwesomeIcon
+      icon={faBars}
       onClick={toggle}
       style={{ fontSize: "1.4rem", color: "#485859" }}
     />

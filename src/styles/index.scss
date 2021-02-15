@@ -1,10 +1,7 @@
 @import "common";
-@import "header";
 @import "loading";
 @import "subtitle";
 @import "subsubtitle";
-@import "news";
-@import "swiper";
 @import "top";
 @import "reserve";
 @import "contact";
@@ -13,3 +10,19 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 2rem;
+  height: 2rem;
+  margin-top: -16px;
+  &::after {
+    font-size: 0 !important;
+  }
+}
+.swiper-button-prev {
+  background: url(../../public/image/arrow_left.svg) no-repeat center center / contain;
+}
+.swiper-button-next {
+  background: url(../../public/image/arrow_right.svg) no-repeat center center / contain;
+}
