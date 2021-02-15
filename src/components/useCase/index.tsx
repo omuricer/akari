@@ -1,7 +1,7 @@
 import React from "react";
 import { UseCase as UseCaseModel } from "domain/model/useCase";
-import Date from "components/date";
 import style from "./index.module.scss";
+import Image from "next/image";
 
 interface Props extends UseCaseModel {}
 const UseCase: React.FC<Props> = (props) => {
@@ -10,7 +10,12 @@ const UseCase: React.FC<Props> = (props) => {
       <div className={style.root}>
         <div className={style.image}>
           <a href={props.more.url}>
-            <img src={props.image} />
+            <Image
+              src={props.image}
+              width={600}
+              height={600}
+              className={style.img}
+            />
           </a>
         </div>
         <div className={style.date}>{props.resource}</div>
