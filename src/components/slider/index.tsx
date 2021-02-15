@@ -9,8 +9,8 @@ interface Props {
   images: { src: string; alt: string }[];
 }
 const Slider: React.FC<Props> = (props) => {
-  const images = props.images.map((image) => (
-    <span className={style.item}>
+  const images = props.images.map((image, index) => (
+    <span className={style.item} key={index}>
       <Image
         src={image.src}
         alt={image.alt}

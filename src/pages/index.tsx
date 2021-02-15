@@ -275,6 +275,7 @@ const Page: React.FC<Props> = (props) => {
         <div className="mdc-layout-grid__inner">
           <div className="mdc-layout-grid__cell--span-12">
             <iframe
+              loading="lazy"
               className="googlemap-gray"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3149.189949838821!2d140.53903921532066!3d37.87924027974069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a63c91e070605%3A0x75870bb1f9fb6816!2z44Ki44Kr44Oq!5e0!3m2!1sja!2sjp!4v1572481999076!5m2!1sja!2sjp"
               width="100%"
