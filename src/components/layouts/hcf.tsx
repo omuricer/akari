@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
     main: {
       flex: 1,
       display: "flex",
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down("sm")]: {
         flexDirection: "column",
       },
     },

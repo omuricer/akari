@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) =>
       "&::first-child": {
         padding: 0,
       },
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down("sm")]: {
         minWidth: "auto",
       },
     },

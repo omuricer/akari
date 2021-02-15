@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
       position: "absolute",
       width: "4.5vw",
 
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down("sm")]: {
         width: "80px",
       },
     },

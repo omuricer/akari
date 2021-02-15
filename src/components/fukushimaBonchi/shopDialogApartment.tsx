@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingLeft: "2rem",
       paddingRight: "2rem",
 
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down("sm")]: {
         minWidth: "auto",
       },
     },

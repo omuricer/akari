@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "left",
       alignItems: "center",
       backgroundColor: "#CAF2FB",
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down("sm")]: {
         justifyContent: "center",
         alignItems: "baseline",
       },
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down("sm")]: {
         textAlign: "center",
       },
     },

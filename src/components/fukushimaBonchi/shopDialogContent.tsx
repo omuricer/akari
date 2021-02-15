@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) => {
       alignItems: "center",
 
       paddingRight: "2rem",
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down("sm")]: {
         flexDirection: "column",
         padding: 0,
       },
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme: Theme) => {
     logo: {
       width: "50%",
       margin: "2rem",
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down("sm")]: {
         width: "100%",
         height: "auto",
         marginTop: 0,
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme: Theme) => {
     shopContent: {
       display: "flex",
       flexDirection: "column",
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down("sm")]: {
         alignItems: "center",
         marginBottom: "2rem",
       },
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme: Theme) => {
     info: {
       minHeight: "18px",
       marginLeft: "0.5rem",
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down("sm")]: {
         marginLeft: "0",
       },
     },
