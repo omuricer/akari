@@ -1,0 +1,158 @@
+@mixin root {
+}
+@mixin opacity {
+  position: absolute;
+  background: rgba(#FFFFFF, 0.8);
+  width: 70vw;
+  z-index: 1;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+@mixin label {
+  font-size: 2rem;
+  letter-spacing: 0.2em;
+  line-height: unset !important;
+
+  span {
+    color: #F9A638;    
+
+  }
+}
+@mixin text {
+}
+@mixin image {
+}
+
+.root {
+  @include root();
+}
+.opacity {
+  @include opacity();
+
+  top: 0;
+  left: 0;
+}
+.label {
+  @include label();
+
+  text-align: left !important;
+  margin-left: 1.5rem;
+}
+.text {
+  @include text();
+  text-align: left !important;
+  margin-left: 4rem;
+}
+.image {
+  @include image();
+  top: 30px;
+  left: 30px;
+}
+
+.root-reverse {
+  @include root();
+}
+.opacity-reverse {
+  @include opacity();
+
+  bottom: 0;
+  right: 0;
+}
+.label-reverse {
+  @include label();
+
+  text-align: right !important;
+  margin-right: 1.5rem;
+}
+.text-reverse {
+  @include text();
+  text-align: right !important;
+  margin-right: 4rem;
+}
+.image-reverse {
+  @include image();
+  bottom: 30px;
+  right: 30px;
+}
+
+@media (min-width: 768px) {
+  @mixin root {
+    position: relative;
+    height: 420px;
+  }
+  @mixin opacity {
+    position: absolute;
+    background: rgba(#FFFFFF, 0.8);
+    width: 380px;
+    z-index: 1;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  @mixin label {
+    font-size: 2.8rem;
+    letter-spacing: 0.2em;
+    line-height: unset !important;
+
+    span {
+      color: #F9A638;    
+
+    }
+  }
+  @mixin text {
+  }
+  @mixin image {
+    position: absolute;
+  }
+
+  .root {
+    @include root();
+  }
+  .opacity {
+    @include opacity();
+
+    top: 0;
+    left: 0;
+  }
+  .label {
+    @include label();
+  
+    text-align: left !important;
+    margin-left: 1.5rem;
+  }
+  .text {
+    @include text();
+    text-align: left !important;
+    margin-left: 4rem;
+  }
+  .image {
+    @include image();
+    top: 30px;
+    left: 30px;
+  }
+
+  .root-reverse {
+    @include root();
+  }
+  .opacity-reverse {
+    @include opacity();
+
+    bottom: 0;
+    right: 0;
+  }
+  .label-reverse {
+    @include label();
+  
+    text-align: right !important;
+    margin-right: 1.5rem;
+  }
+  .text-reverse {
+    @include text();
+    text-align: right !important;
+    margin-right: 4rem;
+  }
+  .image-reverse {
+    @include image();
+    bottom: 30px;
+    right: 30px;
+  }
+}

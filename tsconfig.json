@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext",
+      // "es6" // for InversifyJS(https://github.com/inversify/InversifyJS)
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": "./src",
+    // "baseUrl": "./",
+    // "paths": {
+    //   "@/*": ["src/*"],
+    //   "@": ["src"]
+    // },
+    "types": ["reflect-metadata"],  // for InversifyJS(https://github.com/inversify/InversifyJS)
+    "experimentalDecorators": true, // for InversifyJS(https://github.com/inversify/InversifyJS)
+    "emitDecoratorMetadata": true,  // for InversifyJS(https://github.com/inversify/InversifyJS)
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+}
