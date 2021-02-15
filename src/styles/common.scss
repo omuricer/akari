@@ -249,6 +249,7 @@
         width: 30px;
         text-align: center;
         margin-right: 1rem;
+        display: inline;
       }
       p {
         display: inline;
@@ -258,6 +259,8 @@
       margin-left: 0.5rem;
       margin-right: 0.5rem;
       i, svg {
+        width: 28px;
+        display: inline;
         font-size: 1.3rem;
         margin-right: 0.5rem;
         margin-left: 0.5rem;
