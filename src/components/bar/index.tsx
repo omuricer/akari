@@ -48,7 +48,7 @@ const Bar: React.FC<IBarProps> = (props) => {
   const sns = [
     {
       href: "https://www.facebook.com/akarikunimi",
-      icon: <FontAwesomeIcon icon={faFacebookSquare} />,
+      icon: <FontAwesomeIcon icon={faFacebookSquare} width="13px" />,
     },
     {
       href: "https://www.instagram.com/akarikunimi/",

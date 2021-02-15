@@ -55,13 +55,13 @@ const Mobile: React.FC<IMobileProps> = (props) => {
     <FontAwesomeIcon
       icon={faTimes}
       onClick={toggle}
-      style={{ fontSize: "1.4rem", color: "#485859" }}
+      style={{ fontSize: "1.4rem", color: "#485859", width: "16px" }}
     />
   ) : (
     <FontAwesomeIcon
       icon={faBars}
       onClick={toggle}
-      style={{ fontSize: "1.4rem", color: "#485859" }}
+      style={{ fontSize: "1.4rem", color: "#485859", width: "16px" }}
     />
   );
 

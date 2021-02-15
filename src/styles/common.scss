@@ -264,6 +264,11 @@
         font-size: 1.3rem;
         margin-right: 0.5rem;
         margin-left: 0.5rem;
+        @media screen and (max-width: 480px) {
+          width: auto;
+          height: 20px;
+        }
+    
       }
     }
   }
