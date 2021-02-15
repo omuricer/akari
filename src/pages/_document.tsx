@@ -13,7 +13,6 @@ export default class MyDocument extends Document {
           {/* Global Site Tag (gtag.ts) - Google Analytics */}
           <script
             async
-            rel="preload"
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
           />
           <script
