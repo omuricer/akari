@@ -52,7 +52,7 @@ const Bar: React.FC<IBarProps> = (props) => {
     },
     {
       href: "https://www.instagram.com/akarikunimi/",
-      icon: <FontAwesomeIcon icon={faInstagram} />,
+      icon: <FontAwesomeIcon icon={faInstagram} width="13px" />,
     },
   ];
 
