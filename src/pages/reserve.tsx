@@ -5,6 +5,7 @@ import SubSubTitle from "components/subSubTitle";
 import UseCase from "components/useCase";
 import FadeOnScroll from "components/fadeOnScroll";
 import { UseCase as UseCaseModel } from "domain/model/useCase";
+import Image from "next/image";
 
 const data: UseCaseModel[] = [
   {
@@ -95,8 +96,9 @@ const Page: React.FC<Props> = (props) => {
         mdc-layout-grid__cell--span-6-desktop
         mdc-layout-grid__cell--span-8-tablet
         mdc-layout-grid__cell--span-4-phone
-        image"
+        picture"
           >
+            {/* <Image src="/image/studio.jpg" width={600} height={600} /> */}
             <div className="line"></div>
             <h3 className="resource">スタジオ</h3>
             <img className="mdc-image-list__image" src="image/studio.jpg" />
@@ -148,7 +150,7 @@ const Page: React.FC<Props> = (props) => {
         mdc-layout-grid__cell--span-6-desktop
         mdc-layout-grid__cell--span-8-tablet
         mdc-layout-grid__cell--span-4-phone
-        image"
+        picture"
           >
             <div className="line"></div>
             <h2 className="resource">アカリパーク</h2>

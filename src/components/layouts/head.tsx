@@ -7,6 +7,7 @@ const CommonHead: React.FC<Props> = (props) => {
     <Head>
       <meta charSet="utf-8" />
       <title>家守舎桃ノ音 アカリ</title>
+      <link rel="icon" href="/image/favicon/favicon.ico" />
       <meta
         name="description"
         content="家守舎桃ノ音のリノベーションにより、福島県伊達郡国見町に新たな学び合いの場、アカリが誕生しました。アカリはシェアオフィス、コワーキングスペース、イベントスペース、トラットリアを提供し、地域の多様な人々がともに学び合う場をつくっています。共感できる仲間と、空間も価値観もシェアして、１人１人に灯る”想い”を大切にする場所です。"

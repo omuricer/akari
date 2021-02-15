@@ -5,19 +5,6 @@ import classNames from "classnames";
 interface Props {}
 const MainConcept: React.FC<Props> = (props) => {
   return (
-    // <div>
-    //   <div style={{ position: "fixed", zIndex: -1 }}>
-    //     <Image
-    //       alt="Mountains"
-    //       src="/image/concept_main.jpg"
-    //       width={600}
-    //       height={600}
-    //       // layout="fill"
-    //       // objectFit="cover"
-    //       // quality={100}
-    //     />
-    //   </div>
-    // </div>
     <div className={classNames("mdc-layout-grid", style.no_margin)}>
       <div className={classNames("mdc-layout-grid__inner", style.fixed_bg)}>
         <Image

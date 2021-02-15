@@ -11,7 +11,6 @@ import { News as NewsModel } from "domain/model/news";
 import { DIContainer } from "di/inversify.config";
 import { TYPES } from "di/types";
 import { NewsRepository } from "domain/repository/newsRepository";
-import Image from "next/image";
 import Slider from "components/slider";
 import MainConcept from "components/mainConcept";
 
@@ -80,54 +79,6 @@ const Page: React.FC<Props> = (props) => {
   return (
     <HCF className="plane">
       <MainConcept />
-      {/* <div style={{ width: 600, height: 600 }} />
-
-      <div className="mdc-layout-grid">
-        aaaa
-        <br />
-        aaaa
-        <br />
-        aaaa
-        <br />
-        aaaa
-        <br />
-        aaaa
-        <br />
-        aaaa
-        <br />
-        aaaa
-        <br />
-        aaaa
-        <br />
-        aaaa
-        <br />
-        aaaa
-        <br />
-        aaaa
-        <br />
-        aaaa
-        <br />
-        aaaa
-        <br />
-        aaaa
-        <br />
-        aaaa
-        <br />
-        aaaa
-        <br />
-        aaaa
-        <br />
-        aaaa
-        <br />
-        aaaa
-        <br />
-        aaaa
-        <br />
-        aaaa
-        <br />
-        aaaa
-        <br />
-      </div> */}
       <div className="mdc-layout-grid about" id="about">
         <SubTitle text={"about akari"} />
         <div className="mdc-layout-grid__inner">

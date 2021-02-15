@@ -67,6 +67,7 @@ const Page: React.FC<Props> = (props) => {
               }}
             >
               <iframe
+                loading="lazy"
                 src="https://tayori.com/form/611c5599a7047a05ab9dd618f88a7c735c4990f0"
                 width="100%"
                 height="100%"
