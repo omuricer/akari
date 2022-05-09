@@ -85,35 +85,15 @@ export const MobileMenu: React.FC<IMobileMenuProps> = (props) => {
 
   const menu: JSX.Element[] = [];
   props.menu.map((item, index) => {
-    // TODO: bonchi期間だけ
-    if (item.label == "FUKUSHIMA BONCHI") {
-      menu.push(
-        <li key={"menu" + index}>
-          <Link href={item.href}>
-            <a
-              target="_self"
-              style={{
-                fontWeight: "bold",
-                letterSpacing: "0",
-                color: "#F9A638",
-              }}
-            >
-              {item.label}
-            </a>
-          </Link>
-        </li>
-      );
-    } else {
-      menu.push(
-        <li key={"menu" + index}>
-          <Link href={item.href}>
-            <a target="_self" className={classes.menuText}>
-              {item.label}
-            </a>
-          </Link>
-        </li>
-      );
-    }
+    menu.push(
+      <li key={"menu" + index}>
+        <Link href={item.href}>
+          <a target="_self" className={classes.menuText}>
+            {item.label}
+          </a>
+        </Link>
+      </li>
+    );
   });
   const snsIcons: JSX.Element[] = [];
   props.sns.map((sns, index) => {
