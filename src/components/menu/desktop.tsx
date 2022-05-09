@@ -34,31 +34,13 @@ const Desktop: React.FC<IDesktopProps> = (props) => {
 
   const menu: JSX.Element[] = [];
   props.menu.map((item, index) => {
-    // TODO: bonchi期間だけ
-    if (item.label == "FUKUSHIMA BONCHI") {
-      menu.push(
-        <li className={classes.menuText} key={"menu" + index}>
-          <Link href={item.href} passHref>
-            <A
-              style={{
-                fontWeight: "bold",
-                letterSpacing: "0",
-              }}
-            >
-              {item.label}
-            </A>
-          </Link>
-        </li>
-      );
-    } else {
-      menu.push(
-        <li className={classes.menuText} key={"menu" + index}>
-          <Link href={item.href} passHref>
-            <A>{item.label}</A>
-          </Link>
-        </li>
-      );
-    }
+    menu.push(
+      <li className={classes.menuText} key={"menu" + index}>
+        <Link href={item.href} passHref>
+          <A>{item.label}</A>
+        </Link>
+      </li>
+    );
   });
   props.sns.map((sns, index) => {
     menu.push(
