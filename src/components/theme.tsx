@@ -8,6 +8,8 @@ import {
 let theme = createMuiTheme({
   typography: {
     fontFamily: [
+      "M PLUS Rounded 1c",
+      "sans-serif",
       "Georgia",
       "游明朝",
       "YuMincho",
@@ -73,7 +75,7 @@ let theme = createMuiTheme({
 });
 // theme = responsiveFontSizes(theme);
 
-interface IThemeProps {}
+interface IThemeProps { }
 const Theme: React.FC<IThemeProps> = (props) => {
   return <ThemeProvider theme={theme}>{props.children}</ThemeProvider>;
 };

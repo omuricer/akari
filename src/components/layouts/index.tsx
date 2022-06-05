@@ -35,6 +35,12 @@ const Layout: React.FC<{}> = (props) => {
           href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap"
           rel="stylesheet"
         />
+
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400&display=swap');
+        </style>
+
+
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
