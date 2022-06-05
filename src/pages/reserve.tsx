@@ -153,7 +153,7 @@ const Page: React.FC<Props> = (props) => {
         picture"
           >
             <div className="line"></div>
-            <h2 className="resource">アカリパーク</h2>
+            <h2 className="resource">ヒロバ</h2>
             <img className="mdc-image-list__image" src="image/akaripark.jpg" />
           </div>
           <div

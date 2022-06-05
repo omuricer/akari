@@ -118,33 +118,27 @@ const Page: React.FC<Props> = (props) => {
             <ul>
               <li>
                 <h4 className="headline">
-                  Trattoria da Martino ( イタリアン )
+                  Trattoria da Martino ( シチリア料理 )
                 </h4>
                 <div className="text">
                   周辺地域の食材を使ったシチリア料理で新たな味の提案をしています。
                 </div>
               </li>
               <li>
-                <h4 className="headline">Lounge</h4>
+                <h4 className="headline">ラウンジ</h4>
                 <div className="text">
                   勉強や読書など、ご自由にお寛ぎください。無料でお使い頂けます。
                 </div>
               </li>
               <li>
-                <h4 className="headline">Library</h4>
+                <h4 className="headline">ライブラリ</h4>
                 <div className="text">
                   無人で本の販売をしています。Lounge
                   に限り、お好きな本を無料でお読み頂けます。
                 </div>
               </li>
               <li>
-                <h4 className="headline">Baby room</h4>
-                <div className="text">
-                  おむつ交換台と授乳スペースを設置しています。
-                </div>
-              </li>
-              <li>
-                <h4 className="headline">Studio</h4>
+                <h4 className="headline">スタジオ</h4>
                 <div className="text">
                   会議やイベントスペースとしてお使い頂けます。プロジェクター、マイク、スクリーンは有料で貸し出しております。
                 </div>
@@ -155,7 +149,7 @@ const Page: React.FC<Props> = (props) => {
                 </div>
               </li>
               <li>
-                <h4 className="headline">Akari Park</h4>
+                <h4 className="headline">ヒロバ</h4>
                 <div className="text">
                   マルシェなど、屋外のイベントでご利用頂けます。１日単位でご利用頂けます。
                 </div>
@@ -166,7 +160,7 @@ const Page: React.FC<Props> = (props) => {
                 </div>
               </li>
               <li>
-                <h4 className="headline">Share Office</h4>
+                <h4 className="headline">シェアオフィス</h4>
                 <div className="text">
                   主に地域の魅力を高める業態の方を対象に、オフィススペースを貸し出しています。随時入居者を募集しておりますので、お問合わせフォームよりお気軽にご相談ください。
                 </div>
@@ -244,7 +238,6 @@ const Page: React.FC<Props> = (props) => {
           <div className="mdc-layout-grid__cell--span-12">
             <FadeOnScroll>
               <p>
-                Co-working &<br />
                 Co-learning
                 <br />
                 Space
