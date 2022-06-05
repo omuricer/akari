@@ -1,7 +1,6 @@
 import FadeOnScroll from "components/fadeOnScroll";
 import Image from "next/image";
 import style from "./index.module.scss";
-import Grid from "@material-ui/core/Grid";
 import classNames from "classnames";
 
 interface Props {

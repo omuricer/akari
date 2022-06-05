@@ -26,21 +26,21 @@ let conceptsData = [
     main_accent: "Share",
     main: " Space",
     sub: "多様な価値観に気づく。",
-    image: "/image/concept2.png",
+    image: "/image/concept2.jpg",
     reverse: true,
   },
   {
     main_accent: "Share",
     main: " Park",
     sub: "多様な文化を知る。",
-    image: "/image/concept3.png",
+    image: "/image/concept3.jpg",
     reverse: false,
   },
   {
     main_accent: "Share",
     main: " Office",
     sub: "小さな産業が生まれる。",
-    image: "/image/concept4.png",
+    image: "/image/concept4.jpg",
     reverse: true,
   },
 ];
@@ -80,7 +80,7 @@ const Page: React.FC<Props> = (props) => {
     <HCF className="plane">
       <MainConcept />
       <div className="mdc-layout-grid about" id="about">
-        <SubTitle text={"about akari"} />
+        <SubTitle text={"about"} />
         <div className="mdc-layout-grid__inner">
           <div
             className="
@@ -96,7 +96,7 @@ const Page: React.FC<Props> = (props) => {
         </div>
       </div>
       <div className="mdc-layout-grid service" id="service">
-        <SubTitle text={"our service"} />
+        <SubTitle text={"service"} />
         <div className="mdc-layout-grid__inner">
           <div
             className="mdc-layout-grid__cell--span-6-desktop
@@ -118,7 +118,7 @@ const Page: React.FC<Props> = (props) => {
             <ul>
               <li>
                 <h4 className="headline">
-                  Trattoria da Martino ( シチリア料理 )
+                  Trattoria da Martino (イタリアン)
                 </h4>
                 <div className="text">
                   周辺地域の食材を使ったシチリア料理で新たな味の提案をしています。
