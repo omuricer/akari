@@ -212,10 +212,10 @@ const Page: React.FC<Props> = (props) => {
           </div>
         </div>
       </div>
-      <div className="mdc-layout-grid" id="news">
+      {/* <div className="mdc-layout-grid" id="news">
         <SubTitle text={"news"} />
         <div className="mdc-layout-grid__inner">{news}</div>
-      </div>
+      </div> */}
       <div className="mdc-layout-grid no-margin" id="access">
         <div className="mdc-layout-grid__inner">
           <div className="mdc-layout-grid__cell--span-12">

@@ -40,7 +40,7 @@ const Bar: React.FC<IBarProps> = (props) => {
     { href: "/", label: "top" },
     { href: "/#about", label: "about" },
     { href: "/#service", label: "service" },
-    { href: "/#news", label: "news" },
+    // { href: "/#news", label: "news" },
     { href: "/reserve", label: "reservation" },
     { href: "/contact", label: "contact" },
   ];
