@@ -64,7 +64,7 @@ const Bar: React.FC<IBarProps> = (props) => {
               <h1>
                 <Link href="/">
                   <a>
-                    <Image src={props.logo} width={230} height={50} />
+                    <Image src={props.logo} width={180} height={60} />
                   </a>
                 </Link>
               </h1>
