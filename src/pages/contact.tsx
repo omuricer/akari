@@ -8,7 +8,7 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
-interface Props {}
+interface Props { }
 const Page: React.FC<Props> = (props) => {
   return (
     <HCF className="plane">
@@ -56,7 +56,10 @@ const Page: React.FC<Props> = (props) => {
           </div>
           <div className="mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone center">
             <p className="desc">
-              下記の入力フォームからもお問い合わせただけます。
+              下記の入力フォームからもお問い合わせただけます。<br />
+            </p>
+            <p className="desc">
+              バーベキューの予約をご希望の方はこちらからお問い合わせください。
             </p>
             <div
               style={{

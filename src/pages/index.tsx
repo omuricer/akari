@@ -151,10 +151,18 @@ const Page: React.FC<Props> = (props) => {
               <li>
                 <h4 className="headline">ヒロバ</h4>
                 <div className="text">
-                  マルシェなど、屋外のイベントでご利用頂けます。１日単位でご利用頂けます。
+                  バーベキュー利用や全面貸切でのご利用が可能です。
                 </div>
-                <div className="attr">面積：1,500㎡</div>
-                <div className="attr">利用料：¥10,000/日</div>
+                <div className="attr">
+                  [バーベキュー利用]<br />
+                  ヒロバ中央の焚火台をお貸しいたします。<br />
+                  １箇所　¥1500/日(全３箇所)
+                </div>
+                <div className="attr">
+                  [貸切利用]<br />
+                  マルシェなど、屋外のイベントでご利用頂けます。１日単位でご利用頂けます。<br />
+                  面積：1,500㎡利用料：¥10,000/日
+                </div>
                 <div className="text">
                   <a href="/reserve">ご予約はこちら</a>
                 </div>

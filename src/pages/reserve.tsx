@@ -167,7 +167,7 @@ const Page: React.FC<Props> = (props) => {
               <div className="description--set">
                 <SubSubTitle text={"サービス"} />
                 <p>
-                  マルシェなど、屋外のイベントでご利用頂けます。１日単位でご利用頂けます。
+                  バーベキュー利用や全面貸切でのご利用が可能です。
                 </p>
               </div>
               <div className="description--set">
@@ -181,15 +181,32 @@ const Page: React.FC<Props> = (props) => {
               </div>
               <div className="description--set">
                 <SubSubTitle text={"ご利用料金"} />
-                <p>¥10,000/day</p>
+                <p>
+                  [バーベキュー利用]<br />
+                  ヒロバ中央の焚火台をお貸しいたします。<br />
+                  １箇所　¥1500/日(全３箇所)<br />
+                </p>
+                <br />
+                <p>
+                  [貸切利用]<br />
+                  マルシェなど、屋外のイベントでご利用頂けます。１日単位でご利用頂けます。<br />
+                  面積：1,500㎡利用料：¥10,000/日
+                </p>
+              </div>
+              <div className="description--set">
+                <SubSubTitle text={"ご予約方法"} />
+                <p>
+                  バーベキューの予約をご希望の方は下のボタンのお問い合わせフォームより、下記の事項を入力して送信してください。<br />
+                  問い合わせ項目：バーベキュー利用のご予約<br />
+                  問い合わせ内容：利用日時、ご利用箇所数、大まかな利用人数、他ご要望・ご質問など<br />
+                </p>
               </div>
               <div className="right">
                 <a
                   className="mdc-button mdc-button--raised right"
-                  href="https://airrsv.net/yamorisyamomonone/calendar?schdlId=s000029C7B"
-                  target="_blank"
+                  href="/contact"
                 >
-                  空き状況確認・ご予約
+                  お問い合わせフォーム
                 </a>
               </div>
             </div>

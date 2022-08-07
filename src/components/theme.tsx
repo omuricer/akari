@@ -8,18 +8,7 @@ import {
 let theme = createMuiTheme({
   typography: {
     fontFamily: [
-      "M PLUS Rounded 1c",
-      "sans-serif",
-      "Georgia",
-      "游明朝",
-      "YuMincho",
-      '"Noto Serif JP"',
-      '"ヒラギノ明朝 ProN W3"',
-      '"Hiragino Mincho ProN"',
-      "HG明朝E",
-      '"ＭＳ Ｐ明朝"',
-      '"ＭＳ 明朝"',
-      "serif",
+      'M PLUS 1p', 'sans-serif'
     ].join(","),
     fontSize: 14,
     h1: {

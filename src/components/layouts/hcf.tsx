@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Bar from "components/bar";
-import Grid from "@material-ui/core/Grid";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Toolbar from "@material-ui/core/Toolbar";
 import Footer from "components/footer";
-import Loading from "components/loading";
 import Head from "./head";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -41,7 +39,7 @@ const detectBreakPoint = () => {
   return detectedBreakPoint ?? "lg";
 };
 
-interface ITemplateHCFProps extends React.HTMLProps<HTMLElement> {}
+interface ITemplateHCFProps extends React.HTMLProps<HTMLElement> { }
 const HCF: React.FC<ITemplateHCFProps> = (props) => {
   const classes = useStyles();
 
