@@ -213,10 +213,10 @@ const Page: React.FC<Props> = (props) => {
           </div>
         </div>
       </div>
-      <div className="mdc-layout-grid">
+      {/* <div className="mdc-layout-grid">
         <SubTitle text={"use case"} />
         <div className="mdc-layout-grid__inner">{useCases}</div>
-      </div>
+      </div> */}
     </HCF>
   );
 };
