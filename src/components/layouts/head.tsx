@@ -33,8 +33,6 @@ const CommonHead: React.FC<Props> = (props) => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@yamorisyamomone" />
 
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300&display=swap" rel="stylesheet" />
     </Head>
   );
