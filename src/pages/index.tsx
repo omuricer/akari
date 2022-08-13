@@ -131,14 +131,14 @@ const Page: React.FC<Props> = (props) => {
                 </div>
               </li>
               <li>
-                <h4 className="headline">ライブラリ</h4>
+                <h4 className="headline"><div className="underline">ライブラリ</div></h4>
                 <div className="text">
                   無人で本の販売をしています。Lounge
                   に限り、お好きな本を無料でお読み頂けます。
                 </div>
               </li>
               <li>
-                <h4 className="headline">スタジオ</h4>
+                <h4 className="headline"><div className="underline">スタジオ</div></h4>
                 <div className="text">
                   会議やイベントスペースとしてお使い頂けます。プロジェクター、マイク、スクリーンは有料で貸し出しております。
                 </div>
@@ -183,10 +183,7 @@ const Page: React.FC<Props> = (props) => {
                 <div className="attr">＜入居者特典＞</div>
                 <br />
                 <div className="attr">
-                  ①Trattoria da Martino のまかないメシ（¥500）
-                </div>
-                <div className="attr">
-                  ②スタジオ・アカリパーク利用料割引（１割引）
+                  Trattoria da Martino のまかないメシ（¥500）
                 </div>
               </li>
             </ul>
@@ -301,7 +298,7 @@ const Page: React.FC<Props> = (props) => {
           </div>
         </div>
       </div>
-    </HCF>
+    </HCF >
   );
 };
 export default Page;

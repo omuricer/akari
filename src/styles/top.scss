@@ -3,11 +3,11 @@
   line-height: 2rem;
 }
 
-.center{
+.center {
   p {
     text-align: center;
   }
-} 
+}
 
 .access {
   text-align: center;
@@ -15,25 +15,35 @@
 
 .service {
   text-align: center;
+
   ul {
     list-style: none;
   }
+
   li {
     margin-bottom: 2rem;
   }
+
   .headline {
     margin-bottom: 0.7rem;
     font-size: 1.2rem;
     font-weight: 500;
+
+    .underline {
+      text-decoration: underline;
+    }
   }
+
   .text {
     margin-bottom: 0.7rem;
   }
+
   .attr {
     display: inline-block;
     margin-right: 1rem;
     margin-bottom: 0.3rem;
   }
+
   line-height: 1.5rem;
 }
 
