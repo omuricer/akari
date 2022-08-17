@@ -105,8 +105,8 @@ const Page: React.FC<Props> = (props) => {
           >
             <Slider
               images={[
-                { src: "/image/1f.png", alt: "地域の価値を分かち合う。" },
-                { src: "/image/2f.png", alt: "地域の価値を分かち合う。" },
+                { src: "/image/1f.png", alt: "1f" },
+                { src: "/image/2f.png", alt: "2f" },
               ]}
             />
           </div>
@@ -117,15 +117,13 @@ const Page: React.FC<Props> = (props) => {
           >
             <ul>
               <li>
-                <h4 className="headline">
-                  Trattoria da Martino (イタリアン)
-                </h4>
+                <h4 className="headline"><div className="underline">Trattoria da Martino (イタリアン)</div></h4>
                 <div className="text">
                   周辺地域の食材を使ったシチリア料理で新たな味の提案をしています。
                 </div>
               </li>
               <li>
-                <h4 className="headline">ラウンジ</h4>
+                <h4 className="headline"><div className="underline">ラウンジ</div></h4>
                 <div className="text">
                   勉強や読書など、ご自由にお寛ぎください。無料でお使い頂けます。
                 </div>
@@ -149,7 +147,7 @@ const Page: React.FC<Props> = (props) => {
                 </div>
               </li>
               <li>
-                <h4 className="headline">ヒロバ</h4>
+                <h4 className="headline"><div className="underline">ヒロバ</div></h4>
                 <div className="text">
                   バーベキュー利用や全面貸切でのご利用が可能です。
                 </div>
@@ -168,7 +166,7 @@ const Page: React.FC<Props> = (props) => {
                 </div>
               </li>
               <li>
-                <h4 className="headline">シェアオフィス</h4>
+                <h4 className="headline"><div className="underline">シェアオフィス</div></h4>
                 <div className="text">
                   主に地域の魅力を高める業態の方を対象に、オフィススペースを貸し出しています。随時入居者を募集しておりますので、お問合わせフォームよりお気軽にご相談ください。
                 </div>
