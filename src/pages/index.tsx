@@ -26,21 +26,21 @@ let conceptsData = [
     main_accent: "Share",
     main: " Space",
     sub: "多様な価値観に気づく。",
-    image: "/image/concept2.png",
+    image: "/image/concept2.jpg",
     reverse: true,
   },
   {
     main_accent: "Share",
     main: " Park",
     sub: "多様な文化を知る。",
-    image: "/image/concept3.png",
+    image: "/image/concept3.jpg",
     reverse: false,
   },
   {
     main_accent: "Share",
     main: " Office",
     sub: "小さな産業が生まれる。",
-    image: "/image/concept4.png",
+    image: "/image/concept4.jpg",
     reverse: true,
   },
 ];
@@ -80,7 +80,7 @@ const Page: React.FC<Props> = (props) => {
     <HCF className="plane">
       <MainConcept />
       <div className="mdc-layout-grid about" id="about">
-        <SubTitle text={"about akari"} />
+        <SubTitle text={"about"} />
         <div className="mdc-layout-grid__inner">
           <div
             className="
@@ -96,7 +96,7 @@ const Page: React.FC<Props> = (props) => {
         </div>
       </div>
       <div className="mdc-layout-grid service" id="service">
-        <SubTitle text={"our service"} />
+        <SubTitle text={"service"} />
         <div className="mdc-layout-grid__inner">
           <div
             className="mdc-layout-grid__cell--span-6-desktop
@@ -105,8 +105,8 @@ const Page: React.FC<Props> = (props) => {
           >
             <Slider
               images={[
-                { src: "/image/1f.png", alt: "地域の価値を分かち合う。" },
-                { src: "/image/2f.png", alt: "地域の価値を分かち合う。" },
+                { src: "/image/1f.png", alt: "1f" },
+                { src: "/image/2f.png", alt: "2f" },
               ]}
             />
           </div>
@@ -117,34 +117,26 @@ const Page: React.FC<Props> = (props) => {
           >
             <ul>
               <li>
-                <h4 className="headline">
-                  Trattoria da Martino ( イタリアン )
-                </h4>
+                <h4 className="headline"><div className="underline">Trattoria da Martino (イタリアン)</div></h4>
                 <div className="text">
                   周辺地域の食材を使ったシチリア料理で新たな味の提案をしています。
                 </div>
               </li>
               <li>
-                <h4 className="headline">Lounge</h4>
+                <h4 className="headline"><div className="underline">ラウンジ</div></h4>
                 <div className="text">
                   勉強や読書など、ご自由にお寛ぎください。無料でお使い頂けます。
                 </div>
               </li>
               <li>
-                <h4 className="headline">Library</h4>
+                <h4 className="headline"><div className="underline">ライブラリ</div></h4>
                 <div className="text">
                   無人で本の販売をしています。Lounge
                   に限り、お好きな本を無料でお読み頂けます。
                 </div>
               </li>
               <li>
-                <h4 className="headline">Baby room</h4>
-                <div className="text">
-                  おむつ交換台と授乳スペースを設置しています。
-                </div>
-              </li>
-              <li>
-                <h4 className="headline">Studio</h4>
+                <h4 className="headline"><div className="underline">スタジオ</div></h4>
                 <div className="text">
                   会議やイベントスペースとしてお使い頂けます。プロジェクター、マイク、スクリーンは有料で貸し出しております。
                 </div>
@@ -155,18 +147,26 @@ const Page: React.FC<Props> = (props) => {
                 </div>
               </li>
               <li>
-                <h4 className="headline">Akari Park</h4>
+                <h4 className="headline"><div className="underline">ヒロバ</div></h4>
                 <div className="text">
-                  マルシェなど、屋外のイベントでご利用頂けます。１日単位でご利用頂けます。
+                  バーベキュー利用や全面貸切でのご利用が可能です。
                 </div>
-                <div className="attr">面積：1,500㎡</div>
-                <div className="attr">利用料：¥10,000/日</div>
+                <div className="attr">
+                  [バーベキュー利用]<br />
+                  ヒロバ中央の焚火台をお貸しいたします。<br />
+                  １箇所　¥1500/日(全３箇所)
+                </div>
+                <div className="attr">
+                  [貸切利用]<br />
+                  マルシェなど、屋外のイベントでご利用頂けます。１日単位でご利用頂けます。<br />
+                  面積：1,500㎡利用料：¥10,000/日
+                </div>
                 <div className="text">
                   <a href="/reserve">ご予約はこちら</a>
                 </div>
               </li>
               <li>
-                <h4 className="headline">Share Office</h4>
+                <h4 className="headline"><div className="underline">シェアオフィス</div></h4>
                 <div className="text">
                   主に地域の魅力を高める業態の方を対象に、オフィススペースを貸し出しています。随時入居者を募集しておりますので、お問合わせフォームよりお気軽にご相談ください。
                 </div>
@@ -181,10 +181,7 @@ const Page: React.FC<Props> = (props) => {
                 <div className="attr">＜入居者特典＞</div>
                 <br />
                 <div className="attr">
-                  ①Trattoria da Martino のまかないメシ（¥500）
-                </div>
-                <div className="attr">
-                  ②スタジオ・アカリパーク利用料割引（１割引）
+                  Trattoria da Martino のまかないメシ（¥500）
                 </div>
               </li>
             </ul>
@@ -218,10 +215,10 @@ const Page: React.FC<Props> = (props) => {
           </div>
         </div>
       </div>
-      <div className="mdc-layout-grid" id="news">
+      {/* <div className="mdc-layout-grid" id="news">
         <SubTitle text={"news"} />
         <div className="mdc-layout-grid__inner">{news}</div>
-      </div>
+      </div> */}
       <div className="mdc-layout-grid no-margin" id="access">
         <div className="mdc-layout-grid__inner">
           <div className="mdc-layout-grid__cell--span-12">
@@ -244,7 +241,6 @@ const Page: React.FC<Props> = (props) => {
           <div className="mdc-layout-grid__cell--span-12">
             <FadeOnScroll>
               <p>
-                Co-working &<br />
                 Co-learning
                 <br />
                 Space
@@ -300,7 +296,7 @@ const Page: React.FC<Props> = (props) => {
           </div>
         </div>
       </div>
-    </HCF>
+    </HCF >
   );
 };
 export default Page;

@@ -2,14 +2,14 @@ import Image from "next/image";
 import style from "./index.module.scss";
 import classNames from "classnames";
 
-interface Props {}
+interface Props { }
 const MainConcept: React.FC<Props> = (props) => {
   return (
     <div className={classNames("mdc-layout-grid", style.no_margin)}>
       <div className={classNames("mdc-layout-grid__inner", style.fixed_bg)}>
         <Image
           alt="Mountains"
-          src="/image/concept_main.jpg"
+          src="/image/concept_main.png"
           layout="fill"
           objectFit="cover"
           quality={100}
@@ -20,21 +20,15 @@ const MainConcept: React.FC<Props> = (props) => {
       >
         <div className="mdc-layout-grid__cell--span-12">
           <div className={style.concept_text}>
-            <p className={classNames("mdc-typography--headline2", style.main)}>
-              ともに学びあう
+            <p className={classNames("mdc-typography--body1", style.text)} style={{ marginBottom: "1rem" }}>
+              元縫製工場をリノベーションして、
+              <br />
+              学びの複合施設として生まれ変わりました。
             </p>
             <p className={classNames("mdc-typography--body1", style.text)}>
-              ひとりひとりの想いが灯る、アカリ
+              空間も価値観もシェアして、
               <br />
-              <br />
-              眠っていた元書庫の施設が
-              <br />
-              リノベ－ションにより学びあいの場へと生まれ変わりました
-              <br />
-              <br />
-              多様な価値観が交差し、新しいモノ・コトが生まれる
-              <br />
-              多様な人との出会い、多様な文化との接点に、あなたもお越しください
+              １人１人の「想い」が灯る場所に。
             </p>
           </div>
         </div>

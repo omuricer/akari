@@ -23,6 +23,7 @@
   overflow: hidden;
   z-index: -1;
 }
+
 .fixed_bg_dummy {
   min-height: 100vh;
   position: relative;
@@ -43,23 +44,25 @@
   color: #FBFAF5;
 
   border: 3px;
-  background: rgba(#474a4d, 0.2);
+  background: rgba(#474a4d, 0.25);
 
   width: 80vw;
-  padding: 2rem;
+  padding: 0.5rem;
   border-top: 2px solid #FFFFFF;
   border-bottom: 2px solid #FFFFFF;
 }
+
 .main {
   letter-spacing: 0.2em;
 }
+
 .text {
-  font-size: 1.2rem;
-  letter-spacing: 0.2em;
-  padding-top: 3rem;
+  font-size: 1.4rem;
+  line-height: 3.5rem;
 }
 
 
+// PC Style
 @media (min-width: 768px) {
   .fixed_bg {
     background-position: center;
@@ -67,11 +70,20 @@
   }
 
   .concept_text {
+    top: 55%;
     margin-left: 0;
     width: auto;
+    padding: 2rem;
   }
 
   .service {
     text-align: left;
   }
+
+  .text {
+    letter-spacing: 0.2em;
+    font-size: 2.8rem;
+    line-height: 6rem;
+  }
+
 }

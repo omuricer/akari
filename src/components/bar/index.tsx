@@ -40,8 +40,8 @@ const Bar: React.FC<IBarProps> = (props) => {
     { href: "/", label: "top" },
     { href: "/#about", label: "about" },
     { href: "/#service", label: "service" },
-    { href: "/#news", label: "news" },
-    { href: "/reserve", label: "studio/akari park" },
+    // { href: "/#news", label: "news" },
+    { href: "/reserve", label: "reservation" },
     { href: "/contact", label: "contact" },
   ];
   const sns = [
@@ -64,7 +64,7 @@ const Bar: React.FC<IBarProps> = (props) => {
               <h1>
                 <Link href="/">
                   <a>
-                    <Image src={props.logo} width={230} height={50} />
+                    <Image src={props.logo} width={180} height={60} />
                   </a>
                 </Link>
               </h1>

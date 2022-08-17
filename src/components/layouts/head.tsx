@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 
-interface Props {}
+interface Props { }
 const CommonHead: React.FC<Props> = (props) => {
   return (
     <Head>
@@ -32,6 +32,8 @@ const CommonHead: React.FC<Props> = (props) => {
       <meta property="fb:app_id" content="2590332120996026" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@yamorisyamomone" />
+
+      <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300&display=swap" rel="stylesheet" />
     </Head>
   );
 };
